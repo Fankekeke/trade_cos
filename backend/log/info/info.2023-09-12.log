@@ -1,0 +1,1021 @@
+2023-09-12 22:02:51.637 febs [main] INFO  cc.mrbird.febs.FebsApplication - Starting FebsApplication on WIN-KJDA35RA4FP with PID 14340 (started by Administrator in G:\Project\工地安全预警管理系统的设计与实现\construction_cos\backend)
+2023-09-12 22:02:51.640 febs [main] INFO  cc.mrbird.febs.FebsApplication - No active profile set, falling back to default profiles: default
+2023-09-12 22:02:52.515 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-09-12 22:02:52.518 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2023-09-12 22:02:52.580 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46ms. Found 0 repository interfaces.
+2023-09-12 22:02:52.844 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncExecutorPoolConfig' of type [cc.mrbird.febs.common.config.AsyncExecutorPoolConfig$$EnhancerBySpringCGLIB$$da99c94c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:52.941 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.012 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$b4e914f0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.018 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.021 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.028 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4b5aa41f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.040 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [cc.mrbird.febs.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$b6daa5c8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.280 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [cc.mrbird.febs.common.config.RedisConfig$$EnhancerBySpringCGLIB$$af9f5d1c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.296 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisPoolFactory' of type [redis.clients.jedis.JedisPool] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.299 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisService' of type [cc.mrbird.febs.common.service.impl.RedisServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.375 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.380 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [cc.mrbird.febs.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$9ce2002e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.384 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.388 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$892310b9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.394 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.396 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.398 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-检测到并开启了p6spy
+2023-09-12 22:02:53.404 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Starting...
+2023-09-12 22:02:53.584 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Start completed.
+2023-09-12 22:02:53.585 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 初始共加载 1 个数据源
+2023-09-12 22:02:53.585 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 primary 成功
+2023-09-12 22:02:53.585 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 primary
+2023-09-12 22:02:53.585 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.baomidou.dynamic.datasource.DynamicRoutingDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.595 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:53.601 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.181 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.186 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.188 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.190 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMapper' of type [com.sun.proxy.$Proxy108] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.204 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.205 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuMapper' of type [com.sun.proxy.$Proxy110] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.210 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.211 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleMapper' of type [com.sun.proxy.$Proxy111] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.212 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleService' of type [cc.mrbird.febs.system.service.impl.UserRoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.241 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuService' of type [cc.mrbird.febs.system.service.impl.RoleMenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.255 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleService' of type [cc.mrbird.febs.system.service.impl.RoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.273 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.274 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuMapper' of type [com.sun.proxy.$Proxy115] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.275 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuService' of type [cc.mrbird.febs.system.service.impl.MenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.290 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.291 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy117] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.307 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.308 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigMapper' of type [com.sun.proxy.$Proxy118] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.310 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigService' of type [cc.mrbird.febs.system.service.impl.UserConfigServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.324 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [cc.mrbird.febs.system.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.339 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration$$EnhancerBySpringCGLIB$$a6ee23b0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.342 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration$$EnhancerBySpringCGLIB$$593ae5c9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.344 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration$$EnhancerBySpringCGLIB$$1451cbb8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.349 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties' of type [org.springframework.boot.autoconfigure.jackson.JacksonProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.351 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'standardJacksonObjectMapperBuilderCustomizer' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration$StandardJackson2ObjectMapperBuilderCustomizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.356 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration$$EnhancerBySpringCGLIB$$3b1d42e6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.361 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'parameterNamesModule' of type [com.fasterxml.jackson.module.paramnames.ParameterNamesModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.363 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$$EnhancerBySpringCGLIB$$88f9c13f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.373 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jsonComponentModule' of type [org.springframework.boot.jackson.JsonComponentModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.374 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.data.web.config.SpringDataJacksonConfiguration' of type [org.springframework.data.web.config.SpringDataJacksonConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.379 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonGeoModule' of type [org.springframework.data.geo.GeoModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.381 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonObjectMapperBuilder' of type [org.springframework.http.converter.json.Jackson2ObjectMapperBuilder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.401 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonObjectMapper' of type [com.fasterxml.jackson.databind.ObjectMapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.412 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheService' of type [cc.mrbird.febs.common.service.impl.CacheServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.415 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userManager' of type [cc.mrbird.febs.system.manager.UserManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.416 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [cc.mrbird.febs.common.authentication.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.422 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.433 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:02:54.702 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9527 (http)
+2023-09-12 22:02:54.712 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9527"]
+2023-09-12 22:02:54.716 febs [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-09-12 22:02:54.716 febs [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2023-09-12 22:02:54.720 febs [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_201\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;F:\办公软件\Git\cmd;F:\nodejs\;F:\Yarn\bin\;F:\Bandizip\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\Yarn\bin;.]
+2023-09-12 22:02:54.822 febs [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-09-12 22:02:54.822 febs [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3125 ms
+2023-09-12 22:02:55.252 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2023-09-12 22:02:55.253 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2023-09-12 22:02:55.253 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2023-09-12 22:02:55.253 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2023-09-12 22:02:55.253 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2023-09-12 22:02:55.253 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+2023-09-12 22:02:55.253 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'shiroFilterFactoryBean' to: [/*]
+2023-09-12 22:02:55.253 febs [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2023-09-12 22:02:55.809 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2023-09-12 22:02:55.818 febs [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-12 22:02:55.819 febs [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.0 created.
+2023-09-12 22:02:55.822 febs [main] INFO  o.s.s.quartz.LocalDataSourceJobStore - Using db table-based data access locking (synchronization).
+2023-09-12 22:02:55.824 febs [main] INFO  o.s.s.quartz.LocalDataSourceJobStore - JobStoreCMT initialized.
+2023-09-12 22:02:55.824 febs [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'MyScheduler' with instanceId 'WIN-KJDA35RA4FP1694527375810'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2023-09-12 22:02:55.824 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'MyScheduler' initialized from an externally provided properties instance.
+2023-09-12 22:02:55.824 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.0
+2023-09-12 22:02:55.825 febs [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@23d23d98
+2023-09-12 22:02:55.880 febs [main] INFO  p6spy - 2023-09-12 22:02:55 | 耗时 12 ms | SQL 语句：
+select job_id jobId, bean_name beanName, method_name methodName, params, cron_expression cronExpression, status, remark, create_time createTime from t_job order by job_id;
+2023-09-12 22:02:56.291 febs [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2023-09-12 22:02:57.315 febs [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2023-09-12 22:02:57.362 febs [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-09-12 22:02:57.428 febs [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Will start Quartz Scheduler [MyScheduler] in 1 seconds
+2023-09-12 22:02:57.440 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9527"]
+2023-09-12 22:02:57.448 febs [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2023-09-12 22:02:57.460 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9527 (http) with context path ''
+2023-09-12 22:02:57.463 febs [main] INFO  cc.mrbird.febs.FebsApplication - Started FebsApplication in 6.266 seconds (JVM running for 7.54)
+2023-09-12 22:02:57.470 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - Redis连接中 ······
+2023-09-12 22:02:57.473 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-09-12 22:02:57.473 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - 缓存初始化 ······
+2023-09-12 22:02:57.473 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - 缓存用户数据 ······
+2023-09-12 22:02:57.501 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 2 ms | SQL 语句：
+SELECT USER_ID,username,password,dept_id,email,mobile,status,create_time,modify_time,last_login_time,ssex,description,avatar FROM t_user;
+2023-09-12 22:02:57.512 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 7 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'mrbird' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:02:57.579 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'mrbird';
+2023-09-12 22:02:57.595 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 5 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'mrbird' and m.perms is not null and m.perms <> '';
+2023-09-12 22:02:57.611 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 3 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='1' ;
+2023-09-12 22:02:57.616 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 1 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'scott' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:02:57.618 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'scott';
+2023-09-12 22:02:57.621 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'scott' and m.perms is not null and m.perms <> '';
+2023-09-12 22:02:57.624 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='2' ;
+2023-09-12 22:02:57.627 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'jack' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:02:57.630 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'jack';
+2023-09-12 22:02:57.632 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'jack' and m.perms is not null and m.perms <> '';
+2023-09-12 22:02:57.634 febs [main] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='12' ;
+2023-09-12 22:02:57.635 febs [main] INFO  c.m.f.common.runner.StartedUpRunner -  __    ___   _      ___   _     ____ _____  ____ 
+2023-09-12 22:02:57.635 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - / /`  / / \ | |\/| | |_) | |   | |_   | |  | |_  
+2023-09-12 22:02:57.635 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - \_\_, \_\_/ |_|  | |_|   |_|__ |_|__  |_|  |_|__ 
+2023-09-12 22:02:57.635 febs [main] INFO  c.m.f.common.runner.StartedUpRunner -                                                       
+2023-09-12 22:02:57.635 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - FEBS 启动完毕，时间：2023-09-12T22:02:57.635
+2023-09-12 22:02:57.935 febs [RMI TCP Connection(2)-192.168.1.3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-12 22:02:57.935 febs [RMI TCP Connection(2)-192.168.1.3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-09-12 22:02:57.936 febs [RMI TCP Connection(3)-192.168.1.3] INFO  p6spy - 2023-09-12 22:02:57 | 耗时 0 ms | SQL 语句：
+/* ping */ SELECT 1;
+2023-09-12 22:02:57.945 febs [RMI TCP Connection(2)-192.168.1.3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2023-09-12 22:02:58.437 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now, after delay of 1 seconds
+2023-09-12 22:02:58.445 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.LocalDataSourceJobStore - ClusterManager: detected 1 failed or restarted instances.
+2023-09-12 22:02:58.445 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.LocalDataSourceJobStore - ClusterManager: Scanning for instance "WIN-KJDA35RA4FP1694441940622"'s failed in-progress jobs.
+2023-09-12 22:02:58.448 febs [Quartz Scheduler [MyScheduler]] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1694527375810 started.
+2023-09-12 22:04:40.463 febs [http-nio-9527-exec-4] INFO  c.m.febs.common.aspect.LimitAspect - IP:127.0.0.1 第 1 次访问key为 [limit_login127.0.0.1]，描述为 [登录接口] 的接口
+2023-09-12 22:04:40.547 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 1 ms | SQL 语句：
+UPDATE t_user SET last_login_time='2023-09-12T22:04:40.528+0800' WHERE username = 'mrbird';
+2023-09-12 22:04:40.551 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 2 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'mrbird' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:04:40.570 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 7 ms | SQL 语句：
+INSERT INTO t_login_log ( username, login_time, location, ip ) VALUES ( 'mrbird', '2023-09-12T22:04:40.557+0800', '', '127.0.0.1' );
+2023-09-12 22:04:40.654 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:04:40.673 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 1 ms | SQL 语句：
+select m.* from t_menu m where m.type <> 1 and m.MENU_ID in (select distinct rm.menu_id from t_role_menu rm left join t_role r on (rm.role_id = r.role_id) left join t_user_role ur on (ur.role_id = r.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'mrbird') order by m.order_num;
+2023-09-12 22:04:40.954 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:04:40.954 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:04:40.959 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 1 ms | SQL 语句：
+select count(1) from t_login_log;
+2023-09-12 22:04:40.962 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 1 ms | SQL 语句：
+select count(1) from t_login_log where datediff(login_time,now())=0;
+2023-09-12 22:04:40.965 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 0 ms | SQL 语句：
+select count(distinct(ip)) from t_login_log where datediff(login_time,now())=0;
+2023-09-12 22:04:40.967 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 1 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 group by days;
+2023-09-12 22:04:40.969 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 0 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 and l.username = 'mrbird' group by days;
+2023-09-12 22:04:40.971 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 5 ms | SQL 语句：
+SELECT ID,title,content,date,images,publisher FROM bulletin_info;
+2023-09-12 22:04:40.977 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 4 ms | SQL 语句：
+SELECT DATE_FORMAT( spo.days, '%m-%d' ) AS days, IFNULL( SUM(er.amount), 0 ) AS amount FROM ( SELECT DATE_SUB( curdate(), INTERVAL + 0 DAY ) days UNION SELECT DATE_SUB( curdate(), INTERVAL + 1 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 2 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 3 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 4 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 5 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 6 DAY )) spo LEFT JOIN stock_info er ON ( DATE_FORMAT( er.create_date, '%Y-%m-%d' ) = DATE_FORMAT( spo.days, '%Y-%m-%d' )) AND er.is_in = 1 GROUP BY days ORDER BY days ASC;
+2023-09-12 22:04:40.981 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 2 ms | SQL 语句：
+SELECT IFNULL(sum( si.amount * si.price ),0) AS price, ct.`name` FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE si.is_in = 1 GROUP BY ct.id;
+2023-09-12 22:04:40.983 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 0 ms | SQL 语句：
+SELECT DATE_FORMAT( spo.days, '%m-%d' ) AS days, IFNULL( SUM(er.amount), 0 ) AS amount FROM ( SELECT DATE_SUB( curdate(), INTERVAL + 0 DAY ) days UNION SELECT DATE_SUB( curdate(), INTERVAL + 1 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 2 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 3 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 4 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 5 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 6 DAY )) spo LEFT JOIN stock_info er ON ( DATE_FORMAT( er.create_date, '%Y-%m-%d' ) = DATE_FORMAT( spo.days, '%Y-%m-%d' )) AND er.is_in = 2 GROUP BY days ORDER BY days ASC;
+2023-09-12 22:04:40.985 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 0 ms | SQL 语句：
+SELECT IFNULL(sum( si.amount * si.price ),0) AS price, ct.`name` FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE si.is_in = 2 GROUP BY ct.id;
+2023-09-12 22:04:40.987 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:04:40 | 耗时 0 ms | SQL 语句：
+SELECT * FROM ( SELECT count( 1 ) AS putCount FROM stock_info si WHERE si.is_in = 1 ) AS on1, ( SELECT count( 1 ) AS outCount FROM stock_info si WHERE si.is_in = 2 ) AS on2, ( SELECT IFNULL( SUM( si.amount * si.price ),0) AS price FROM stock_info si WHERE si.is_in = 1 ) AS on3;
+2023-09-12 22:04:55.661 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:04:55.672 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:04:55 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:10:30.160 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:10:30.171 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 22:10:30 | 耗时 1 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:11:01.580 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:11:01.600 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:11:01 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_menu ( parent_id, menu_name, path, component, icon, type, order_num, create_time ) VALUES ( 0, '物料申请', '/stu', 'PageView', '', '0', 8.0, '2023-09-12T22:11:01.595+0800' );
+2023-09-12 22:11:01.624 febs [asyncTaskExecutor-1] INFO  p6spy - 2023-09-12 22:11:01 | 耗时 7 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增菜单/按钮', 10, 'cc.mrbird.febs.system.controller.MenuController.addMenu()', ' menu: "Menu(menuId=155, parentId=0, menuName=物料申请, path=/stu, component=PageView, perms=null, icon=, type=0, orderNum=8.0, createTime=Tue Sep 12 22:11:01 CST 2023, modifyTime=null, createTimeFrom=null, createTimeTo=null)"', '127.0.0.1', '2023-09-12T22:11:01.612+0800', '' );
+2023-09-12 22:11:01.760 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:11:01.766 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:11:01 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:11:03.928 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:11:03.933 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:11:03 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:11:25.594 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:11:25.599 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:11:25 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_menu ( parent_id, menu_name, path, component, type, order_num, create_time ) VALUES ( 155, '个人信息', '/stu/user', 'stu/user/User', '0', 1.0, '2023-09-12T22:11:25.597+0800' );
+2023-09-12 22:11:25.606 febs [asyncTaskExecutor-2] INFO  p6spy - 2023-09-12 22:11:25 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增菜单/按钮', 5, 'cc.mrbird.febs.system.controller.MenuController.addMenu()', ' menu: "Menu(menuId=156, parentId=155, menuName=个人信息, path=/stu/user, component=stu/user/User, perms=null, icon=null, type=0, orderNum=1.0, createTime=Tue Sep 12 22:11:25 CST 2023, modifyTime=null, createTimeFrom=null, createTimeTo=null)"', '127.0.0.1', '2023-09-12T22:11:25.604+0800', '' );
+2023-09-12 22:11:25.732 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:11:25.736 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 22:11:25 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:11:28.951 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:11:28.956 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:11:28 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:12:30.307 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:12:30.313 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 22:12:30 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_menu ( parent_id, menu_name, path, component, type, order_num, create_time ) VALUES ( 155, '物料申请', '/stu/request', 'stu/request/Request', '0', 2.0, '2023-09-12T22:12:30.310+0800' );
+2023-09-12 22:12:30.320 febs [asyncTaskExecutor-3] INFO  p6spy - 2023-09-12 22:12:30 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增菜单/按钮', 5, 'cc.mrbird.febs.system.controller.MenuController.addMenu()', ' menu: "Menu(menuId=157, parentId=155, menuName=物料申请, path=/stu/request, component=stu/request/Request, perms=null, icon=null, type=0, orderNum=2.0, createTime=Tue Sep 12 22:12:30 CST 2023, modifyTime=null, createTimeFrom=null, createTimeTo=null)"', '127.0.0.1', '2023-09-12T22:12:30.317+0800', '' );
+2023-09-12 22:12:30.451 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:12:30.455 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:12:30 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:12:32.190 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:12:32.194 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:12:32 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:12:49.856 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:12:49.862 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:12:49 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_menu ( parent_id, menu_name, path, component, type, order_num, create_time ) VALUES ( 155, '领取记录', '/stu/record', 'stu/record/Record', '0', 3.0, '2023-09-12T22:12:49.860+0800' );
+2023-09-12 22:12:49.869 febs [asyncTaskExecutor-4] INFO  p6spy - 2023-09-12 22:12:49 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增菜单/按钮', 5, 'cc.mrbird.febs.system.controller.MenuController.addMenu()', ' menu: "Menu(menuId=158, parentId=155, menuName=领取记录, path=/stu/record, component=stu/record/Record, perms=null, icon=null, type=0, orderNum=3.0, createTime=Tue Sep 12 22:12:49 CST 2023, modifyTime=null, createTimeFrom=null, createTimeTo=null)"', '127.0.0.1', '2023-09-12T22:12:49.866+0800', '' );
+2023-09-12 22:12:49.995 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:12:49.999 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:12:49 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:12:51.706 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:12:51.710 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 22:12:51 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:13:17.547 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:13:17.553 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:13:17 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_menu ( parent_id, menu_name, path, component, type, order_num, create_time ) VALUES ( 155, '库房信息', '/purchase/request', 'purchase/request/Request', '0', 4.0, '2023-09-12T22:13:17.551+0800' );
+2023-09-12 22:13:17.561 febs [asyncTaskExecutor-5] INFO  p6spy - 2023-09-12 22:13:17 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增菜单/按钮', 5, 'cc.mrbird.febs.system.controller.MenuController.addMenu()', ' menu: "Menu(menuId=159, parentId=155, menuName=库房信息, path=/purchase/request, component=purchase/request/Request, perms=null, icon=null, type=0, orderNum=4.0, createTime=Tue Sep 12 22:13:17 CST 2023, modifyTime=null, createTimeFrom=null, createTimeTo=null)"', '127.0.0.1', '2023-09-12T22:13:17.558+0800', '' );
+2023-09-12 22:13:17.688 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:13:17.692 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:13:17 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:13:19.367 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:13:19.371 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:13:19 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:16:34.645 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:16:34.651 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:16:34 | 耗时 1 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:16:53.271 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:16:53.277 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:16:53 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:17:17.886 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:17:17.890 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:17:17 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_menu ( parent_id, menu_name, path, component, icon, type, order_num, create_time ) VALUES ( 0, '采购管理', '/purchase', 'PageView', 'tool', '0', 9.0, '2023-09-12T22:17:17.889+0800' );
+2023-09-12 22:17:17.898 febs [asyncTaskExecutor-1] INFO  p6spy - 2023-09-12 22:17:17 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增菜单/按钮', 5, 'cc.mrbird.febs.system.controller.MenuController.addMenu()', ' menu: "Menu(menuId=160, parentId=0, menuName=采购管理, path=/purchase, component=PageView, perms=null, icon=tool, type=0, orderNum=9.0, createTime=Tue Sep 12 22:17:17 CST 2023, modifyTime=null, createTimeFrom=null, createTimeTo=null)"', '127.0.0.1', '2023-09-12T22:17:17.894+0800', '' );
+2023-09-12 22:17:18.028 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:17:18.032 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 22:17:18 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:17:22.178 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:17:22.183 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:17:22 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:17:28.479 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:17:28.489 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:17:28 | 耗时 0 ms | SQL 语句：
+UPDATE t_menu SET parent_id=160, menu_name='库房信息', path='/purchase/request', component='purchase/request/Request', type='0', order_num=1.0, modify_time='2023-09-12T22:17:28.484+0800' WHERE MENU_ID=159;
+2023-09-12 22:17:28.491 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:17:28 | 耗时 0 ms | SQL 语句：
+SELECT user_id FROM t_user_role WHERE role_id IN ( SELECT rm.role_id FROM t_role_menu rm WHERE rm.menu_id = '159' );
+2023-09-12 22:17:28.497 febs [asyncTaskExecutor-2] INFO  p6spy - 2023-09-12 22:17:28 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '修改菜单/按钮', 10, 'cc.mrbird.febs.system.controller.MenuController.updateMenu()', ' menu: "Menu(menuId=159, parentId=160, menuName=库房信息, path=/purchase/request, component=purchase/request/Request, perms=null, icon=null, type=0, orderNum=1.0, createTime=null, modifyTime=Tue Sep 12 22:17:28 CST 2023, createTimeFrom=null, createTimeTo=null)"', '127.0.0.1', '2023-09-12T22:17:28.495+0800', '' );
+2023-09-12 22:17:28.623 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:17:28.626 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:17:28 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:20:07.204 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:20:07.209 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:20:07 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:20:34.924 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:20:34.928 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:20:34 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_menu ( parent_id, menu_name, path, component, type, order_num, create_time ) VALUES ( 160, '采购记录', '/purchase/record', 'purchase/record/Record', '0', 2.0, '2023-09-12T22:20:34.926+0800' );
+2023-09-12 22:20:34.935 febs [asyncTaskExecutor-3] INFO  p6spy - 2023-09-12 22:20:34 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增菜单/按钮', 4, 'cc.mrbird.febs.system.controller.MenuController.addMenu()', ' menu: "Menu(menuId=161, parentId=160, menuName=采购记录, path=/purchase/record, component=purchase/record/Record, perms=null, icon=null, type=0, orderNum=2.0, createTime=Tue Sep 12 22:20:34 CST 2023, modifyTime=null, createTimeFrom=null, createTimeTo=null)"', '127.0.0.1', '2023-09-12T22:20:34.931+0800', '' );
+2023-09-12 22:20:35.091 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:20:35.094 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:20:35 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:20:43.576 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:20:43.581 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 22:20:43 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:21:07.558 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:21:07.563 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:21:07 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_menu ( parent_id, menu_name, path, component, type, order_num, create_time ) VALUES ( 148, '耗材类型', '/admin/type', 'admin/type/Type', '0', 7.0, '2023-09-12T22:21:07.561+0800' );
+2023-09-12 22:21:07.569 febs [asyncTaskExecutor-4] INFO  p6spy - 2023-09-12 22:21:07 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增菜单/按钮', 4, 'cc.mrbird.febs.system.controller.MenuController.addMenu()', ' menu: "Menu(menuId=162, parentId=148, menuName=耗材类型, path=/admin/type, component=admin/type/Type, perms=null, icon=null, type=0, orderNum=7.0, createTime=Tue Sep 12 22:21:07 CST 2023, modifyTime=null, createTimeFrom=null, createTimeTo=null)"', '127.0.0.1', '2023-09-12T22:21:07.566+0800', '' );
+2023-09-12 22:21:07.705 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:21:07.708 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:21:07 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:21:18.722 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:21:18.726 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:21:18 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:22:04.005 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:22:04.009 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:22:04 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_menu ( parent_id, menu_name, path, component, type, order_num, create_time ) VALUES ( 161, '采购申请', '/purchase/rurchase', 'purchase/rurchase/Rurchase', '0', 3.0, '2023-09-12T22:22:04.007+0800' );
+2023-09-12 22:22:04.016 febs [asyncTaskExecutor-5] INFO  p6spy - 2023-09-12 22:22:04 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增菜单/按钮', 6, 'cc.mrbird.febs.system.controller.MenuController.addMenu()', ' menu: "Menu(menuId=163, parentId=161, menuName=采购申请, path=/purchase/rurchase, component=purchase/rurchase/Rurchase, perms=null, icon=null, type=0, orderNum=3.0, createTime=Tue Sep 12 22:22:04 CST 2023, modifyTime=null, createTimeFrom=null, createTimeTo=null)"', '127.0.0.1', '2023-09-12T22:22:04.013+0800', '' );
+2023-09-12 22:22:04.186 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:22:04.189 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 22:22:04 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:22:13.384 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:22:13.387 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:22:13 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:22:19.904 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:22:19.908 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:22:19 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu WHERE type = '0';
+2023-09-12 22:22:24.090 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:22:24.094 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:22:24 | 耗时 0 ms | SQL 语句：
+UPDATE t_menu SET parent_id=160, menu_name='采购申请', path='/purchase/rurchase', component='purchase/rurchase/Rurchase', type='0', order_num=3.0, modify_time='2023-09-12T22:22:24.092+0800' WHERE MENU_ID=163;
+2023-09-12 22:22:24.096 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:22:24 | 耗时 0 ms | SQL 语句：
+SELECT user_id FROM t_user_role WHERE role_id IN ( SELECT rm.role_id FROM t_role_menu rm WHERE rm.menu_id = '163' );
+2023-09-12 22:22:24.102 febs [asyncTaskExecutor-1] INFO  p6spy - 2023-09-12 22:22:24 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '修改菜单/按钮', 7, 'cc.mrbird.febs.system.controller.MenuController.updateMenu()', ' menu: "Menu(menuId=163, parentId=160, menuName=采购申请, path=/purchase/rurchase, component=purchase/rurchase/Rurchase, perms=null, icon=null, type=0, orderNum=3.0, createTime=null, modifyTime=Tue Sep 12 22:22:24 CST 2023, createTimeFrom=null, createTimeTo=null)"', '127.0.0.1', '2023-09-12T22:22:24.100+0800', '' );
+2023-09-12 22:22:24.235 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:22:24.238 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:22:24 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:39:50.607 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:39:50.647 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:39:50 | 耗时 7 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2023-09-12 22:39:50.652 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:39:50 | 耗时 0 ms | SQL 语句：
+SELECT ROLE_ID,role_name,remark,create_time,modify_time FROM t_role LIMIT 0,10;
+2023-09-12 22:39:53.506 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:39:53.512 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:39:53 | 耗时 1 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:40:00.261 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:40:00.267 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 22:40:00 | 耗时 0 ms | SQL 语句：
+SELECT ROLE_ID,role_name,remark,create_time,modify_time FROM t_role WHERE role_name = '超级管理员';
+2023-09-12 22:51:05.290 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:05.298 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 2 ms | SQL 语句：
+INSERT INTO t_role ( role_name, remark, create_time ) VALUES ( '超级管理员', '', '2023-09-12T22:51:05.294+0800' );
+2023-09-12 22:51:05.303 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 148 );
+2023-09-12 22:51:05.305 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 149 );
+2023-09-12 22:51:05.308 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 150 );
+2023-09-12 22:51:05.310 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 151 );
+2023-09-12 22:51:05.312 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 152 );
+2023-09-12 22:51:05.314 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 153 );
+2023-09-12 22:51:05.316 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 154 );
+2023-09-12 22:51:05.318 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 162 );
+2023-09-12 22:51:05.319 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 139 );
+2023-09-12 22:51:05.321 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 140 );
+2023-09-12 22:51:05.324 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 141 );
+2023-09-12 22:51:05.326 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 142 );
+2023-09-12 22:51:05.328 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 143 );
+2023-09-12 22:51:05.330 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 144 );
+2023-09-12 22:51:05.332 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 145 );
+2023-09-12 22:51:05.334 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 146 );
+2023-09-12 22:51:05.336 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 74, 147 );
+2023-09-12 22:51:05.342 febs [asyncTaskExecutor-2] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增角色', 43, 'cc.mrbird.febs.system.controller.RoleController.addRole()', ' role: "Role(roleId=74, roleName=超级管理员, remark=, createTime=Tue Sep 12 22:51:05 CST 2023, modifyTime=null, createTimeFrom=null, createTimeTo=null, menuId=148,149,150,151,152,153,154,162,139,140,141,142,143,144,145,146,147)"', '127.0.0.1', '2023-09-12T22:51:05.338+0800', '' );
+2023-09-12 22:51:05.380 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:05.386 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2023-09-12 22:51:05.387 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 22:51:05 | 耗时 0 ms | SQL 语句：
+SELECT ROLE_ID,role_name,remark,create_time,modify_time FROM t_role LIMIT 0,10;
+2023-09-12 22:51:08.792 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:08.797 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:51:08 | 耗时 1 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:51:23.866 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:23.869 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:51:23 | 耗时 0 ms | SQL 语句：
+SELECT ROLE_ID,role_name,remark,create_time,modify_time FROM t_role WHERE role_name = '用工';
+2023-09-12 22:51:28.840 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:28.846 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:28 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role ( role_name, remark, create_time ) VALUES ( '用工', '', '2023-09-12T22:51:28.843+0800' );
+2023-09-12 22:51:28.849 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:28 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 75, 155 );
+2023-09-12 22:51:28.851 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:28 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 75, 156 );
+2023-09-12 22:51:28.853 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:28 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 75, 157 );
+2023-09-12 22:51:28.855 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:28 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 75, 158 );
+2023-09-12 22:51:28.858 febs [asyncTaskExecutor-3] INFO  p6spy - 2023-09-12 22:51:28 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增角色', 13, 'cc.mrbird.febs.system.controller.RoleController.addRole()', ' role: "Role(roleId=75, roleName=用工, remark=, createTime=Tue Sep 12 22:51:28 CST 2023, modifyTime=null, createTimeFrom=null, createTimeTo=null, menuId=155,156,157,158)"', '127.0.0.1', '2023-09-12T22:51:28.856+0800', '' );
+2023-09-12 22:51:28.888 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:28.894 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:28 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2023-09-12 22:51:28.894 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:28 | 耗时 0 ms | SQL 语句：
+SELECT ROLE_ID,role_name,remark,create_time,modify_time FROM t_role LIMIT 0,10;
+2023-09-12 22:51:29.815 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:29.818 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 22:51:29 | 耗时 0 ms | SQL 语句：
+SELECT MENU_ID,parent_id,menu_name,path,component,perms,icon,type,order_num,create_time,modify_time FROM t_menu;
+2023-09-12 22:51:34.587 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:34.590 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:51:34 | 耗时 0 ms | SQL 语句：
+SELECT ROLE_ID,role_name,remark,create_time,modify_time FROM t_role WHERE role_name = '采购员';
+2023-09-12 22:51:38.330 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:38.335 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:51:38 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role ( role_name, remark, create_time ) VALUES ( '采购员', '', '2023-09-12T22:51:38.331+0800' );
+2023-09-12 22:51:38.338 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:51:38 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 76, 160 );
+2023-09-12 22:51:38.339 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:51:38 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 76, 159 );
+2023-09-12 22:51:38.341 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:51:38 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 76, 161 );
+2023-09-12 22:51:38.343 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:51:38 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_role_menu ( role_id, menu_id ) VALUES ( 76, 163 );
+2023-09-12 22:51:38.347 febs [asyncTaskExecutor-4] INFO  p6spy - 2023-09-12 22:51:38 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增角色', 12, 'cc.mrbird.febs.system.controller.RoleController.addRole()', ' role: "Role(roleId=76, roleName=采购员, remark=, createTime=Tue Sep 12 22:51:38 CST 2023, modifyTime=null, createTimeFrom=null, createTimeTo=null, menuId=160,159,161,163)"', '127.0.0.1', '2023-09-12T22:51:38.345+0800', '' );
+2023-09-12 22:51:38.382 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:38.387 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:38 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2023-09-12 22:51:38.388 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:38 | 耗时 0 ms | SQL 语句：
+SELECT ROLE_ID,role_name,remark,create_time,modify_time FROM t_role LIMIT 0,10;
+2023-09-12 22:51:40.594 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:40.594 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:40.612 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 22:51:40 | 耗时 1 ms | SQL 语句：
+SELECT DEPT_ID,parent_id,dept_name,order_num,create_time,modify_time FROM t_dept ORDER BY order_num ASC;
+2023-09-12 22:51:40.623 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:51:40 | 耗时 1 ms | SQL 语句：
+SELECT COUNT(1) FROM ( SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u.STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE 1 = 1 GROUP BY u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME ) TOTAL;
+2023-09-12 22:51:40.625 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:51:40 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE 1 = 1 group by u.username, u.user_id, u.password, u.email, u.mobile, u. STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME ORDER BY userId ASC LIMIT 0,10;
+2023-09-12 22:51:42.407 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:42.407 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:42.410 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:51:42 | 耗时 0 ms | SQL 语句：
+SELECT DEPT_ID,parent_id,dept_name,order_num,create_time,modify_time FROM t_dept ORDER BY order_num ASC;
+2023-09-12 22:51:42.411 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:51:42 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2023-09-12 22:51:42.411 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:51:42 | 耗时 0 ms | SQL 语句：
+SELECT ROLE_ID,role_name,remark,create_time,modify_time FROM t_role LIMIT 0,10;
+2023-09-12 22:51:45.679 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:51:45 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,username,password,dept_id,email,mobile,status,create_time,modify_time,last_login_time,ssex,description,avatar FROM t_user WHERE username = 'admin';
+2023-09-12 22:51:50.311 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:50.331 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:50 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_user ( username, password, status, create_time, ssex, avatar ) VALUES ( 'admin', '3ee4a28b103216fa2d140d1979297910', '1', '2023-09-12T22:51:50.326+0800', '2', 'default.jpg' );
+2023-09-12 22:51:50.333 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:50 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_user_role ( user_id, role_id ) VALUES ( 13, 74 );
+2023-09-12 22:51:50.337 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:50 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_user_config ( USER_ID, theme, layout, multi_page, fix_siderbar, fix_header, color ) VALUES ( 13, 'light', 'head', '0', '1', '1', 'rgb(66, 185, 131)' );
+2023-09-12 22:51:50.338 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:50 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'admin' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:51:50.339 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:50 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin';
+2023-09-12 22:51:50.341 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:50 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'admin' and m.perms is not null and m.perms <> '';
+2023-09-12 22:51:50.342 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:51:50 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='13' ;
+2023-09-12 22:51:50.347 febs [asyncTaskExecutor-5] INFO  p6spy - 2023-09-12 22:51:50 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增用户', 18, 'cc.mrbird.febs.system.controller.UserController.addUser()', ' user: "User(userId=13, username=admin, password=3ee4a28b103216fa2d140d1979297910, deptId=null, deptName=null, email=null, mobile=null, status=1, createTime=Tue Sep 12 22:51:50 CST 2023, modifyTime=null, lastLoginTime=null, ssex=2, description=null, avatar=default.jpg, roleId=74, roleName=null, sortField=null, sortOrder=null, createTimeFrom=null, createTimeTo=null, id=null)"', '127.0.0.1', '2023-09-12T22:51:50.345+0800', '' );
+2023-09-12 22:51:50.381 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:51:50.387 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:50 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM ( SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u.STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE 1 = 1 GROUP BY u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME ) TOTAL;
+2023-09-12 22:51:50.388 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:51:50 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE 1 = 1 group by u.username, u.user_id, u.password, u.email, u.mobile, u. STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME ORDER BY userId ASC LIMIT 0,10;
+2023-09-12 22:52:00.249 febs [http-nio-9527-exec-1] INFO  c.m.febs.common.aspect.LimitAspect - IP:127.0.0.1 第 1 次访问key为 [limit_login127.0.0.1]，描述为 [登录接口] 的接口
+2023-09-12 22:52:00.252 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+UPDATE t_user SET last_login_time='2023-09-12T22:52:00.250+0800' WHERE username = 'admin';
+2023-09-12 22:52:00.254 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'admin' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:52:00.259 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_login_log ( username, login_time, location, ip ) VALUES ( 'admin', '2023-09-12T22:52:00.256+0800', '', '127.0.0.1' );
+2023-09-12 22:52:00.273 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:52:00.276 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+select m.* from t_menu m where m.type <> 1 and m.MENU_ID in (select distinct rm.menu_id from t_role_menu rm left join t_role r on (rm.role_id = r.role_id) left join t_user_role ur on (ur.role_id = r.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin') order by m.order_num;
+2023-09-12 22:52:00.407 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:52:00.407 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:52:00.409 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+SELECT ID,title,content,date,images,publisher FROM bulletin_info;
+2023-09-12 22:52:00.409 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+select count(1) from t_login_log;
+2023-09-12 22:52:00.410 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+select count(1) from t_login_log where datediff(login_time,now())=0;
+2023-09-12 22:52:00.411 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 1 ms | SQL 语句：
+SELECT DATE_FORMAT( spo.days, '%m-%d' ) AS days, IFNULL( SUM(er.amount), 0 ) AS amount FROM ( SELECT DATE_SUB( curdate(), INTERVAL + 0 DAY ) days UNION SELECT DATE_SUB( curdate(), INTERVAL + 1 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 2 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 3 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 4 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 5 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 6 DAY )) spo LEFT JOIN stock_info er ON ( DATE_FORMAT( er.create_date, '%Y-%m-%d' ) = DATE_FORMAT( spo.days, '%Y-%m-%d' )) AND er.is_in = 1 GROUP BY days ORDER BY days ASC;
+2023-09-12 22:52:00.412 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+select count(distinct(ip)) from t_login_log where datediff(login_time,now())=0;
+2023-09-12 22:52:00.414 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 group by days;
+2023-09-12 22:52:00.414 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+SELECT IFNULL(sum( si.amount * si.price ),0) AS price, ct.`name` FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE si.is_in = 1 GROUP BY ct.id;
+2023-09-12 22:52:00.416 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 and l.username = 'admin' group by days;
+2023-09-12 22:52:00.416 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+SELECT DATE_FORMAT( spo.days, '%m-%d' ) AS days, IFNULL( SUM(er.amount), 0 ) AS amount FROM ( SELECT DATE_SUB( curdate(), INTERVAL + 0 DAY ) days UNION SELECT DATE_SUB( curdate(), INTERVAL + 1 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 2 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 3 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 4 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 5 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 6 DAY )) spo LEFT JOIN stock_info er ON ( DATE_FORMAT( er.create_date, '%Y-%m-%d' ) = DATE_FORMAT( spo.days, '%Y-%m-%d' )) AND er.is_in = 2 GROUP BY days ORDER BY days ASC;
+2023-09-12 22:52:00.418 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 0 ms | SQL 语句：
+SELECT IFNULL(sum( si.amount * si.price ),0) AS price, ct.`name` FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE si.is_in = 2 GROUP BY ct.id;
+2023-09-12 22:52:00.420 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:52:00 | 耗时 1 ms | SQL 语句：
+SELECT * FROM ( SELECT count( 1 ) AS putCount FROM stock_info si WHERE si.is_in = 1 ) AS on1, ( SELECT count( 1 ) AS outCount FROM stock_info si WHERE si.is_in = 2 ) AS on2, ( SELECT IFNULL( SUM( si.amount * si.price ),0) AS price FROM stock_info si WHERE si.is_in = 1 ) AS on3;
+2023-09-12 22:52:37.465 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:52:37.495 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:52:37 | 耗时 9 ms | SQL 语句：
+SELECT COUNT(1) FROM rurchase_request rr WHERE 1 = 1;
+2023-09-12 22:52:39.043 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:52:39.066 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:52:39 | 耗时 11 ms | SQL 语句：
+SELECT COUNT(1) FROM goods_request gr LEFT JOIN student_info si ON (si.id = gr.user_id) WHERE 1 = 1;
+2023-09-12 22:52:52.499 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:52:52.523 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:52:52 | 耗时 10 ms | SQL 语句：
+SELECT COUNT(1) FROM consumable_type;
+2023-09-12 22:52:55.810 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:52:55.810 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:52:55.813 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:52:55 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 22:52:55.820 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:52:55 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_info si LEFT JOIN consumable_type cy ON (cy.id = si.type_id) WHERE si.is_in != 0;
+2023-09-12 22:53:04.403 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:53:04.427 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:53:04 | 耗时 14 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_put sp WHERE 1 = 1;
+2023-09-12 22:53:10.149 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:53:10.149 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:53:10.150 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:53:10.151 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:53:10 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 22:53:10.153 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 22:53:10 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_info si LEFT JOIN consumable_type ct ON (ct.id = si.type_id) WHERE 1 = 1 AND si.is_in = 0;
+2023-09-12 22:53:10.154 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:53:10.155 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:53:10 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 22:53:38.380 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:53:38.383 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:53:38 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_info si LEFT JOIN consumable_type ct ON (ct.id = si.type_id) WHERE 1 = 1 AND si.is_in = 0;
+2023-09-12 22:53:39.122 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:53:39.125 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:53:39 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_info si LEFT JOIN consumable_type ct ON (ct.id = si.type_id) WHERE 1 = 1 AND si.is_in = 0;
+2023-09-12 22:53:39.992 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:53:39.995 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:53:39 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_info si LEFT JOIN consumable_type ct ON (ct.id = si.type_id) WHERE 1 = 1 AND si.is_in = 0;
+2023-09-12 22:53:49.899 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:53:49.924 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:53:49 | 耗时 11 ms | SQL 语句：
+SELECT COUNT(1) FROM archives_info WHERE 1 = 1;
+2023-09-12 22:53:54.300 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:53:54.303 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 22:53:54 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM rurchase_request rr WHERE 1 = 1;
+2023-09-12 22:53:56.046 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:53:56.050 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:53:56 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM goods_request gr LEFT JOIN student_info si ON (si.id = gr.user_id) WHERE 1 = 1;
+2023-09-12 22:53:59.204 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:53:59.207 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:53:59 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_put sp WHERE 1 = 1;
+2023-09-12 22:54:00.806 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:54:00.806 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:54:00.807 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:54:00.808 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:54:00 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 22:54:00.809 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 22:54:00 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_info si LEFT JOIN consumable_type ct ON (ct.id = si.type_id) WHERE 1 = 1 AND si.is_in = 0;
+2023-09-12 22:54:00.811 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:54:00.814 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:54:00 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 22:54:58.168 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:54:58.186 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:54:58 | 耗时 4 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_out so LEFT JOIN student_info si ON (si.id = so.user_id) WHERE 1 = 1;
+2023-09-12 22:57:18.998 febs [Thread-16] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1694527375810 paused.
+2023-09-12 22:57:18.999 febs [Thread-16] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2023-09-12 22:57:19.007 febs [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'taskExecutor'
+2023-09-12 22:57:19.008 febs [Thread-16] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2023-09-12 22:57:19.008 febs [Thread-16] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1694527375810 shutting down.
+2023-09-12 22:57:19.008 febs [Thread-16] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1694527375810 paused.
+2023-09-12 22:57:19.008 febs [Thread-16] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1694527375810 shutdown complete.
+2023-09-12 22:57:19.012 febs [Thread-16] INFO  c.b.d.d.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2023-09-12 22:57:19.012 febs [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - primary - Shutdown initiated...
+2023-09-12 22:57:19.015 febs [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - primary - Shutdown completed.
+2023-09-12 22:57:22.746 febs [main] INFO  cc.mrbird.febs.FebsApplication - Starting FebsApplication on WIN-KJDA35RA4FP with PID 4356 (started by Administrator in G:\Project\工地安全预警管理系统的设计与实现\construction_cos\backend)
+2023-09-12 22:57:22.749 febs [main] INFO  cc.mrbird.febs.FebsApplication - No active profile set, falling back to default profiles: default
+2023-09-12 22:57:23.484 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-09-12 22:57:23.495 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2023-09-12 22:57:23.540 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34ms. Found 0 repository interfaces.
+2023-09-12 22:57:23.786 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncExecutorPoolConfig' of type [cc.mrbird.febs.common.config.AsyncExecutorPoolConfig$$EnhancerBySpringCGLIB$$6f796fb7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:23.884 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:23.952 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$49c8bb5b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:23.959 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:23.961 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:23.968 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e03a4a8a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:23.982 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [cc.mrbird.febs.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$4bba4c33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:24.208 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [cc.mrbird.febs.common.config.RedisConfig$$EnhancerBySpringCGLIB$$447f0387] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:24.223 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisPoolFactory' of type [redis.clients.jedis.JedisPool] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:24.226 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisService' of type [cc.mrbird.febs.common.service.impl.RedisServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:24.293 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:24.298 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [cc.mrbird.febs.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$31c1a699] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:24.301 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:24.305 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$1e02b724] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:24.311 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:24.312 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:24.314 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-检测到并开启了p6spy
+2023-09-12 22:57:24.319 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Starting...
+2023-09-12 22:57:24.457 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Start completed.
+2023-09-12 22:57:24.457 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 初始共加载 1 个数据源
+2023-09-12 22:57:24.457 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 primary 成功
+2023-09-12 22:57:24.457 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 primary
+2023-09-12 22:57:24.457 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.baomidou.dynamic.datasource.DynamicRoutingDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:24.467 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:24.473 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.025 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.029 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.031 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.033 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMapper' of type [com.sun.proxy.$Proxy108] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.047 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.047 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuMapper' of type [com.sun.proxy.$Proxy110] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.052 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.053 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleMapper' of type [com.sun.proxy.$Proxy111] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.054 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleService' of type [cc.mrbird.febs.system.service.impl.UserRoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.083 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuService' of type [cc.mrbird.febs.system.service.impl.RoleMenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.100 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleService' of type [cc.mrbird.febs.system.service.impl.RoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.118 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.119 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuMapper' of type [com.sun.proxy.$Proxy115] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.120 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuService' of type [cc.mrbird.febs.system.service.impl.MenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.137 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.138 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy117] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.153 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.154 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigMapper' of type [com.sun.proxy.$Proxy118] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.157 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigService' of type [cc.mrbird.febs.system.service.impl.UserConfigServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.171 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [cc.mrbird.febs.system.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.186 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration$$EnhancerBySpringCGLIB$$3bcdca1b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.189 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration$$EnhancerBySpringCGLIB$$ee1a8c34] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.191 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration$$EnhancerBySpringCGLIB$$a9317223] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.196 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties' of type [org.springframework.boot.autoconfigure.jackson.JacksonProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.198 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'standardJacksonObjectMapperBuilderCustomizer' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration$StandardJackson2ObjectMapperBuilderCustomizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.202 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration$$EnhancerBySpringCGLIB$$cffce951] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.207 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'parameterNamesModule' of type [com.fasterxml.jackson.module.paramnames.ParameterNamesModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.209 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$$EnhancerBySpringCGLIB$$1dd967aa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.219 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jsonComponentModule' of type [org.springframework.boot.jackson.JsonComponentModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.220 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.data.web.config.SpringDataJacksonConfiguration' of type [org.springframework.data.web.config.SpringDataJacksonConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.223 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonGeoModule' of type [org.springframework.data.geo.GeoModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.225 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonObjectMapperBuilder' of type [org.springframework.http.converter.json.Jackson2ObjectMapperBuilder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.242 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonObjectMapper' of type [com.fasterxml.jackson.databind.ObjectMapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.254 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheService' of type [cc.mrbird.febs.common.service.impl.CacheServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.257 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userManager' of type [cc.mrbird.febs.system.manager.UserManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.257 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [cc.mrbird.febs.common.authentication.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.264 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.274 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-12 22:57:25.524 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9527 (http)
+2023-09-12 22:57:25.533 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9527"]
+2023-09-12 22:57:25.536 febs [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-09-12 22:57:25.537 febs [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2023-09-12 22:57:25.541 febs [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_201\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;F:\办公软件\Git\cmd;F:\nodejs\;F:\Yarn\bin\;F:\Bandizip\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\Yarn\bin;.]
+2023-09-12 22:57:25.643 febs [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-09-12 22:57:25.643 febs [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2842 ms
+2023-09-12 22:57:26.049 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2023-09-12 22:57:26.049 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2023-09-12 22:57:26.049 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2023-09-12 22:57:26.049 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2023-09-12 22:57:26.049 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2023-09-12 22:57:26.049 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+2023-09-12 22:57:26.049 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'shiroFilterFactoryBean' to: [/*]
+2023-09-12 22:57:26.049 febs [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2023-09-12 22:57:26.615 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2023-09-12 22:57:26.624 febs [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-09-12 22:57:26.624 febs [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.0 created.
+2023-09-12 22:57:26.626 febs [main] INFO  o.s.s.quartz.LocalDataSourceJobStore - Using db table-based data access locking (synchronization).
+2023-09-12 22:57:26.628 febs [main] INFO  o.s.s.quartz.LocalDataSourceJobStore - JobStoreCMT initialized.
+2023-09-12 22:57:26.628 febs [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'MyScheduler' with instanceId 'WIN-KJDA35RA4FP1694530646615'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2023-09-12 22:57:26.628 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'MyScheduler' initialized from an externally provided properties instance.
+2023-09-12 22:57:26.628 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.0
+2023-09-12 22:57:26.629 febs [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@f4d391c
+2023-09-12 22:57:26.669 febs [main] INFO  p6spy - 2023-09-12 22:57:26 | 耗时 1 ms | SQL 语句：
+select job_id jobId, bean_name beanName, method_name methodName, params, cron_expression cronExpression, status, remark, create_time createTime from t_job order by job_id;
+2023-09-12 22:57:27.030 febs [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2023-09-12 22:57:27.981 febs [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2023-09-12 22:57:28.026 febs [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-09-12 22:57:28.094 febs [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Will start Quartz Scheduler [MyScheduler] in 1 seconds
+2023-09-12 22:57:28.107 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9527"]
+2023-09-12 22:57:28.116 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-09-12 22:57:28.117 febs [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2023-09-12 22:57:28.129 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9527 (http) with context path ''
+2023-09-12 22:57:28.131 febs [main] INFO  cc.mrbird.febs.FebsApplication - Started FebsApplication in 5.761 seconds (JVM running for 6.399)
+2023-09-12 22:57:28.139 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - Redis连接中 ······
+2023-09-12 22:57:28.140 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - 缓存初始化 ······
+2023-09-12 22:57:28.140 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - 缓存用户数据 ······
+2023-09-12 22:57:28.166 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 2 ms | SQL 语句：
+SELECT USER_ID,username,password,dept_id,email,mobile,status,create_time,modify_time,last_login_time,ssex,description,avatar FROM t_user;
+2023-09-12 22:57:28.171 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 2 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'mrbird' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:57:28.225 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'mrbird';
+2023-09-12 22:57:28.236 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 2 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'mrbird' and m.perms is not null and m.perms <> '';
+2023-09-12 22:57:28.248 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='1' ;
+2023-09-12 22:57:28.252 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'scott' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:57:28.255 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'scott';
+2023-09-12 22:57:28.257 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'scott' and m.perms is not null and m.perms <> '';
+2023-09-12 22:57:28.260 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='2' ;
+2023-09-12 22:57:28.262 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'jack' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:57:28.264 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'jack';
+2023-09-12 22:57:28.266 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'jack' and m.perms is not null and m.perms <> '';
+2023-09-12 22:57:28.268 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='12' ;
+2023-09-12 22:57:28.270 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'admin' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:57:28.273 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin';
+2023-09-12 22:57:28.275 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'admin' and m.perms is not null and m.perms <> '';
+2023-09-12 22:57:28.277 febs [main] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='13' ;
+2023-09-12 22:57:28.277 febs [main] INFO  c.m.f.common.runner.StartedUpRunner -  __    ___   _      ___   _     ____ _____  ____ 
+2023-09-12 22:57:28.277 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - / /`  / / \ | |\/| | |_) | |   | |_   | |  | |_  
+2023-09-12 22:57:28.277 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - \_\_, \_\_/ |_|  | |_|   |_|__ |_|__  |_|  |_|__ 
+2023-09-12 22:57:28.277 febs [main] INFO  c.m.f.common.runner.StartedUpRunner -                                                       
+2023-09-12 22:57:28.277 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - FEBS 启动完毕，时间：2023-09-12T22:57:28.277
+2023-09-12 22:57:28.398 febs [RMI TCP Connection(1)-192.168.1.3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-12 22:57:28.398 febs [RMI TCP Connection(1)-192.168.1.3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-09-12 22:57:28.407 febs [RMI TCP Connection(1)-192.168.1.3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2023-09-12 22:57:28.462 febs [RMI TCP Connection(3)-192.168.1.3] INFO  p6spy - 2023-09-12 22:57:28 | 耗时 0 ms | SQL 语句：
+/* ping */ SELECT 1;
+2023-09-12 22:57:29.105 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now, after delay of 1 seconds
+2023-09-12 22:57:29.113 febs [Quartz Scheduler [MyScheduler]] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1694530646615 started.
+2023-09-12 22:57:44.116 febs [QuartzScheduler_MyScheduler-WIN-KJDA35RA4FP1694530646615_ClusterManager] INFO  o.s.s.quartz.LocalDataSourceJobStore - ClusterManager: detected 1 failed or restarted instances.
+2023-09-12 22:57:44.116 febs [QuartzScheduler_MyScheduler-WIN-KJDA35RA4FP1694530646615_ClusterManager] INFO  o.s.s.quartz.LocalDataSourceJobStore - ClusterManager: Scanning for instance "WIN-KJDA35RA4FP1694527375810"'s failed in-progress jobs.
+2023-09-12 22:57:52.749 febs [http-nio-9527-exec-4] INFO  c.m.febs.common.aspect.LimitAspect - IP:127.0.0.1 第 1 次访问key为 [limit_login127.0.0.1]，描述为 [登录接口] 的接口
+2023-09-12 22:57:52.778 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:57:52 | 耗时 1 ms | SQL 语句：
+UPDATE t_user SET last_login_time='2023-09-12T22:57:52.759+0800' WHERE username = 'mrbird';
+2023-09-12 22:57:52.780 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:57:52 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'mrbird' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:57:52.793 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:57:52 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_login_log ( username, login_time, location, ip ) VALUES ( 'mrbird', '2023-09-12T22:57:52.786+0800', '', '127.0.0.1' );
+2023-09-12 22:57:52.867 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:57:52.884 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:57:52 | 耗时 1 ms | SQL 语句：
+select m.* from t_menu m where m.type <> 1 and m.MENU_ID in (select distinct rm.menu_id from t_role_menu rm left join t_role r on (rm.role_id = r.role_id) left join t_user_role ur on (ur.role_id = r.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'mrbird') order by m.order_num;
+2023-09-12 22:57:53.089 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:57:53.089 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:57:53.094 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:57:53 | 耗时 1 ms | SQL 语句：
+select count(1) from t_login_log;
+2023-09-12 22:57:53.097 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:57:53 | 耗时 0 ms | SQL 语句：
+select count(1) from t_login_log where datediff(login_time,now())=0;
+2023-09-12 22:57:53.099 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:57:53 | 耗时 0 ms | SQL 语句：
+select count(distinct(ip)) from t_login_log where datediff(login_time,now())=0;
+2023-09-12 22:57:53.101 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:57:53 | 耗时 0 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 group by days;
+2023-09-12 22:57:53.102 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:57:53 | 耗时 1 ms | SQL 语句：
+SELECT ID,title,content,date,images,publisher FROM bulletin_info;
+2023-09-12 22:57:53.104 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:57:53 | 耗时 0 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 and l.username = 'mrbird' group by days;
+2023-09-12 22:57:53.105 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:57:53 | 耗时 1 ms | SQL 语句：
+SELECT DATE_FORMAT( spo.days, '%m-%d' ) AS days, IFNULL( SUM(er.amount), 0 ) AS amount FROM ( SELECT DATE_SUB( curdate(), INTERVAL + 0 DAY ) days UNION SELECT DATE_SUB( curdate(), INTERVAL + 1 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 2 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 3 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 4 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 5 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 6 DAY )) spo LEFT JOIN stock_info er ON ( DATE_FORMAT( er.create_date, '%Y-%m-%d' ) = DATE_FORMAT( spo.days, '%Y-%m-%d' )) AND er.is_in = 1 GROUP BY days ORDER BY days ASC;
+2023-09-12 22:57:53.110 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:57:53 | 耗时 1 ms | SQL 语句：
+SELECT IFNULL(sum( si.amount * si.price ),0) AS price, ct.`name` FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE si.is_in = 1 GROUP BY ct.id;
+2023-09-12 22:57:53.112 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:57:53 | 耗时 1 ms | SQL 语句：
+SELECT DATE_FORMAT( spo.days, '%m-%d' ) AS days, IFNULL( SUM(er.amount), 0 ) AS amount FROM ( SELECT DATE_SUB( curdate(), INTERVAL + 0 DAY ) days UNION SELECT DATE_SUB( curdate(), INTERVAL + 1 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 2 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 3 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 4 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 5 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 6 DAY )) spo LEFT JOIN stock_info er ON ( DATE_FORMAT( er.create_date, '%Y-%m-%d' ) = DATE_FORMAT( spo.days, '%Y-%m-%d' )) AND er.is_in = 2 GROUP BY days ORDER BY days ASC;
+2023-09-12 22:57:53.115 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:57:53 | 耗时 0 ms | SQL 语句：
+SELECT IFNULL(sum( si.amount * si.price ),0) AS price, ct.`name` FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE si.is_in = 2 GROUP BY ct.id;
+2023-09-12 22:57:53.118 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:57:53 | 耗时 1 ms | SQL 语句：
+SELECT * FROM ( SELECT count( 1 ) AS putCount FROM stock_info si WHERE si.is_in = 1 ) AS on1, ( SELECT count( 1 ) AS outCount FROM stock_info si WHERE si.is_in = 2 ) AS on2, ( SELECT IFNULL( SUM( si.amount * si.price ),0) AS price FROM stock_info si WHERE si.is_in = 1 ) AS on3;
+2023-09-12 22:58:08.888 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:58:08.926 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 22:58:08 | 耗时 1 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2023-09-12 22:58:08.930 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 22:58:08 | 耗时 0 ms | SQL 语句：
+SELECT ROLE_ID,role_name,remark,create_time,modify_time FROM t_role LIMIT 0,10;
+2023-09-12 22:58:12.699 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:58:12.701 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:58:12.714 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:58:12 | 耗时 0 ms | SQL 语句：
+SELECT DEPT_ID,parent_id,dept_name,order_num,create_time,modify_time FROM t_dept ORDER BY order_num ASC;
+2023-09-12 22:58:12.721 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:58:12 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM ( SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u.STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE 1 = 1 GROUP BY u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME ) TOTAL;
+2023-09-12 22:58:12.723 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:58:12 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE 1 = 1 group by u.username, u.user_id, u.password, u.email, u.mobile, u. STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME ORDER BY userId ASC LIMIT 0,10;
+2023-09-12 22:58:13.248 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:58:13.250 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:58:13.251 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 22:58:13 | 耗时 0 ms | SQL 语句：
+SELECT DEPT_ID,parent_id,dept_name,order_num,create_time,modify_time FROM t_dept ORDER BY order_num ASC;
+2023-09-12 22:58:13.255 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:58:13 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM t_role;
+2023-09-12 22:58:13.256 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:58:13 | 耗时 0 ms | SQL 语句：
+SELECT ROLE_ID,role_name,remark,create_time,modify_time FROM t_role LIMIT 0,10;
+2023-09-12 22:58:17.546 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:58:17 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,username,password,dept_id,email,mobile,status,create_time,modify_time,last_login_time,ssex,description,avatar FROM t_user WHERE username = 'caigou';
+2023-09-12 22:58:22.713 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:58:22.739 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:58:22 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_user ( username, password, status, create_time, ssex, avatar ) VALUES ( 'caigou', 'f4c466b824e1ffdbd38271d52e363a93', '1', '2023-09-12T22:58:22.734+0800', '2', 'default.jpg' );
+2023-09-12 22:58:22.743 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:58:22 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_user_role ( user_id, role_id ) VALUES ( 14, 76 );
+2023-09-12 22:58:22.746 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:58:22 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_user_config ( USER_ID, theme, layout, multi_page, fix_siderbar, fix_header, color ) VALUES ( 14, 'light', 'head', '0', '1', '1', 'rgb(66, 185, 131)' );
+2023-09-12 22:58:22.747 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:58:22 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'caigou' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:58:22.749 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:58:22 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'caigou';
+2023-09-12 22:58:22.751 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:58:22 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'caigou' and m.perms is not null and m.perms <> '';
+2023-09-12 22:58:22.752 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:58:22 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='14' ;
+2023-09-12 22:58:22.767 febs [asyncTaskExecutor-1] INFO  p6spy - 2023-09-12 22:58:22 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_log ( username, operation, time, method, params, ip, create_time, location ) VALUES ( 'mrbird', '新增用户', 21, 'cc.mrbird.febs.system.controller.UserController.addUser()', ' user: "User(userId=14, username=caigou, password=f4c466b824e1ffdbd38271d52e363a93, deptId=null, deptName=null, email=null, mobile=null, status=1, createTime=Tue Sep 12 22:58:22 CST 2023, modifyTime=null, lastLoginTime=null, ssex=2, description=null, avatar=default.jpg, roleId=76, roleName=null, sortField=null, sortOrder=null, createTimeFrom=null, createTimeTo=null, id=null)"', '127.0.0.1', '2023-09-12T22:58:22.762+0800', '' );
+2023-09-12 22:58:22.801 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:58:22.809 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:58:22 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM ( SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u.STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE 1 = 1 GROUP BY u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME ) TOTAL;
+2023-09-12 22:58:22.811 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:58:22 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE 1 = 1 group by u.username, u.user_id, u.password, u.email, u.mobile, u. STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME ORDER BY userId ASC LIMIT 0,10;
+2023-09-12 22:58:34.471 febs [http-nio-9527-exec-10] INFO  c.m.febs.common.aspect.LimitAspect - IP:127.0.0.1 第 2 次访问key为 [limit_login127.0.0.1]，描述为 [登录接口] 的接口
+2023-09-12 22:58:34.475 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 0 ms | SQL 语句：
+UPDATE t_user SET last_login_time='2023-09-12T22:58:34.472+0800' WHERE username = 'caigou';
+2023-09-12 22:58:34.476 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'caigou' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 22:58:34.482 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 0 ms | SQL 语句：
+INSERT INTO t_login_log ( username, login_time, location, ip ) VALUES ( 'caigou', '2023-09-12T22:58:34.479+0800', '', '127.0.0.1' );
+2023-09-12 22:58:34.487 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'caigou' and m.perms is not null and m.perms <> '';
+2023-09-12 22:58:34.500 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:58:34.503 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 0 ms | SQL 语句：
+select m.* from t_menu m where m.type <> 1 and m.MENU_ID in (select distinct rm.menu_id from t_role_menu rm left join t_role r on (rm.role_id = r.role_id) left join t_user_role ur on (ur.role_id = r.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'caigou') order by m.order_num;
+2023-09-12 22:58:34.685 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:58:34.685 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:58:34.688 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 0 ms | SQL 语句：
+SELECT ID,title,content,date,images,publisher FROM bulletin_info;
+2023-09-12 22:58:34.690 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 1 ms | SQL 语句：
+select count(1) from t_login_log;
+2023-09-12 22:58:34.691 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 1 ms | SQL 语句：
+SELECT DATE_FORMAT( spo.days, '%m-%d' ) AS days, IFNULL( SUM(er.amount), 0 ) AS amount FROM ( SELECT DATE_SUB( curdate(), INTERVAL + 0 DAY ) days UNION SELECT DATE_SUB( curdate(), INTERVAL + 1 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 2 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 3 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 4 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 5 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 6 DAY )) spo LEFT JOIN stock_info er ON ( DATE_FORMAT( er.create_date, '%Y-%m-%d' ) = DATE_FORMAT( spo.days, '%Y-%m-%d' )) AND er.is_in = 1 GROUP BY days ORDER BY days ASC;
+2023-09-12 22:58:34.692 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 0 ms | SQL 语句：
+select count(1) from t_login_log where datediff(login_time,now())=0;
+2023-09-12 22:58:34.693 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 0 ms | SQL 语句：
+SELECT IFNULL(sum( si.amount * si.price ),0) AS price, ct.`name` FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE si.is_in = 1 GROUP BY ct.id;
+2023-09-12 22:58:34.695 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 1 ms | SQL 语句：
+select count(distinct(ip)) from t_login_log where datediff(login_time,now())=0;
+2023-09-12 22:58:34.697 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 1 ms | SQL 语句：
+SELECT DATE_FORMAT( spo.days, '%m-%d' ) AS days, IFNULL( SUM(er.amount), 0 ) AS amount FROM ( SELECT DATE_SUB( curdate(), INTERVAL + 0 DAY ) days UNION SELECT DATE_SUB( curdate(), INTERVAL + 1 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 2 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 3 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 4 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 5 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 6 DAY )) spo LEFT JOIN stock_info er ON ( DATE_FORMAT( er.create_date, '%Y-%m-%d' ) = DATE_FORMAT( spo.days, '%Y-%m-%d' )) AND er.is_in = 2 GROUP BY days ORDER BY days ASC;
+2023-09-12 22:58:34.698 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 0 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 group by days;
+2023-09-12 22:58:34.699 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 0 ms | SQL 语句：
+SELECT IFNULL(sum( si.amount * si.price ),0) AS price, ct.`name` FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE si.is_in = 2 GROUP BY ct.id;
+2023-09-12 22:58:34.700 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 0 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 and l.username = 'caigou' group by days;
+2023-09-12 22:58:34.701 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 22:58:34 | 耗时 0 ms | SQL 语句：
+SELECT * FROM ( SELECT count( 1 ) AS putCount FROM stock_info si WHERE si.is_in = 1 ) AS on1, ( SELECT count( 1 ) AS outCount FROM stock_info si WHERE si.is_in = 2 ) AS on2, ( SELECT IFNULL( SUM( si.amount * si.price ),0) AS price FROM stock_info si WHERE si.is_in = 1 ) AS on3;
+2023-09-12 22:58:38.095 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:58:38.095 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:58:38.104 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:58:38 | 耗时 1 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 22:58:38.132 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 22:58:38 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_info si LEFT JOIN consumable_type ct ON (ct.id = si.type_id) WHERE 1 = 1 AND si.is_in = 0;
+2023-09-12 22:59:18.174 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:59:18.198 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:59:18 | 耗时 16 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_put sp WHERE 1 = 1;
+2023-09-12 22:59:19.124 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:59:19.153 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-09-12 22:59:19 | 耗时 16 ms | SQL 语句：
+SELECT COUNT(1) FROM rurchase_request rr WHERE 1 = 1;
+2023-09-12 22:59:21.697 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:59:21.697 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:59:21.699 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 22:59:21 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 22:59:21.700 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 22:59:21 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_info si LEFT JOIN consumable_type ct ON (ct.id = si.type_id) WHERE 1 = 1 AND si.is_in = 0;
+2023-09-12 22:59:22.656 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:59:22.659 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 22:59:22 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_put sp WHERE 1 = 1;
+2023-09-12 22:59:23.803 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:59:23.803 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:59:23.805 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 22:59:23 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 22:59:23.806 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 22:59:23 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_info si LEFT JOIN consumable_type ct ON (ct.id = si.type_id) WHERE 1 = 1 AND si.is_in = 0;
+2023-09-12 22:59:24.405 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 22:59:24.408 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-09-12 22:59:24 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 23:01:37.227 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:01:37.240 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 23:01:37 | 耗时 9 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_put sp WHERE 1 = 1;
+2023-09-12 23:01:38.359 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:01:38.359 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:01:38.361 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-09-12 23:01:38 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 23:01:38.363 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 23:01:38 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_info si LEFT JOIN consumable_type ct ON (ct.id = si.type_id) WHERE 1 = 1 AND si.is_in = 0;
+2023-09-12 23:01:39.684 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:01:39.686 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 23:01:39 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 23:03:05.390 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:03:05.435 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 23:03:05 | 耗时 2 ms | SQL 语句：
+INSERT INTO stock_put ( num, price, custodian, put_user, content, create_date ) VALUES ( 'PUT-1694530985428', 13070, '孙笑川', '丁真', '20230912', '2023-09-12 23:03:05' );
+2023-09-12 23:03:05.485 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 23:03:05 | 耗时 8 ms | SQL 语句：
+SELECT ID,name,type_id,type,amount,unit,content,price,create_date,is_in,to_user_id,parent_id FROM stock_info WHERE name = 'AMD 锐龙 R5 5500' AND type_id = 7 AND is_in = 0;
+2023-09-12 23:06:57.440 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:06:57.446 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:06:57 | 耗时 2 ms | SQL 语句：
+INSERT INTO stock_put ( num, price, custodian, put_user, content, create_date ) VALUES ( 'PUT-1694531217441', 13070, '孙笑川', '丁真', '20230912', '2023-09-12 23:06:57' );
+2023-09-12 23:06:57.449 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:06:57 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,type_id,type,amount,unit,content,price,create_date,is_in,to_user_id,parent_id FROM stock_info WHERE name = 'AMD 锐龙 R5 5500' AND type_id = 7 AND is_in = 0;
+2023-09-12 23:06:57.455 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:06:57 | 耗时 1 ms | SQL 语句：
+INSERT INTO stock_info ( name, type_id, type, amount, unit, price, create_date, is_in ) VALUES ( 'AMD 锐龙 R5 5500', 7, 'R5 5500', 10, '个', 599, '2023-09-12 23:06:57', 0 );
+2023-09-12 23:06:57.459 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:06:57 | 耗时 2 ms | SQL 语句：
+INSERT INTO stock_info ( name, type_id, type, amount, unit, price, create_date, is_in, parent_id ) VALUES ( 'AMD 锐龙 R5 5500', 7, 'R5 5500', 10, '个', 599, '2023-09-12 23:06:57', 1, 32 );
+2023-09-12 23:06:57.470 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:06:57 | 耗时 5 ms | SQL 语句：
+INSERT INTO goods_belong ( name, type, unit, amount, type_id, num, price, create_date ) VALUES ( 'AMD 锐龙 R5 5500', 'R5 5500', '个', 10, 7, 'PUT-1694531217441', 599, '2023-09-12 23:06:57' );
+2023-09-12 23:06:57.472 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:06:57 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,type_id,type,amount,unit,content,price,create_date,is_in,to_user_id,parent_id FROM stock_info WHERE name = '华硕 B450M-K' AND type_id = 7 AND is_in = 0;
+2023-09-12 23:06:57.474 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:06:57 | 耗时 1 ms | SQL 语句：
+INSERT INTO stock_info ( name, type_id, type, amount, unit, price, create_date, is_in ) VALUES ( '华硕 B450M-K', 7, 'B450M-K', 10, '个', 708, '2023-09-12 23:06:57', 0 );
+2023-09-12 23:06:57.478 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:06:57 | 耗时 1 ms | SQL 语句：
+INSERT INTO stock_info ( name, type_id, type, amount, unit, price, create_date, is_in, parent_id ) VALUES ( '华硕 B450M-K', 7, 'B450M-K', 10, '个', 708, '2023-09-12 23:06:57', 1, 34 );
+2023-09-12 23:06:57.481 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:06:57 | 耗时 1 ms | SQL 语句：
+INSERT INTO goods_belong ( name, type, unit, amount, type_id, num, price, create_date ) VALUES ( '华硕 B450M-K', 'B450M-K', '个', 10, 7, 'PUT-1694531217441', 708, '2023-09-12 23:06:57' );
+2023-09-12 23:06:57.508 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:06:57.512 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 23:06:57 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_info si LEFT JOIN consumable_type ct ON (ct.id = si.type_id) WHERE 1 = 1 AND si.is_in = 0;
+2023-09-12 23:06:57.514 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 23:06:57 | 耗时 0 ms | SQL 语句：
+SELECT si.id, si.name, si.type, si.type_id AS typeId, si.amount, si.unit, si.content, si.price, si.create_date AS createDate, ct.`name` AS consumableType FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE 1 = 1 AND si.is_in = 0 LIMIT 0,10;
+2023-09-12 23:07:07.156 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:07.160 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 23:07:07 | 耗时 1 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_put sp WHERE 1 = 1;
+2023-09-12 23:07:07.163 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 23:07:07 | 耗时 0 ms | SQL 语句：
+SELECT sp.id, sp.num, sp.price, sp.custodian, sp.put_user AS putUser, sp.content, sp.create_date AS createDate FROM stock_put sp WHERE 1 = 1 LIMIT 0,10;
+2023-09-12 23:07:15.363 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:15.367 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 23:07:15 | 耗时 0 ms | SQL 语句：
+SELECT gb.id, gb.name, gb.type, gb.type_id AS typeId, gb.unit, gb.amount, gb.num, gb.price, gb.create_date AS createDate, ct.`name` AS consumableName FROM goods_belong gb LEFT JOIN consumable_type ct ON ( ct.id = gb.type_id ) WHERE 1 = 1 AND gb.num = 'PUT-1694530985428';
+2023-09-12 23:07:18.359 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:18.361 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 23:07:18 | 耗时 0 ms | SQL 语句：
+SELECT gb.id, gb.name, gb.type, gb.type_id AS typeId, gb.unit, gb.amount, gb.num, gb.price, gb.create_date AS createDate, ct.`name` AS consumableName FROM goods_belong gb LEFT JOIN consumable_type ct ON ( ct.id = gb.type_id ) WHERE 1 = 1 AND gb.num = 'PUT-1694531217441';
+2023-09-12 23:07:24.798 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:24.800 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:07:24 | 耗时 0 ms | SQL 语句：
+SELECT gb.id, gb.name, gb.type, gb.type_id AS typeId, gb.unit, gb.amount, gb.num, gb.price, gb.create_date AS createDate, ct.`name` AS consumableName FROM goods_belong gb LEFT JOIN consumable_type ct ON ( ct.id = gb.type_id ) WHERE 1 = 1 AND gb.num = 'PUT-1694531217441';
+2023-09-12 23:07:26.560 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:26.562 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 23:07:26 | 耗时 0 ms | SQL 语句：
+SELECT gb.id, gb.name, gb.type, gb.type_id AS typeId, gb.unit, gb.amount, gb.num, gb.price, gb.create_date AS createDate, ct.`name` AS consumableName FROM goods_belong gb LEFT JOIN consumable_type ct ON ( ct.id = gb.type_id ) WHERE 1 = 1 AND gb.num = 'PUT-1694530985428';
+2023-09-12 23:07:35.089 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:35.096 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 23:07:35 | 耗时 2 ms | SQL 语句：
+DELETE FROM stock_put WHERE ID IN ( 6 );
+2023-09-12 23:07:35.117 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:35.120 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 23:07:35 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_put sp WHERE 1 = 1;
+2023-09-12 23:07:35.122 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 23:07:35 | 耗时 0 ms | SQL 语句：
+SELECT sp.id, sp.num, sp.price, sp.custodian, sp.put_user AS putUser, sp.content, sp.create_date AS createDate FROM stock_put sp WHERE 1 = 1 LIMIT 0,10;
+2023-09-12 23:07:40.620 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:40.622 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-09-12 23:07:40 | 耗时 0 ms | SQL 语句：
+SELECT gb.id, gb.name, gb.type, gb.type_id AS typeId, gb.unit, gb.amount, gb.num, gb.price, gb.create_date AS createDate, ct.`name` AS consumableName FROM goods_belong gb LEFT JOIN consumable_type ct ON ( ct.id = gb.type_id ) WHERE 1 = 1 AND gb.num = 'PUT-1694531217441';
+2023-09-12 23:07:43.913 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:43.923 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:07:43 | 耗时 7 ms | SQL 语句：
+SELECT COUNT(1) FROM rurchase_request rr WHERE 1 = 1;
+2023-09-12 23:07:55.850 febs [http-nio-9527-exec-6] INFO  c.m.febs.common.aspect.LimitAspect - IP:127.0.0.1 第 1 次访问key为 [limit_login127.0.0.1]，描述为 [登录接口] 的接口
+2023-09-12 23:07:55.853 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 23:07:55 | 耗时 1 ms | SQL 语句：
+UPDATE t_user SET last_login_time='2023-09-12T23:07:55.851+0800' WHERE username = 'admin';
+2023-09-12 23:07:55.855 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 23:07:55 | 耗时 1 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'admin' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-09-12 23:07:55.861 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 23:07:55 | 耗时 1 ms | SQL 语句：
+INSERT INTO t_login_log ( username, login_time, location, ip ) VALUES ( 'admin', '2023-09-12T23:07:55.858+0800', '', '127.0.0.1' );
+2023-09-12 23:07:55.876 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:55.879 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 23:07:55 | 耗时 1 ms | SQL 语句：
+select m.* from t_menu m where m.type <> 1 and m.MENU_ID in (select distinct rm.menu_id from t_role_menu rm left join t_role r on (rm.role_id = r.role_id) left join t_user_role ur on (ur.role_id = r.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin') order by m.order_num;
+2023-09-12 23:07:56.002 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:56.002 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:56.005 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 23:07:56 | 耗时 0 ms | SQL 语句：
+SELECT ID,title,content,date,images,publisher FROM bulletin_info;
+2023-09-12 23:07:56.005 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:07:56 | 耗时 0 ms | SQL 语句：
+select count(1) from t_login_log;
+2023-09-12 23:07:56.007 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:07:56 | 耗时 0 ms | SQL 语句：
+select count(1) from t_login_log where datediff(login_time,now())=0;
+2023-09-12 23:07:56.007 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 23:07:56 | 耗时 0 ms | SQL 语句：
+SELECT DATE_FORMAT( spo.days, '%m-%d' ) AS days, IFNULL( SUM(er.amount), 0 ) AS amount FROM ( SELECT DATE_SUB( curdate(), INTERVAL + 0 DAY ) days UNION SELECT DATE_SUB( curdate(), INTERVAL + 1 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 2 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 3 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 4 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 5 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 6 DAY )) spo LEFT JOIN stock_info er ON ( DATE_FORMAT( er.create_date, '%Y-%m-%d' ) = DATE_FORMAT( spo.days, '%Y-%m-%d' )) AND er.is_in = 1 GROUP BY days ORDER BY days ASC;
+2023-09-12 23:07:56.008 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:07:56 | 耗时 0 ms | SQL 语句：
+select count(distinct(ip)) from t_login_log where datediff(login_time,now())=0;
+2023-09-12 23:07:56.008 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 23:07:56 | 耗时 0 ms | SQL 语句：
+SELECT IFNULL(sum( si.amount * si.price ),0) AS price, ct.`name` FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE si.is_in = 1 GROUP BY ct.id;
+2023-09-12 23:07:56.011 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:07:56 | 耗时 0 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 group by days;
+2023-09-12 23:07:56.011 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 23:07:56 | 耗时 0 ms | SQL 语句：
+SELECT DATE_FORMAT( spo.days, '%m-%d' ) AS days, IFNULL( SUM(er.amount), 0 ) AS amount FROM ( SELECT DATE_SUB( curdate(), INTERVAL + 0 DAY ) days UNION SELECT DATE_SUB( curdate(), INTERVAL + 1 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 2 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 3 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 4 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 5 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 6 DAY )) spo LEFT JOIN stock_info er ON ( DATE_FORMAT( er.create_date, '%Y-%m-%d' ) = DATE_FORMAT( spo.days, '%Y-%m-%d' )) AND er.is_in = 2 GROUP BY days ORDER BY days ASC;
+2023-09-12 23:07:56.013 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 23:07:56 | 耗时 0 ms | SQL 语句：
+SELECT IFNULL(sum( si.amount * si.price ),0) AS price, ct.`name` FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE si.is_in = 2 GROUP BY ct.id;
+2023-09-12 23:07:56.013 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-09-12 23:07:56 | 耗时 0 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 and l.username = 'admin' group by days;
+2023-09-12 23:07:56.015 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-09-12 23:07:56 | 耗时 0 ms | SQL 语句：
+SELECT * FROM ( SELECT count( 1 ) AS putCount FROM stock_info si WHERE si.is_in = 1 ) AS on1, ( SELECT count( 1 ) AS outCount FROM stock_info si WHERE si.is_in = 2 ) AS on2, ( SELECT IFNULL( SUM( si.amount * si.price ),0) AS price FROM stock_info si WHERE si.is_in = 1 ) AS on3;
+2023-09-12 23:07:58.354 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:07:58.357 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 23:07:58 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM rurchase_request rr WHERE 1 = 1;
+2023-09-12 23:08:00.315 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:08:00.326 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 23:08:00 | 耗时 2 ms | SQL 语句：
+SELECT COUNT(1) FROM goods_request gr LEFT JOIN archives_info si ON (si.id = gr.user_id) WHERE 1 = 1;
+2023-09-12 23:08:01.386 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:08:01.389 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 23:08:01 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_put sp WHERE 1 = 1;
+2023-09-12 23:08:01.390 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 23:08:01 | 耗时 0 ms | SQL 语句：
+SELECT sp.id, sp.num, sp.price, sp.custodian, sp.put_user AS putUser, sp.content, sp.create_date AS createDate FROM stock_put sp WHERE 1 = 1 LIMIT 0,10;
+2023-09-12 23:08:02.963 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:08:02.963 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:08:02.965 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:08:02.966 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-09-12 23:08:02 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 23:08:02.968 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 23:08:02 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM stock_info si LEFT JOIN consumable_type ct ON (ct.id = si.type_id) WHERE 1 = 1 AND si.is_in = 0;
+2023-09-12 23:08:02.969 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-09-12 23:08:02 | 耗时 0 ms | SQL 语句：
+SELECT si.id, si.name, si.type, si.type_id AS typeId, si.amount, si.unit, si.content, si.price, si.create_date AS createDate, ct.`name` AS consumableType FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE 1 = 1 AND si.is_in = 0 LIMIT 0,10;
+2023-09-12 23:08:02.971 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:08:02.974 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-09-12 23:08:02 | 耗时 0 ms | SQL 语句：
+SELECT ID,name,content,create_date FROM consumable_type;
+2023-09-12 23:08:08.059 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-09-12 23:08:08.068 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-09-12 23:08:08 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM archives_info WHERE 1 = 1;
+2023-09-12 23:09:17.842 febs [Thread-16] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1694530646615 paused.
+2023-09-12 23:09:17.842 febs [Thread-16] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2023-09-12 23:09:17.849 febs [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'taskExecutor'
+2023-09-12 23:09:17.849 febs [Thread-16] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2023-09-12 23:09:17.849 febs [Thread-16] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1694530646615 shutting down.
+2023-09-12 23:09:17.849 febs [Thread-16] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1694530646615 paused.
+2023-09-12 23:09:17.850 febs [Thread-16] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1694530646615 shutdown complete.
+2023-09-12 23:09:17.853 febs [Thread-16] INFO  c.b.d.d.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2023-09-12 23:09:17.853 febs [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - primary - Shutdown initiated...
+2023-09-12 23:09:17.855 febs [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - primary - Shutdown completed.

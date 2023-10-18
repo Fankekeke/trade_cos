@@ -1,0 +1,302 @@
+2023-10-13 20:37:45.045 febs [main] INFO  cc.mrbird.febs.FebsApplication - Starting FebsApplication on WIN-KJDA35RA4FP with PID 14680 (started by Administrator in G:\Project\工地安全预警管理系统的设计与实现\construction_cos\backend)
+2023-10-13 20:37:45.047 febs [main] INFO  cc.mrbird.febs.FebsApplication - No active profile set, falling back to default profiles: default
+2023-10-13 20:37:46.200 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-10-13 20:37:46.202 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2023-10-13 20:37:46.243 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32ms. Found 0 repository interfaces.
+2023-10-13 20:37:46.483 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncExecutorPoolConfig' of type [cc.mrbird.febs.common.config.AsyncExecutorPoolConfig$$EnhancerBySpringCGLIB$$6a55ca7f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.578 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.643 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$44a51623] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.649 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.651 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.658 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$db16a552] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.670 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [cc.mrbird.febs.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$4696a6fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.897 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [cc.mrbird.febs.common.config.RedisConfig$$EnhancerBySpringCGLIB$$3f5b5e4f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.913 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisPoolFactory' of type [redis.clients.jedis.JedisPool] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.916 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisService' of type [cc.mrbird.febs.common.service.impl.RedisServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.981 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.986 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [cc.mrbird.febs.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$2c9e0161] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.989 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.993 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$18df11ec] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:46.999 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.000 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.002 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-检测到并开启了p6spy
+2023-10-13 20:37:47.007 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Starting...
+2023-10-13 20:37:47.164 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Start completed.
+2023-10-13 20:37:47.164 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 初始共加载 1 个数据源
+2023-10-13 20:37:47.164 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 动态数据源-加载 primary 成功
+2023-10-13 20:37:47.164 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - 当前的默认数据源是单数据源，数据源名为 primary
+2023-10-13 20:37:47.164 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.baomidou.dynamic.datasource.DynamicRoutingDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.174 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.180 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.769 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.774 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.776 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.777 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMapper' of type [com.sun.proxy.$Proxy108] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.791 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.792 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuMapper' of type [com.sun.proxy.$Proxy110] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.797 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.797 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleMapper' of type [com.sun.proxy.$Proxy111] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.798 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleService' of type [cc.mrbird.febs.system.service.impl.UserRoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.825 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuService' of type [cc.mrbird.febs.system.service.impl.RoleMenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.840 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleService' of type [cc.mrbird.febs.system.service.impl.RoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.858 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.859 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuMapper' of type [com.sun.proxy.$Proxy115] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.860 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuService' of type [cc.mrbird.febs.system.service.impl.MenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.876 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.877 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy117] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.892 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.893 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigMapper' of type [com.sun.proxy.$Proxy118] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.896 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigService' of type [cc.mrbird.febs.system.service.impl.UserConfigServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.910 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [cc.mrbird.febs.system.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.926 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration$$EnhancerBySpringCGLIB$$36aa24e3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.929 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration$$EnhancerBySpringCGLIB$$e8f6e6fc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.931 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration$$EnhancerBySpringCGLIB$$a40dcceb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.936 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties' of type [org.springframework.boot.autoconfigure.jackson.JacksonProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:47.938 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'standardJacksonObjectMapperBuilderCustomizer' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration$StandardJackson2ObjectMapperBuilderCustomizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.052 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration$$EnhancerBySpringCGLIB$$cad94419] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.056 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'parameterNamesModule' of type [com.fasterxml.jackson.module.paramnames.ParameterNamesModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.058 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$$EnhancerBySpringCGLIB$$18b5c272] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.067 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jsonComponentModule' of type [org.springframework.boot.jackson.JsonComponentModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.068 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.data.web.config.SpringDataJacksonConfiguration' of type [org.springframework.data.web.config.SpringDataJacksonConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.071 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonGeoModule' of type [org.springframework.data.geo.GeoModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.073 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonObjectMapperBuilder' of type [org.springframework.http.converter.json.Jackson2ObjectMapperBuilder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.088 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonObjectMapper' of type [com.fasterxml.jackson.databind.ObjectMapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.097 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheService' of type [cc.mrbird.febs.common.service.impl.CacheServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.100 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userManager' of type [cc.mrbird.febs.system.manager.UserManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.101 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [cc.mrbird.febs.common.authentication.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.106 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.115 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-10-13 20:37:48.374 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9527 (http)
+2023-10-13 20:37:48.383 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9527"]
+2023-10-13 20:37:48.386 febs [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-10-13 20:37:48.386 febs [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2023-10-13 20:37:48.390 febs [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_201\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;F:\办公软件\Git\cmd;F:\nodejs\;F:\Yarn\bin\;F:\Bandizip\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\Yarn\bin;.]
+2023-10-13 20:37:48.505 febs [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-10-13 20:37:48.506 febs [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3432 ms
+2023-10-13 20:37:48.922 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2023-10-13 20:37:48.922 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2023-10-13 20:37:48.922 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2023-10-13 20:37:48.922 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2023-10-13 20:37:48.922 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2023-10-13 20:37:48.923 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+2023-10-13 20:37:48.923 febs [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'shiroFilterFactoryBean' to: [/*]
+2023-10-13 20:37:48.923 febs [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2023-10-13 20:37:49.461 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2023-10-13 20:37:49.470 febs [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-10-13 20:37:49.470 febs [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.0 created.
+2023-10-13 20:37:49.473 febs [main] INFO  o.s.s.quartz.LocalDataSourceJobStore - Using db table-based data access locking (synchronization).
+2023-10-13 20:37:49.475 febs [main] INFO  o.s.s.quartz.LocalDataSourceJobStore - JobStoreCMT initialized.
+2023-10-13 20:37:49.476 febs [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'MyScheduler' with instanceId 'WIN-KJDA35RA4FP1697200669462'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2023-10-13 20:37:49.476 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'MyScheduler' initialized from an externally provided properties instance.
+2023-10-13 20:37:49.476 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.0
+2023-10-13 20:37:49.477 febs [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@6c46dc02
+2023-10-13 20:37:49.526 febs [main] INFO  p6spy - 2023-10-13 20:37:49 | 耗时 10 ms | SQL 语句：
+select job_id jobId, bean_name beanName, method_name methodName, params, cron_expression cronExpression, status, remark, create_time createTime from t_job order by job_id;
+2023-10-13 20:37:49.946 febs [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2023-10-13 20:37:50.902 febs [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2023-10-13 20:37:50.947 febs [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-10-13 20:37:51.010 febs [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Will start Quartz Scheduler [MyScheduler] in 1 seconds
+2023-10-13 20:37:51.019 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9527"]
+2023-10-13 20:37:51.028 febs [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2023-10-13 20:37:51.038 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9527 (http) with context path ''
+2023-10-13 20:37:51.040 febs [main] INFO  cc.mrbird.febs.FebsApplication - Started FebsApplication in 6.396 seconds (JVM running for 7.394)
+2023-10-13 20:37:51.047 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - Redis连接中 ······
+2023-10-13 20:37:51.056 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - 缓存初始化 ······
+2023-10-13 20:37:51.056 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2023-10-13 20:37:51.056 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - 缓存用户数据 ······
+2023-10-13 20:37:51.083 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 3 ms | SQL 语句：
+SELECT USER_ID,username,password,dept_id,email,mobile,status,create_time,modify_time,last_login_time,ssex,description,avatar FROM t_user;
+2023-10-13 20:37:51.094 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 8 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'mrbird' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-10-13 20:37:51.153 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'mrbird';
+2023-10-13 20:37:51.167 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 5 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'mrbird' and m.perms is not null and m.perms <> '';
+2023-10-13 20:37:51.182 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 3 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='1' ;
+2023-10-13 20:37:51.186 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 1 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'scott' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-10-13 20:37:51.189 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'scott';
+2023-10-13 20:37:51.191 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'scott' and m.perms is not null and m.perms <> '';
+2023-10-13 20:37:51.194 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='2' ;
+2023-10-13 20:37:51.196 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'jack' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-10-13 20:37:51.199 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'jack';
+2023-10-13 20:37:51.201 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'jack' and m.perms is not null and m.perms <> '';
+2023-10-13 20:37:51.203 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='12' ;
+2023-10-13 20:37:51.205 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'admin' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-10-13 20:37:51.209 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin';
+2023-10-13 20:37:51.212 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'admin' and m.perms is not null and m.perms <> '';
+2023-10-13 20:37:51.214 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='13' ;
+2023-10-13 20:37:51.216 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'caigou' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-10-13 20:37:51.217 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'caigou';
+2023-10-13 20:37:51.219 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'caigou' and m.perms is not null and m.perms <> '';
+2023-10-13 20:37:51.220 febs [main] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,theme,layout,multi_page,fix_siderbar,fix_header,color FROM t_user_config WHERE USER_ID='14' ;
+2023-10-13 20:37:51.220 febs [main] INFO  c.m.f.common.runner.StartedUpRunner -  __    ___   _      ___   _     ____ _____  ____ 
+2023-10-13 20:37:51.220 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - / /`  / / \ | |\/| | |_) | |   | |_   | |  | |_  
+2023-10-13 20:37:51.220 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - \_\_, \_\_/ |_|  | |_|   |_|__ |_|__  |_|  |_|__ 
+2023-10-13 20:37:51.220 febs [main] INFO  c.m.f.common.runner.StartedUpRunner -                                                       
+2023-10-13 20:37:51.220 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - FEBS 启动完毕，时间：2023-10-13T20:37:51.220
+2023-10-13 20:37:51.566 febs [RMI TCP Connection(3)-192.168.1.3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-13 20:37:51.566 febs [RMI TCP Connection(3)-192.168.1.3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-10-13 20:37:51.566 febs [RMI TCP Connection(2)-192.168.1.3] INFO  p6spy - 2023-10-13 20:37:51 | 耗时 0 ms | SQL 语句：
+/* ping */ SELECT 1;
+2023-10-13 20:37:51.574 febs [RMI TCP Connection(3)-192.168.1.3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2023-10-13 20:37:52.017 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now, after delay of 1 seconds
+2023-10-13 20:37:52.027 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.LocalDataSourceJobStore - ClusterManager: detected 1 failed or restarted instances.
+2023-10-13 20:37:52.027 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.LocalDataSourceJobStore - ClusterManager: Scanning for instance "WIN-KJDA35RA4FP1697120726283"'s failed in-progress jobs.
+2023-10-13 20:37:52.030 febs [Quartz Scheduler [MyScheduler]] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1697200669462 started.
+2023-10-13 20:57:00.257 febs [http-nio-9527-exec-10] INFO  c.m.febs.common.aspect.LimitAspect - IP:127.0.0.1 第 1 次访问key为 [limit_login127.0.0.1]，描述为 [登录接口] 的接口
+2023-10-13 20:57:00.343 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 1 ms | SQL 语句：
+UPDATE t_user SET last_login_time='2023-10-13T20:57:00.324+0800' WHERE username = 'admin';
+2023-10-13 20:57:00.346 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 1 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'admin' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2023-10-13 20:57:00.366 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 7 ms | SQL 语句：
+INSERT INTO t_login_log ( username, login_time, location, ip ) VALUES ( 'admin', '2023-10-13T20:57:00.352+0800', '', '127.0.0.1' );
+2023-10-13 20:57:00.442 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 20:57:00.463 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 2 ms | SQL 语句：
+select m.* from t_menu m where m.type <> 1 and m.MENU_ID in (select distinct rm.menu_id from t_role_menu rm left join t_role r on (rm.role_id = r.role_id) left join t_user_role ur on (ur.role_id = r.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin') order by m.order_num;
+2023-10-13 20:57:00.705 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 20:57:00.705 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 20:57:00.710 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 1 ms | SQL 语句：
+select count(1) from t_login_log;
+2023-10-13 20:57:00.714 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 2 ms | SQL 语句：
+select count(1) from t_login_log where datediff(login_time,now())=0;
+2023-10-13 20:57:00.716 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 0 ms | SQL 语句：
+select count(distinct(ip)) from t_login_log where datediff(login_time,now())=0;
+2023-10-13 20:57:00.719 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 1 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 group by days;
+2023-10-13 20:57:00.721 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 4 ms | SQL 语句：
+SELECT ID,title,content,date,images,publisher FROM bulletin_info;
+2023-10-13 20:57:00.722 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 0 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 and l.username = 'admin' group by days;
+2023-10-13 20:57:00.729 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 5 ms | SQL 语句：
+SELECT DATE_FORMAT( spo.days, '%m-%d' ) AS days, IFNULL( SUM(er.amount), 0 ) AS amount FROM ( SELECT DATE_SUB( curdate(), INTERVAL + 0 DAY ) days UNION SELECT DATE_SUB( curdate(), INTERVAL + 1 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 2 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 3 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 4 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 5 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 6 DAY )) spo LEFT JOIN stock_info er ON ( DATE_FORMAT( er.create_date, '%Y-%m-%d' ) = DATE_FORMAT( spo.days, '%Y-%m-%d' )) AND er.is_in = 1 GROUP BY days ORDER BY days ASC;
+2023-10-13 20:57:00.734 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 3 ms | SQL 语句：
+SELECT IFNULL(sum( si.amount * si.price ),0) AS price, ct.`name` FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE si.is_in = 1 GROUP BY ct.id;
+2023-10-13 20:57:00.736 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 0 ms | SQL 语句：
+SELECT DATE_FORMAT( spo.days, '%m-%d' ) AS days, IFNULL( SUM(er.amount), 0 ) AS amount FROM ( SELECT DATE_SUB( curdate(), INTERVAL + 0 DAY ) days UNION SELECT DATE_SUB( curdate(), INTERVAL + 1 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 2 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 3 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 4 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 5 DAY ) UNION SELECT DATE_SUB( curdate(), INTERVAL + 6 DAY )) spo LEFT JOIN stock_info er ON ( DATE_FORMAT( er.create_date, '%Y-%m-%d' ) = DATE_FORMAT( spo.days, '%Y-%m-%d' )) AND er.is_in = 2 GROUP BY days ORDER BY days ASC;
+2023-10-13 20:57:00.738 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 0 ms | SQL 语句：
+SELECT IFNULL(sum( si.amount * si.price ),0) AS price, ct.`name` FROM stock_info si LEFT JOIN consumable_type ct ON ( ct.id = si.type_id ) WHERE si.is_in = 2 GROUP BY ct.id;
+2023-10-13 20:57:00.740 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 20:57:00 | 耗时 0 ms | SQL 语句：
+SELECT * FROM ( SELECT count( 1 ) AS putCount FROM stock_info si WHERE si.is_in = 1 ) AS on1, ( SELECT count( 1 ) AS outCount FROM stock_info si WHERE si.is_in = 2 ) AS on2, ( SELECT IFNULL( SUM( si.amount * si.price ),0) AS price FROM stock_info si WHERE si.is_in = 1 ) AS on3;
+2023-10-13 20:57:06.574 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 20:57:06.638 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-10-13 20:57:06 | 耗时 20 ms | SQL 语句：
+SELECT COUNT(1) FROM station_info WHERE 1 = 1;
+2023-10-13 20:57:06.643 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-10-13 20:57:06 | 耗时 0 ms | SQL 语句：
+select id, code, station_name, station_address, longitude, latitude, administrator, images, remark, phone, create_date, del_flag from station_info where 1 = 1 order by create_date desc LIMIT 0,10;
+2023-10-13 21:30:24.672 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:30:24.672 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:30:24.672 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:30:24.678 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-10-13 21:30:24 | 耗时 1 ms | SQL 语句：
+SELECT ID,code,station_name,station_address,longitude,latitude,administrator,images,create_date,remark,phone,del_flag FROM station_info WHERE del_flag = '0';
+2023-10-13 21:30:24.689 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 21:30:24 | 耗时 8 ms | SQL 语句：
+SELECT ID,code,name,sex,birthday,native_address,id_card,images,diploma,school_name,address,mail,phone,create_date,del_flag FROM archives_info WHERE del_flag = '0';
+2023-10-13 21:30:24.691 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-10-13 21:30:24 | 耗时 4 ms | SQL 语句：
+SELECT COUNT(1) FROM safety_inspection si LEFT JOIN archives_info ai ON (ai.code = si.staff_code) LEFT JOIN station_info sti ON (sti.code = si.station_code) WHERE 1 = 1;
+2023-10-13 21:30:26.093 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:30:26.093 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:30:26.111 febs [http-nio-9527-exec-10] INFO  p6spy - 2023-10-13 21:30:26 | 耗时 0 ms | SQL 语句：
+SELECT ID,code,station_name,station_address,longitude,latitude,administrator,images,create_date,remark,phone,del_flag FROM station_info WHERE del_flag = '0';
+2023-10-13 21:30:26.111 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-10-13 21:30:26 | 耗时 0 ms | SQL 语句：
+SELECT ID,code,name,sex,birthday,native_address,id_card,images,diploma,school_name,address,mail,phone,create_date,del_flag FROM archives_info WHERE del_flag = '0';
+2023-10-13 21:30:33.374 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:30:33.423 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-10-13 21:30:33 | 耗时 1 ms | SQL 语句：
+INSERT INTO safety_inspection ( staff_code, station_code, check_type, check_date ) VALUES ( 'AR-1695219019114', 'ST-1696863979866', '2', '2023-10-13 21:30:33' );
+2023-10-13 21:30:33.445 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:30:33.449 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-10-13 21:30:33 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM safety_inspection si LEFT JOIN archives_info ai ON (ai.code = si.staff_code) LEFT JOIN station_info sti ON (sti.code = si.station_code) WHERE 1 = 1;
+2023-10-13 21:30:33.450 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-10-13 21:30:33 | 耗时 0 ms | SQL 语句：
+select si.id, si.staff_code, si.station_code, si.check_type, si.check_date, si.images, ai.name, ai.sex, ai.phone, sti.station_name, sti.station_address from safety_inspection si left join archives_info ai on (ai.code = si.staff_code) left join station_info sti on (sti.code = si.station_code) where 1 = 1 order by si.check_date desc LIMIT 0,10;
+2023-10-13 21:30:50.660 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:30:50.668 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-10-13 21:30:50 | 耗时 2 ms | SQL 语句：
+UPDATE safety_inspection SET staff_code='AR-1695219019114', station_code='ST-1696863979866', check_type='2', images='99CMRQ8xAuSaAPzY42LlDuuyL4flFr9LTgrS04PLvLdpXqjJX_o12dEv4qUeGn0Ql0cm-Lf9tDMlLZpO7rb3bg.jpg' WHERE ID=1;
+2023-10-13 21:30:50.699 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:30:50.705 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-10-13 21:30:50 | 耗时 1 ms | SQL 语句：
+SELECT COUNT(1) FROM safety_inspection si LEFT JOIN archives_info ai ON (ai.code = si.staff_code) LEFT JOIN station_info sti ON (sti.code = si.station_code) WHERE 1 = 1;
+2023-10-13 21:30:50.706 febs [http-nio-9527-exec-7] INFO  p6spy - 2023-10-13 21:30:50 | 耗时 0 ms | SQL 语句：
+select si.id, si.staff_code, si.station_code, si.check_type, si.check_date, si.images, ai.name, ai.sex, ai.phone, sti.station_name, sti.station_address from safety_inspection si left join archives_info ai on (ai.code = si.staff_code) left join station_info sti on (sti.code = si.station_code) where 1 = 1 order by si.check_date desc LIMIT 0,10;
+2023-10-13 21:31:00.309 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:31:00.313 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-10-13 21:31:00 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM safety_inspection si LEFT JOIN archives_info ai ON (ai.code = si.staff_code) LEFT JOIN station_info sti ON (sti.code = si.station_code) WHERE 1 = 1;
+2023-10-13 21:31:00.314 febs [http-nio-9527-exec-6] INFO  p6spy - 2023-10-13 21:31:00 | 耗时 0 ms | SQL 语句：
+select si.id, si.staff_code, si.station_code, si.check_type, si.check_date, si.images, ai.name, ai.sex, ai.phone, sti.station_name, sti.station_address from safety_inspection si left join archives_info ai on (ai.code = si.staff_code) left join station_info sti on (sti.code = si.station_code) where 1 = 1 order by si.check_date desc LIMIT 0,10;
+2023-10-13 21:33:50.120 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:33:50.120 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:33:50.123 febs [http-nio-9527-exec-4] INFO  p6spy - 2023-10-13 21:33:50 | 耗时 0 ms | SQL 语句：
+SELECT ID,code,station_name,station_address,longitude,latitude,administrator,images,create_date,remark,phone,del_flag FROM station_info WHERE del_flag = '0';
+2023-10-13 21:33:50.123 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-10-13 21:33:50 | 耗时 0 ms | SQL 语句：
+SELECT ID,code,name,sex,birthday,native_address,id_card,images,diploma,school_name,address,mail,phone,create_date,del_flag FROM archives_info WHERE del_flag = '0';
+2023-10-13 21:34:24.919 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:34:24.925 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 21:34:24 | 耗时 1 ms | SQL 语句：
+SELECT COUNT(1) FROM safety_inspection si LEFT JOIN archives_info ai ON (ai.code = si.staff_code) LEFT JOIN station_info sti ON (sti.code = si.station_code) WHERE 1 = 1;
+2023-10-13 21:34:24.927 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 21:34:24 | 耗时 0 ms | SQL 语句：
+select si.id, si.staff_code, si.station_code, si.check_type, si.check_date, si.images, ai.name, ai.sex, ai.phone, sti.station_name, sti.station_address from safety_inspection si left join archives_info ai on (ai.code = si.staff_code) left join station_info sti on (sti.code = si.station_code) where 1 = 1 order by si.check_date desc LIMIT 0,10;
+2023-10-13 21:34:31.409 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:34:31.415 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-10-13 21:34:31 | 耗时 3 ms | SQL 语句：
+UPDATE safety_inspection SET staff_code='AR-1695219019114', station_code='ST-1696863979866', check_type='2', images='SA1697204070425.jpg' WHERE ID=1;
+2023-10-13 21:34:31.447 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:34:31.451 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-10-13 21:34:31 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM safety_inspection si LEFT JOIN archives_info ai ON (ai.code = si.staff_code) LEFT JOIN station_info sti ON (sti.code = si.station_code) WHERE 1 = 1;
+2023-10-13 21:34:31.452 febs [http-nio-9527-exec-1] INFO  p6spy - 2023-10-13 21:34:31 | 耗时 0 ms | SQL 语句：
+select si.id, si.staff_code, si.station_code, si.check_type, si.check_date, si.images, ai.name, ai.sex, ai.phone, sti.station_name, sti.station_address from safety_inspection si left join archives_info ai on (ai.code = si.staff_code) left join station_info sti on (sti.code = si.station_code) where 1 = 1 order by si.check_date desc LIMIT 0,10;
+2023-10-13 21:34:35.151 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:34:35.155 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 21:34:35 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM safety_inspection si LEFT JOIN archives_info ai ON (ai.code = si.staff_code) LEFT JOIN station_info sti ON (sti.code = si.station_code) WHERE 1 = 1;
+2023-10-13 21:34:35.157 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 21:34:35 | 耗时 0 ms | SQL 语句：
+select si.id, si.staff_code, si.station_code, si.check_type, si.check_date, si.images, ai.name, ai.sex, ai.phone, sti.station_name, sti.station_address from safety_inspection si left join archives_info ai on (ai.code = si.staff_code) left join station_info sti on (sti.code = si.station_code) where 1 = 1 order by si.check_date desc LIMIT 0,10;
+2023-10-13 21:35:11.330 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:35:11.330 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:35:11.334 febs [http-nio-9527-exec-8] INFO  p6spy - 2023-10-13 21:35:11 | 耗时 0 ms | SQL 语句：
+SELECT ID,code,name,sex,birthday,native_address,id_card,images,diploma,school_name,address,mail,phone,create_date,del_flag FROM archives_info WHERE del_flag = '0';
+2023-10-13 21:35:11.353 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-10-13 21:35:11 | 耗时 9 ms | SQL 语句：
+SELECT COUNT(1) FROM work_evaluation we LEFT JOIN archives_info ai ON (ai.code = we.staff_code) WHERE 1 = 1;
+2023-10-13 21:35:11.356 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-10-13 21:35:11 | 耗时 1 ms | SQL 语句：
+select we.id, we.staff_code, we.work_score, we.attendance_score, we.quality_score, we.`year`, we.`month`, we.appraiser, we.remark, we.create_date, we.del_flag, ai.name, ai.sex, ai.phone from work_evaluation we left join archives_info ai on (ai.code = we.staff_code) where 1 = 1 order by we.create_date desc LIMIT 0,10;
+2023-10-13 21:35:12.254 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:35:12.258 febs [http-nio-9527-exec-2] INFO  p6spy - 2023-10-13 21:35:12 | 耗时 0 ms | SQL 语句：
+SELECT ID,code,name,sex,birthday,native_address,id_card,images,diploma,school_name,address,mail,phone,create_date,del_flag FROM archives_info WHERE del_flag = '0';
+2023-10-13 21:35:12.258 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:35:12.258 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:35:12.261 febs [http-nio-9527-exec-5] INFO  p6spy - 2023-10-13 21:35:12 | 耗时 0 ms | SQL 语句：
+SELECT ID,code,station_name,station_address,longitude,latitude,administrator,images,create_date,remark,phone,del_flag FROM station_info WHERE del_flag = '0';
+2023-10-13 21:35:12.263 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 21:35:12 | 耗时 0 ms | SQL 语句：
+SELECT COUNT(1) FROM safety_inspection si LEFT JOIN archives_info ai ON (ai.code = si.staff_code) LEFT JOIN station_info sti ON (sti.code = si.station_code) WHERE 1 = 1;
+2023-10-13 21:35:12.264 febs [http-nio-9527-exec-3] INFO  p6spy - 2023-10-13 21:35:12 | 耗时 0 ms | SQL 语句：
+select si.id, si.staff_code, si.station_code, si.check_type, si.check_date, si.images, ai.name, ai.sex, ai.phone, sti.station_name, sti.station_address from safety_inspection si left join archives_info ai on (ai.code = si.staff_code) left join station_info sti on (sti.code = si.station_code) where 1 = 1 order by si.check_date desc LIMIT 0,10;
+2023-10-13 21:35:21.377 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:35:21.378 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:35:21.378 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2023-10-13 21:35:21.380 febs [http-nio-9527-exec-9] INFO  p6spy - 2023-10-13 21:35:21 | 耗时 0 ms | SQL 语句：
+SELECT ID,code,station_name,station_address,longitude,latitude,administrator,images,create_date,remark,phone,del_flag FROM station_info WHERE del_flag = '0';
+2023-10-13 21:36:43.503 febs [Thread-17] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1697200669462 paused.
+2023-10-13 21:36:43.503 febs [Thread-17] INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2023-10-13 21:36:43.510 febs [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'taskExecutor'
+2023-10-13 21:36:43.511 febs [Thread-17] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2023-10-13 21:36:43.511 febs [Thread-17] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1697200669462 shutting down.
+2023-10-13 21:36:43.511 febs [Thread-17] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1697200669462 paused.
+2023-10-13 21:36:43.512 febs [Thread-17] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_WIN-KJDA35RA4FP1697200669462 shutdown complete.
+2023-10-13 21:36:43.516 febs [Thread-17] INFO  c.b.d.d.DynamicRoutingDataSource - closing dynamicDatasource  ing....
+2023-10-13 21:36:43.516 febs [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - primary - Shutdown initiated...
+2023-10-13 21:36:43.519 febs [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - primary - Shutdown completed.

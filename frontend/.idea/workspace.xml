@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8d94e285-d1b0-4ce5-8593-dca4515a0d01" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="26e1GHDCccNPhjjOkikO0T4XnFK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "G:/Project/二手交易平台/trade_cos/frontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Project\工地安全预警管理系统的设计与实现\construction_cos\frontend\src\utils" />
+      <recent name="E:\Project\实验室耗材管理系统\frontend\src\utils" />
+      <recent name="E:\Project\实验室耗材管理系统\frontend\src\views\admin\goods" />
+      <recent name="E:\Project\实验室耗材管理系统\frontend\src\views\admin\stockout" />
+      <recent name="E:\Project\实验室耗材管理系统\frontend\src\views\admin\stock" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d94e285-d1b0-4ce5-8593-dca4515a0d01" name="Default Changelist" comment="" />
+      <created>1647769140458</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647769140458</updated>
+      <workItem from="1647769141599" duration="3281000" />
+      <workItem from="1647822892443" duration="25565000" />
+      <workItem from="1647907130405" duration="23512000" />
+      <workItem from="1647993384535" duration="18237000" />
+      <workItem from="1648037051905" duration="2370000" />
+      <workItem from="1648081482624" duration="7995000" />
+      <workItem from="1648116003472" duration="15000" />
+      <workItem from="1648474400775" duration="777000" />
+      <workItem from="1648947448542" duration="723000" />
+      <workItem from="1648974068918" duration="1410000" />
+      <workItem from="1648977580871" duration="53000" />
+      <workItem from="1649070933546" duration="440000" />
+      <workItem from="1649427550215" duration="22000" />
+      <workItem from="1649467957051" duration="959000" />
+      <workItem from="1650115344237" duration="180000" />
+      <workItem from="1664682127860" duration="1725000" />
+      <workItem from="1664758541055" duration="962000" />
+      <workItem from="1665811570581" duration="4214000" />
+      <workItem from="1668840003234" duration="1071000" />
+      <workItem from="1668841121041" duration="504000" />
+      <workItem from="1668841640318" duration="919000" />
+      <workItem from="1668842578411" duration="6560000" />
+      <workItem from="1668867816224" duration="24000" />
+      <workItem from="1668868068452" duration="608000" />
+      <workItem from="1668905384784" duration="577000" />
+      <workItem from="1669288798072" duration="761000" />
+      <workItem from="1670936166509" duration="1257000" />
+      <workItem from="1672553594624" duration="240000" />
+      <workItem from="1672571518579" duration="540000" />
+      <workItem from="1672572256848" duration="144000" />
+      <workItem from="1672586376629" duration="4000" />
+      <workItem from="1673015791385" duration="70000" />
+      <workItem from="1673072965840" duration="16000" />
+      <workItem from="1673073102827" duration="46000" />
+      <workItem from="1673102363106" duration="182000" />
+      <workItem from="1694441740175" duration="2692000" />
+      <workItem from="1694526833351" duration="980000" />
+      <workItem from="1694616755580" duration="1706000" />
+      <workItem from="1694697431973" duration="148000" />
+      <workItem from="1694701907952" duration="1196000" />
+      <workItem from="1695048456863" duration="1316000" />
+      <workItem from="1695216555665" duration="3547000" />
+      <workItem from="1696594635203" duration="943000" />
+      <workItem from="1696856715192" duration="3153000" />
+      <workItem from="1697031546399" duration="21000" />
+      <workItem from="1697032604766" duration="874000" />
+      <workItem from="1697034274913" duration="2301000" />
+      <workItem from="1697118448777" duration="3974000" />
+      <workItem from="1697199871997" duration="2676000" />
+      <workItem from="1697642026398" duration="65000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
