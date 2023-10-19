@@ -70,39 +70,39 @@
         </template>
       </a-table>
     </div>
-    <bulletin-add
-      v-if="bulletinAdd.visiable"
-      @close="handleBulletinAddClose"
-      @success="handleBulletinAddSuccess"
-      :bulletinAddVisiable="bulletinAdd.visiable">
-    </bulletin-add>
-    <bulletin-edit
-      ref="bulletinEdit"
-      @close="handleBulletinEditClose"
-      @success="handleBulletinEditSuccess"
-      :bulletinEditVisiable="bulletinEdit.visiable">
-    </bulletin-edit>
+    <commodity-add
+      v-if="commodityAdd.visiable"
+      @close="handlecommodityAddClose"
+      @success="handlecommodityAddSuccess"
+      :commodityAddVisiable="commodityAdd.visiable">
+    </commodity-add>
+    <commodity-edit
+      ref="commodityEdit"
+      @close="handlecommodityEditClose"
+      @success="handlecommodityEditSuccess"
+      :commodityEditVisiable="commodityEdit.visiable">
+    </commodity-edit>
   </a-card>
 </template>
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import BulletinAdd from './BulletinAdd.vue'
-import BulletinEdit from './BulletinEdit.vue'
+import commodityAdd from './CommodityAdd.vue'
+import commodityEdit from './CommodityEdit.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
-  name: 'Bulletin',
-  components: {BulletinAdd, BulletinEdit, RangeDate},
+  name: 'commodity',
+  components: {commodityAdd, commodityEdit, RangeDate},
   data () {
     return {
       advanced: false,
-      bulletinAdd: {
+      commodityAdd: {
         visiable: false
       },
-      bulletinEdit: {
+      commodityEdit: {
         visiable: false
       },
       queryParams: {},
@@ -176,25 +176,25 @@ export default {
       this.advanced = !this.advanced
     },
     add () {
-      this.bulletinAdd.visiable = true
+      this.commodityAdd.visiable = true
     },
-    handleBulletinAddClose () {
-      this.bulletinAdd.visiable = false
+    handlecommodityAddClose () {
+      this.commodityAdd.visiable = false
     },
-    handleBulletinAddSuccess () {
-      this.bulletinAdd.visiable = false
+    handlecommodityAddSuccess () {
+      this.commodityAdd.visiable = false
       this.$message.success('新增公告成功')
       this.search()
     },
     edit (record) {
-      this.$refs.bulletinEdit.setFormValues(record)
-      this.bulletinEdit.visiable = true
+      this.$refs.commodityEdit.setFormValues(record)
+      this.commodityEdit.visiable = true
     },
-    handleBulletinEditClose () {
-      this.bulletinEdit.visiable = false
+    handlecommodityEditClose () {
+      this.commodityEdit.visiable = false
     },
-    handleBulletinEditSuccess () {
-      this.bulletinEdit.visiable = false
+    handlecommodityEditSuccess () {
+      this.commodityEdit.visiable = false
       this.$message.success('修改公告成功')
       this.search()
     },
@@ -213,7 +213,7 @@ export default {
         centered: true,
         onOk () {
           let ids = that.selectedRowKeys.join(',')
-          that.$delete('/cos/bulletin-info/' + ids).then(() => {
+          that.$delete('/cos/commodity-info/' + ids).then(() => {
             that.$message.success('删除成功')
             that.selectedRowKeys = []
             that.search()
@@ -283,7 +283,7 @@ export default {
         params.size = this.pagination.defaultPageSize
         params.current = this.pagination.defaultCurrent
       }
-      this.$get('/cos/bulletin-info/page', {
+      this.$get('/cos/commodity-info/page', {
         ...params
       }).then((r) => {
         let data = r.data.data

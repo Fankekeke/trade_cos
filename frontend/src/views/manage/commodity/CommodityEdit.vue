@@ -1,11 +1,11 @@
 <template>
-  <a-modal v-model="show" title="新增公告" @cancel="onClose" :width="800">
+  <a-modal v-model="show" title="修改公告" @cancel="onClose" :width="800">
     <template slot="footer">
       <a-button key="back" @click="onClose">
         取消
       </a-button>
       <a-button key="submit" type="primary" :loading="loading" @click="handleSubmit">
-        提交
+        修改
       </a-button>
     </template>
     <a-form :form="form" layout="vertical">
@@ -76,9 +76,9 @@ const formItemLayout = {
   wrapperCol: { span: 24 }
 }
 export default {
-  name: 'BulletinAdd',
+  name: 'commodityEdit',
   props: {
-    bulletinAddVisiable: {
+    commodityEditVisiable: {
       default: false
     }
   },
@@ -88,7 +88,7 @@ export default {
     }),
     show: {
       get: function () {
-        return this.bulletinAddVisiable
+        return this.commodityEditVisiable
       },
       set: function () {
       }
@@ -96,6 +96,7 @@ export default {
   },
   data () {
     return {
+      rowId: null,
       formItemLayout,
       form: this.$form.createForm(this),
       loading: false,
@@ -118,6 +119,31 @@ export default {
     picHandleChange ({ fileList }) {
       this.fileList = fileList
     },
+    imagesInit (images) {
+      if (images !== null && images !== '') {
+        let imageList = []
+        images.split(',').forEach((image, index) => {
+          imageList.push({uid: index, name: image, status: 'done', url: 'http://127.0.0.1:9527/imagesWeb/' + image})
+        })
+        this.fileList = imageList
+      }
+    },
+    setFormValues ({...commodity}) {
+      this.rowId = commodity.id
+      let fields = ['title', 'content', 'publisher']
+      let obj = {}
+      Object.keys(commodity).forEach((key) => {
+        if (key === 'images') {
+          this.fileList = []
+          this.imagesInit(commodity['images'])
+        }
+        if (fields.indexOf(key) !== -1) {
+          this.form.getFieldDecorator(key)
+          obj[key] = commodity[key]
+        }
+      })
+      this.form.setFieldsValue(obj)
+    },
     reset () {
       this.loading = false
       this.form.resetFields()
@@ -130,13 +156,18 @@ export default {
       // 获取图片List
       let images = []
       this.fileList.forEach(image => {
-        images.push(image.response)
+        if (image.response !== undefined) {
+          images.push(image.response)
+        } else {
+          images.push(image.name)
+        }
       })
       this.form.validateFields((err, values) => {
+        values.id = this.rowId
         values.images = images.length > 0 ? images.join(',') : null
         if (!err) {
           this.loading = true
-          this.$post('/cos/bulletin-info', {
+          this.$put('/cos/commodity-info', {
             ...values
           }).then((r) => {
             this.reset()
