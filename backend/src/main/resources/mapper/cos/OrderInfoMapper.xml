@@ -37,6 +37,9 @@
         (ei.order_id = oi.id)
         where
         1 = 1
+        <if test="orderInfo.userId != null and orderInfo.userId != ''">
+            AND ui.user_id = #{orderInfo.userId}
+        </if>
         <if test="orderInfo.code != null and orderInfo.code != ''">
             AND oi.code LIKE CONCAT('%',#{orderInfo.code},'%')
         </if>

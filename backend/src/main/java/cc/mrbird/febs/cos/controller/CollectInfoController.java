@@ -3,7 +3,9 @@ package cc.mrbird.febs.cos.controller;
 
 import cc.mrbird.febs.common.utils.R;
 import cc.mrbird.febs.cos.entity.CollectInfo;
+import cc.mrbird.febs.cos.entity.UserInfo;
 import cc.mrbird.febs.cos.service.ICollectInfoService;
+import cc.mrbird.febs.cos.service.IUserInfoService;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -24,6 +26,8 @@ import java.util.List;
 public class CollectInfoController {
 
     private final ICollectInfoService collectInfoService;
+
+    private final IUserInfoService userInfoService;
 
     /**
      * 分页获取收藏信息
@@ -66,6 +70,11 @@ public class CollectInfoController {
      */
     @PostMapping
     public R save(CollectInfo collectInfo) {
+        // 获取用户信息
+        UserInfo user = userInfoService.getOne(Wrappers.<UserInfo>lambdaQuery().eq(UserInfo::getUserId, collectInfo.getUserId()));
+        if (user != null) {
+            collectInfo.setUserId(user.getId());
+        }
         collectInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
         return R.ok(collectInfoService.save(collectInfo));
     }

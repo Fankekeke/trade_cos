@@ -35,6 +35,9 @@
         (ct.id = coi.type_id)
         where
         1 = 1
+        <if test="commodityInfo.userId != null and commodityInfo.userId != ''">
+            AND ui.user_id = #{commodityInfo.userId}
+        </if>
         <if test="commodityInfo.userName != null and commodityInfo.userName != ''">
             AND ui.name LIKE CONCAT('%',#{commodityInfo.userName},'%')
         </if>

@@ -3,8 +3,11 @@ package cc.mrbird.febs.cos.controller;
 
 import cc.mrbird.febs.common.utils.R;
 import cc.mrbird.febs.cos.entity.CommodityInfo;
+import cc.mrbird.febs.cos.entity.UserInfo;
 import cc.mrbird.febs.cos.service.ICommodityInfoService;
+import cc.mrbird.febs.cos.service.IUserInfoService;
 import cn.hutool.core.date.DateUtil;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,8 @@ import java.util.List;
 public class CommodityInfoController {
 
     private final ICommodityInfoService commodityInfoService;
+
+    private final IUserInfoService userInfoService;
 
     /**
      * 分页获取商品信息
@@ -64,6 +69,12 @@ public class CommodityInfoController {
      */
     @PostMapping
     public R save(CommodityInfo commodityInfo) {
+        // 获取用户信息
+        UserInfo user = userInfoService.getOne(Wrappers.<UserInfo>lambdaQuery().eq(UserInfo::getUserId, commodityInfo.getUserId()));
+        if (user != null) {
+            commodityInfo.setUserId(user.getId());
+        }
+        commodityInfo.setCode("COM-" +System.currentTimeMillis());
         commodityInfo.setCreateTime(DateUtil.formatDateTime(new Date()));
         return R.ok(commodityInfoService.save(commodityInfo));
     }

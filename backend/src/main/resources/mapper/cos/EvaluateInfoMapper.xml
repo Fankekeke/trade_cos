@@ -35,6 +35,9 @@
         (ct.id = coi.type_id)
         where
         1 = 1
+        <if test="evaluateInfo.userId != null and evaluateInfo.userId != ''">
+            AND ui.user_id = #{evaluateInfo.userId}
+        </if>
         <if test="evaluateInfo.userName != null and evaluateInfo.userName != ''">
             AND ui.name LIKE CONCAT('%',#{evaluateInfo.userName},'%')
         </if>

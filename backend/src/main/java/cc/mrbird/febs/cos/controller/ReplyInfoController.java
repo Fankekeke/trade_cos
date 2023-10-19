@@ -3,8 +3,11 @@ package cc.mrbird.febs.cos.controller;
 
 import cc.mrbird.febs.common.utils.R;
 import cc.mrbird.febs.cos.entity.ReplyInfo;
+import cc.mrbird.febs.cos.entity.UserInfo;
 import cc.mrbird.febs.cos.service.IReplyInfoService;
+import cc.mrbird.febs.cos.service.IUserInfoService;
 import cn.hutool.core.date.DateUtil;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,8 @@ import java.util.List;
 public class ReplyInfoController {
 
     private final IReplyInfoService replyInfoService;
+
+    private final IUserInfoService userInfoService;
 
     /**
      * 分页获取消息回复信息
@@ -64,6 +69,11 @@ public class ReplyInfoController {
      */
     @PostMapping
     public R save(ReplyInfo replyInfo) {
+        // 获取用户信息
+        UserInfo user = userInfoService.getOne(Wrappers.<UserInfo>lambdaQuery().eq(UserInfo::getUserId, replyInfo.getUserId()));
+        if (user != null) {
+            replyInfo.setUserId(user.getId());
+        }
         replyInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
         return R.ok(replyInfoService.save(replyInfo));
     }
