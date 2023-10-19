@@ -3,6 +3,10 @@ package cc.mrbird.febs.cos.entity;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -18,6 +22,9 @@ import lombok.experimental.Accessors;
 public class CommodityInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    @TableId(value = "ID", type = IdType.AUTO)
+    private Integer id;
 
     /**
      * 会员编号
@@ -72,7 +79,7 @@ public class CommodityInfo implements Serializable {
     /**
      * 最近点击时间
      */
-    private LocalDateTime clickTime;
+    private String clickTime;
 
     /**
      * 价格
@@ -87,12 +94,12 @@ public class CommodityInfo implements Serializable {
     /**
      * 创建时间
      */
-    private LocalDateTime createTime;
+    private String createTime;
 
     /**
      * 更新时间
      */
-    private LocalDateTime updateTime;
+    private String updateTime;
 
     /**
      * 商品状态（0.上架 1.下架 2.售出）
@@ -104,5 +111,15 @@ public class CommodityInfo implements Serializable {
      */
     private String images;
 
+    /**
+     * 用户名称
+     */
+    @TableField(exist = false)
+    private String userName;
 
+    /**
+     * 商品类型
+     */
+    @TableField(exist = false)
+    private String typeName;
 }

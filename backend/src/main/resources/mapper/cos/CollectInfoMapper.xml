@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.cos.dao.CollectInfoMapper">
+
+    <!-- 分页获取收藏信息 -->
+    <select id="selectCollectPage" resultType="java.util.LinkedHashMap">
+        select
+        ci.id,
+        ci.commodity_id,
+        ci.user_id,
+        ci.create_date,
+        ui.code,
+        ui.name as userName,
+        ui.phone,
+        coi.title,
+        coi.name as commodityName,
+        ct.name as typeName,
+        coi.images,
+        coi.status
+        from
+        collect_info ci
+        left join user_info ui on
+        (ui.id = ci.user_id)
+        left join commodity_info coi on
+        (coi.id = ci.commodity_id)
+        left join commodity_type ct on
+        (ct.id = coi.type_id)
+        where
+        1 = 1
+        <if test="collectInfo.userName != null and collectInfo.userName != ''">
+            AND ui.name LIKE CONCAT('%',#{collectInfo.userName},'%')
+        </if>
+        <if test="collectInfo.commodityName != null and collectInfo.commodityName != ''">
+            AND coi.name LIKE CONCAT('%',#{collectInfo.commodityName},'%')
+        </if>
+        <if test="collectInfo.typeName != null and collectInfo.typeName != ''">
+            AND ct.name LIKE CONCAT('%',#{collectInfo.typeName},'%')
+        </if>
+        <if test="collectInfo.status != null and collectInfo.status != ''">
+            AND coi.status = #{collectInfo.status}
+        </if>
+        order by
+        ci.create_date desc
+
+    </select>
+</mapper>

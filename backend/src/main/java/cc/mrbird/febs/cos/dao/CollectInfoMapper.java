@@ -1,9 +1,9 @@
-package cc.mrbird.febs.cos.service;
+package cc.mrbird.febs.cos.dao;
 
 import cc.mrbird.febs.cos.entity.CollectInfo;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.baomidou.mybatisplus.extension.service.IService;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.LinkedHashMap;
@@ -11,7 +11,7 @@ import java.util.LinkedHashMap;
 /**
  * @author FanK
  */
-public interface ICollectInfoService extends IService<CollectInfo> {
+public interface CollectInfoMapper extends BaseMapper<CollectInfo> {
 
     /**
      * 分页获取收藏信息
@@ -20,5 +20,5 @@ public interface ICollectInfoService extends IService<CollectInfo> {
      * @param collectInfo 收藏信息
      * @return 结果
      */
-    IPage<LinkedHashMap<String, Object>> selectCollectPage(Page<CollectInfo> page, CollectInfo collectInfo);
+    IPage<LinkedHashMap<String, Object>> selectCollectPage(Page<CollectInfo> page, @Param("collectInfo") CollectInfo collectInfo);
 }
