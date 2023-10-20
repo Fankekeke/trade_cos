@@ -95,15 +95,13 @@
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import collectAdd from './collectAdd.vue'
-import collectEdit from './collectEdit.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
   name: 'collect',
-  components: {collectAdd, collectEdit, RangeDate},
+  components: {RangeDate},
   data () {
     return {
       advanced: false,

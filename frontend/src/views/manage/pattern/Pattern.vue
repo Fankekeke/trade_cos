@@ -7,18 +7,18 @@
           <div :class="advanced ? null: 'fold'">
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="标题"
+                label="类型编号"
                 :labelCol="{span: 4}"
                 :wrapperCol="{span: 18, offset: 2}">
-                <a-input v-model="queryParams.title"/>
+                <a-input v-model="queryParams.code"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="内容"
+                label="类型名称"
                 :labelCol="{span: 4}"
                 :wrapperCol="{span: 18, offset: 2}">
-                <a-input v-model="queryParams.content"/>
+                <a-input v-model="queryParams.name"/>
               </a-form-item>
             </a-col>
           </div>
@@ -87,8 +87,8 @@
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import patternAdd from './patternAdd.vue'
-import patternEdit from './patternEdit.vue'
+import patternAdd from './PatternAdd.vue'
+import patternEdit from './PatternEdit.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
@@ -129,18 +129,14 @@ export default {
     }),
     columns () {
       return [{
-        title: '标题',
-        dataIndex: 'title',
-        scopedSlots: { customRender: 'titleShow' },
-        width: 300
+        title: '类型编号',
+        dataIndex: 'code'
       }, {
-        title: '商品类型内容',
-        dataIndex: 'content',
-        scopedSlots: { customRender: 'contentShow' },
-        width: 600
+        title: '类型名称',
+        dataIndex: 'name'
       }, {
-        title: '发布时间',
-        dataIndex: 'date',
+        title: '创建人',
+        dataIndex: 'createBy',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -149,8 +145,20 @@ export default {
           }
         }
       }, {
-        title: '上传人',
-        dataIndex: 'publisher',
+        title: '类型图片',
+        dataIndex: 'images',
+        customRender: (text, record, index) => {
+          if (!record.images) return <a-avatar shape="square" icon="user" />
+          return <a-popover>
+            <template slot="content">
+              <a-avatar shape="square" size={132} icon="user" src={ 'http://127.0.0.1:9527/imagesWeb/' + record.images.split(',')[0] } />
+            </template>
+            <a-avatar shape="square" icon="user" src={ 'http://127.0.0.1:9527/imagesWeb/' + record.images.split(',')[0] } />
+          </a-popover>
+        }
+      }, {
+        title: '创建时间',
+        dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -213,7 +221,7 @@ export default {
         centered: true,
         onOk () {
           let ids = that.selectedRowKeys.join(',')
-          that.$delete('/cos/pattern-info/' + ids).then(() => {
+          that.$delete('/cos/commodity-type/' + ids).then(() => {
             that.$message.success('删除成功')
             that.selectedRowKeys = []
             that.search()
@@ -283,7 +291,7 @@ export default {
         params.size = this.pagination.defaultPageSize
         params.current = this.pagination.defaultCurrent
       }
-      this.$get('/cos/pattern-info/page', {
+      this.$get('/cos/commodity-type/page', {
         ...params
       }).then((r) => {
         let data = r.data.data

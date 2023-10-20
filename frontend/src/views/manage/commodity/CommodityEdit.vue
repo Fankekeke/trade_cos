@@ -19,18 +19,76 @@
           </a-form-item>
         </a-col>
         <a-col :span="12">
-          <a-form-item label='上传人' v-bind="formItemLayout">
+          <a-form-item label='商品名称' v-bind="formItemLayout">
             <a-input v-decorator="[
-            'publisher',
-            { rules: [{ required: true, message: '请输入上传人!' }] }
+            'name',
+            { rules: [{ required: true, message: '请输入商品名称!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='商品类型' v-bind="formItemLayout">
+            <a-select v-decorator="[
+              'typeId',
+              { rules: [{ required: true, message: '请输入商品类型!' }] }
+              ]">
+              <a-select-option :value="item.id" v-for="(item, index) in commodityTypeList" :key="index">{{ item.name }}</a-select-option>
+            </a-select>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='商品品牌' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'brand',
+            { rules: [{ required: true, message: '请输入商品品牌!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='规格' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'model',
+            { rules: [{ required: true, message: '请输入规格!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='成色状态' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'quality',
+            { rules: [{ required: true, message: '请输入成色状态!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='成色状态' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'quality',
+            { rules: [{ required: true, message: '请输入成色状态!' }] }
             ]"/>
           </a-form-item>
         </a-col>
         <a-col :span="24">
-          <a-form-item label='商品内容' v-bind="formItemLayout">
+          <a-form-item label='商品价格' v-bind="formItemLayout">
+            <a-input-number v-decorator="[
+            'price',
+             { rules: [{ required: true, message: '请输入商品价格!' }] }
+            ]" :min="1" :max="99999" :step="0.1" />
+          </a-form-item>
+        </a-col>
+        <a-col :span="24">
+          <a-form-item label='数量' v-bind="formItemLayout">
+            <a-input-number v-decorator="[
+            'storeNum',
+             { rules: [{ required: true, message: '请输入数量!' }] }
+            ]" :min="1" :max="999" />
+          </a-form-item>
+        </a-col>
+        <a-col :span="24">
+          <a-form-item label='商品描述' v-bind="formItemLayout">
             <a-textarea :rows="6" v-decorator="[
             'content',
-             { rules: [{ required: true, message: '请输入名称!' }] }
+             { rules: [{ required: true, message: '请输入商品描述!' }] }
             ]"/>
           </a-form-item>
         </a-col>
@@ -105,7 +163,15 @@ export default {
       previewImage: ''
     }
   },
+  mounted () {
+    this.getType()
+  },
   methods: {
+    getType () {
+      this.$get('/cos/commodity-type/list').then((r) => {
+        this.commodityTypeList = r.data.data
+      })
+    },
     handleCancel () {
       this.previewVisible = false
     },
@@ -130,7 +196,7 @@ export default {
     },
     setFormValues ({...commodity}) {
       this.rowId = commodity.id
-      let fields = ['title', 'content', 'publisher']
+      let fields = ['title', 'content', 'name', 'typeId', 'brand', 'model', 'quality', 'price', 'storeNum']
       let obj = {}
       Object.keys(commodity).forEach((key) => {
         if (key === 'images') {

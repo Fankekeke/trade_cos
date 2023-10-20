@@ -1,5 +1,5 @@
 <template>
-  <a-modal v-model="show" title="修改订单" @cancel="onClose" :width="800">
+  <a-modal v-model="show" title="更新物流" @cancel="onClose" :width="800">
     <template slot="footer">
       <a-button key="back" @click="onClose">
         取消
@@ -7,57 +7,29 @@
       <a-button key="submit" type="primary" :loading="loading" @click="handleSubmit">
         修改
       </a-button>
+      <a-button key="submit1" @click="receipt">
+        收货
+      </a-button>
     </template>
-    <a-form :form="form" layout="vertical">
-      <a-row :gutter="20">
-        <a-col :span="12">
-          <a-form-item label='订单标题' v-bind="formItemLayout">
-            <a-input v-decorator="[
-            'title',
-            { rules: [{ required: true, message: '请输入名称!' }] }
-            ]"/>
-          </a-form-item>
-        </a-col>
-        <a-col :span="12">
-          <a-form-item label='上传人' v-bind="formItemLayout">
-            <a-input v-decorator="[
-            'publisher',
-            { rules: [{ required: true, message: '请输入上传人!' }] }
-            ]"/>
-          </a-form-item>
-        </a-col>
+    <div style="font-size: 13px;font-family: SimHei">
+      <a-row style="padding-left: 24px;padding-right: 24px;">
+        <a-col style="margin-bottom: 15px"><span style="font-size: 15px;font-weight: 650;color: #000c17">当前物流</span></a-col>
         <a-col :span="24">
-          <a-form-item label='订单内容' v-bind="formItemLayout">
-            <a-textarea :rows="6" v-decorator="[
-            'content',
-             { rules: [{ required: true, message: '请输入名称!' }] }
-            ]"/>
-          </a-form-item>
+          <a-table :columns="logisticsColumns" :data-source="logisticsList" :pagination="false">
+          </a-table>
         </a-col>
+      </a-row>
+      <a-divider orientation="left">
+        <span style="font-size: 12px;font-family: SimHei">更新物流</span>
+      </a-divider>
+      <a-row style="padding-left: 24px;padding-right: 24px;" :gutter="50">
         <a-col :span="24">
-          <a-form-item label='图册' v-bind="formItemLayout">
-            <a-upload
-              name="avatar"
-              action="http://127.0.0.1:9527/file/fileUpload/"
-              list-type="picture-card"
-              :file-list="fileList"
-              @preview="handlePreview"
-              @change="picHandleChange"
-            >
-              <div v-if="fileList.length < 8">
-                <a-icon type="plus" />
-                <div class="ant-upload-text">
-                  Upload
-                </div>
-              </div>
-            </a-upload>
-            <a-modal :visible="previewVisible" :footer="null" @cancel="handleCancel">
-              <img alt="example" style="width: 100%" :src="previewImage" />
-            </a-modal>
+          <a-form-item label='物流备注' v-bind="formItemLayout">
+            <a-textarea :rows="6" v-model="remark"/>
           </a-form-item>
         </a-col>
       </a-row>
-    </a-form>
+    </div>
   </a-modal>
 </template>
 
@@ -92,6 +64,15 @@ export default {
       },
       set: function () {
       }
+    },
+    logisticsColumns () {
+      return [{
+        title: '物流信息',
+        dataIndex: 'remark'
+      }, {
+        title: '操作时间',
+        dataIndex: 'createDate'
+      }]
     }
   },
   data () {
@@ -102,10 +83,17 @@ export default {
       loading: false,
       fileList: [],
       previewVisible: false,
-      previewImage: ''
+      previewImage: '',
+      logisticsList: [],
+      remark: ''
     }
   },
   methods: {
+    selectLogistics (orderId) {
+      this.$get(`/cos/purchase-info/detail/${orderId}`).then((r) => {
+        this.logisticsList = r.data.logistics
+      })
+    },
     handleCancel () {
       this.previewVisible = false
     },
@@ -130,19 +118,7 @@ export default {
     },
     setFormValues ({...order}) {
       this.rowId = order.id
-      let fields = ['title', 'content', 'publisher']
-      let obj = {}
-      Object.keys(order).forEach((key) => {
-        if (key === 'images') {
-          this.fileList = []
-          this.imagesInit(order['images'])
-        }
-        if (fields.indexOf(key) !== -1) {
-          this.form.getFieldDecorator(key)
-          obj[key] = order[key]
-        }
-      })
-      this.form.setFieldsValue(obj)
+      this.selectLogistics(order.id)
     },
     reset () {
       this.loading = false
@@ -152,23 +128,24 @@ export default {
       this.reset()
       this.$emit('close')
     },
-    handleSubmit () {
-      // 获取图片List
-      let images = []
-      this.fileList.forEach(image => {
-        if (image.response !== undefined) {
-          images.push(image.response)
-        } else {
-          images.push(image.name)
-        }
+    receipt () {
+      this.$get(`/cos/purchase-info/receipt/${this.rowId}`).then((r) => {
+        this.$emit('success')
       })
+    },
+    handleSubmit () {
+      if (!this.remark) {
+        this.$message.warning('请填写物流备注')
+        return false
+      }
       this.form.validateFields((err, values) => {
         values.id = this.rowId
-        values.images = images.length > 0 ? images.join(',') : null
         if (!err) {
           this.loading = true
-          this.$put('/cos/order-info', {
-            ...values
+          this.logisticsList.push({remark: this.remark, createDate: new Date()})
+          this.$put('/cos/purchase-info', {
+            'id': this.rowId,
+            'logistics': JSON.stringify(this.logisticsList)
           }).then((r) => {
             this.reset()
             this.$emit('success')

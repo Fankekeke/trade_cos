@@ -7,18 +7,34 @@
           <div :class="advanced ? null: 'fold'">
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="标题"
+                label="订单编号"
                 :labelCol="{span: 4}"
                 :wrapperCol="{span: 18, offset: 2}">
-                <a-input v-model="queryParams.title"/>
+                <a-input v-model="queryParams.code"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="内容"
+                label="用户名称"
                 :labelCol="{span: 4}"
                 :wrapperCol="{span: 18, offset: 2}">
-                <a-input v-model="queryParams.content"/>
+                <a-input v-model="queryParams.userName"/>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="24">
+              <a-form-item
+                label="商品名称"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
+                <a-input v-model="queryParams.commodityName"/>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="24">
+              <a-form-item
+                label="商品类型"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
+                <a-input v-model="queryParams.typeName"/>
               </a-form-item>
             </a-col>
           </div>
@@ -70,12 +86,6 @@
         </template>
       </a-table>
     </div>
-    <order-add
-      v-if="orderAdd.visiable"
-      @close="handleorderAddClose"
-      @success="handleorderAddSuccess"
-      :orderAddVisiable="orderAdd.visiable">
-    </order-add>
     <order-edit
       ref="orderEdit"
       @close="handleorderEditClose"
@@ -87,7 +97,6 @@
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import orderAdd from './orderAdd.vue'
 import orderEdit from './orderEdit.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
@@ -95,7 +104,7 @@ moment.locale('zh-cn')
 
 export default {
   name: 'order',
-  components: {orderAdd, orderEdit, RangeDate},
+  components: {orderEdit, RangeDate},
   data () {
     return {
       advanced: false,
@@ -103,7 +112,8 @@ export default {
         visiable: false
       },
       orderEdit: {
-        visiable: false
+        visiable: false,
+        data: null
       },
       queryParams: {},
       filteredInfo: null,
@@ -129,18 +139,31 @@ export default {
     }),
     columns () {
       return [{
-        title: '标题',
-        dataIndex: 'title',
-        scopedSlots: { customRender: 'titleShow' },
-        width: 300
+        title: '订单编号',
+        dataIndex: 'code'
       }, {
-        title: '订单内容',
-        dataIndex: 'content',
-        scopedSlots: { customRender: 'contentShow' },
-        width: 600
+        title: '总价格',
+        dataIndex: 'totalPrice',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text + '元'
+          } else {
+            return '- -'
+          }
+        }
       }, {
-        title: '发布时间',
-        dataIndex: 'date',
+        title: '折后价格',
+        dataIndex: 'totalAfterPrice',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text + '元'
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '用户名称',
+        dataIndex: 'userName',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -149,8 +172,99 @@ export default {
           }
         }
       }, {
-        title: '上传人',
-        dataIndex: 'publisher',
+        title: '联系方式',
+        dataIndex: 'phone',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '商品名称',
+        dataIndex: 'commodityName',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '商品类型',
+        dataIndex: 'typeName',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '商品图片',
+        dataIndex: 'images',
+        customRender: (text, record, index) => {
+          if (!record.images) return <a-avatar shape="square" icon="user" />
+          return <a-popover>
+            <template slot="content">
+              <a-avatar shape="square" size={132} icon="user" src={ 'http://127.0.0.1:9527/imagesWeb/' + record.images.split(',')[0] } />
+            </template>
+            <a-avatar shape="square" icon="user" src={ 'http://127.0.0.1:9527/imagesWeb/' + record.images.split(',')[0] } />
+          </a-popover>
+        }
+      }, {
+        title: '商品状态',
+        dataIndex: 'payStatus',
+        customRender: (text, row, index) => {
+          switch (text) {
+            case 0:
+              return <a-tag color='green'>未支付</a-tag>
+            case 1:
+              return <a-tag color='pink'>已支付</a-tag>
+            case 2:
+              return <a-tag color='red'>正在发货</a-tag>
+            case 3:
+              return <a-tag color='red'>已发货</a-tag>
+            case 4:
+              return <a-tag color='red'>已收货</a-tag>
+            default:
+              return '- -'
+          }
+        }
+      }, {
+        title: '点击次数',
+        dataIndex: 'clickNum',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '价格',
+        dataIndex: 'price',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text + '元'
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '数量',
+        dataIndex: 'storeNum',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '发布时间',
+        dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text

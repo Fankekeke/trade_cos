@@ -15,10 +15,10 @@
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="内容"
+                label="用户名称"
                 :labelCol="{span: 4}"
                 :wrapperCol="{span: 18, offset: 2}">
-                <a-input v-model="queryParams.content"/>
+                <a-input v-model="queryParams.userName"/>
               </a-form-item>
             </a-col>
           </div>
@@ -70,32 +70,18 @@
         </template>
       </a-table>
     </div>
-    <reply-add
-      v-if="replyAdd.visiable"
-      @close="handlereplyAddClose"
-      @success="handlereplyAddSuccess"
-      :replyAddVisiable="replyAdd.visiable">
-    </reply-add>
-    <reply-edit
-      ref="replyEdit"
-      @close="handlereplyEditClose"
-      @success="handlereplyEditSuccess"
-      :replyEditVisiable="replyEdit.visiable">
-    </reply-edit>
   </a-card>
 </template>
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import replyAdd from './replyAdd.vue'
-import replyEdit from './replyEdit.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
   name: 'reply',
-  components: {replyAdd, replyEdit, RangeDate},
+  components: {RangeDate},
   data () {
     return {
       advanced: false,
@@ -129,18 +115,26 @@ export default {
     }),
     columns () {
       return [{
-        title: '标题',
-        dataIndex: 'title',
-        scopedSlots: { customRender: 'titleShow' },
-        width: 300
+        title: '用户编号',
+        dataIndex: 'code'
       }, {
-        title: '回复内容内容',
-        dataIndex: 'content',
-        scopedSlots: { customRender: 'contentShow' },
-        width: 600
+        title: '头像',
+        dataIndex: 'images',
+        customRender: (text, record, index) => {
+          if (!record.images) return <a-avatar shape="square" icon="user" />
+          return <a-popover>
+            <template slot="content">
+              <a-avatar shape="square" size={132} icon="user" src={ 'http://127.0.0.1:9527/imagesWeb/' + record.images.split(',')[0] } />
+            </template>
+            <a-avatar shape="square" icon="user" src={ 'http://127.0.0.1:9527/imagesWeb/' + record.images.split(',')[0] } />
+          </a-popover>
+        }
       }, {
-        title: '发布时间',
-        dataIndex: 'date',
+        title: '用户名称',
+        dataIndex: 'userName'
+      }, {
+        title: '联系方式',
+        dataIndex: 'phone',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -149,8 +143,38 @@ export default {
           }
         }
       }, {
-        title: '上传人',
-        dataIndex: 'publisher',
+        title: '商品名称',
+        dataIndex: 'commodityName',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '标题',
+        dataIndex: 'title',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '内容',
+        dataIndex: 'content',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '创建时间',
+        dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text

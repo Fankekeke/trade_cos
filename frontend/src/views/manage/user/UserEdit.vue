@@ -11,26 +11,58 @@
     <a-form :form="form" layout="vertical">
       <a-row :gutter="20">
         <a-col :span="12">
-          <a-form-item label='用户标题' v-bind="formItemLayout">
+          <a-form-item label='用户名称' v-bind="formItemLayout">
             <a-input v-decorator="[
-            'title',
-            { rules: [{ required: true, message: '请输入名称!' }] }
+            'name',
+            { rules: [{ required: true, message: '请输入用户名称!' }] }
             ]"/>
           </a-form-item>
         </a-col>
         <a-col :span="12">
-          <a-form-item label='上传人' v-bind="formItemLayout">
+          <a-form-item label='电子邮箱' v-bind="formItemLayout">
             <a-input v-decorator="[
-            'publisher',
-            { rules: [{ required: true, message: '请输入上传人!' }] }
+            'mail',
+            { rules: [{ required: true, message: '请输入电子邮箱!' }] }
             ]"/>
           </a-form-item>
         </a-col>
-        <a-col :span="24">
-          <a-form-item label='用户内容' v-bind="formItemLayout">
-            <a-textarea :rows="6" v-decorator="[
-            'content',
-             { rules: [{ required: true, message: '请输入名称!' }] }
+        <a-col :span="12">
+          <a-form-item label='联系方式' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'phone',
+            { rules: [{ required: true, message: '请输入联系方式!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='省份' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'province',
+            { rules: [{ required: true, message: '请输入省份!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='市区' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'city',
+            { rules: [{ required: true, message: '请输入市区!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='区' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'area',
+            { rules: [{ required: true, message: '请输入联系方式!' }] }
+            ]"/>
+          </a-form-item>
+        </a-col>
+        <a-col :span="12">
+          <a-form-item label='详细地址' v-bind="formItemLayout">
+            <a-input v-decorator="[
+            'address',
+            { rules: [{ required: true, message: '请输入详细地址!' }] }
             ]"/>
           </a-form-item>
         </a-col>
@@ -130,7 +162,7 @@ export default {
     },
     setFormValues ({...user}) {
       this.rowId = user.id
-      let fields = ['title', 'content', 'publisher']
+      let fields = ['name', 'mail', 'phone', 'province', 'city', 'area', 'address']
       let obj = {}
       Object.keys(user).forEach((key) => {
         if (key === 'images') {
