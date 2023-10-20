@@ -70,39 +70,39 @@
         </template>
       </a-table>
     </div>
-    <bulletin-add
-      v-if="bulletinAdd.visiable"
-      @close="handleBulletinAddClose"
-      @success="handleBulletinAddSuccess"
-      :bulletinAddVisiable="bulletinAdd.visiable">
-    </bulletin-add>
-    <bulletin-edit
-      ref="bulletinEdit"
-      @close="handleBulletinEditClose"
-      @success="handleBulletinEditSuccess"
-      :bulletinEditVisiable="bulletinEdit.visiable">
-    </bulletin-edit>
+    <reply-add
+      v-if="replyAdd.visiable"
+      @close="handlereplyAddClose"
+      @success="handlereplyAddSuccess"
+      :replyAddVisiable="replyAdd.visiable">
+    </reply-add>
+    <reply-edit
+      ref="replyEdit"
+      @close="handlereplyEditClose"
+      @success="handlereplyEditSuccess"
+      :replyEditVisiable="replyEdit.visiable">
+    </reply-edit>
   </a-card>
 </template>
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import BulletinAdd from './BulletinAdd.vue'
-import BulletinEdit from './BulletinEdit.vue'
+import replyAdd from './replyAdd.vue'
+import replyEdit from './replyEdit.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
-  name: 'Bulletin',
-  components: {BulletinAdd, BulletinEdit, RangeDate},
+  name: 'reply',
+  components: {replyAdd, replyEdit, RangeDate},
   data () {
     return {
       advanced: false,
-      bulletinAdd: {
+      replyAdd: {
         visiable: false
       },
-      bulletinEdit: {
+      replyEdit: {
         visiable: false
       },
       queryParams: {},
@@ -134,7 +134,7 @@ export default {
         scopedSlots: { customRender: 'titleShow' },
         width: 300
       }, {
-        title: '公告内容',
+        title: '回复内容内容',
         dataIndex: 'content',
         scopedSlots: { customRender: 'contentShow' },
         width: 600
@@ -176,26 +176,26 @@ export default {
       this.advanced = !this.advanced
     },
     add () {
-      this.bulletinAdd.visiable = true
+      this.replyAdd.visiable = true
     },
-    handleBulletinAddClose () {
-      this.bulletinAdd.visiable = false
+    handlereplyAddClose () {
+      this.replyAdd.visiable = false
     },
-    handleBulletinAddSuccess () {
-      this.bulletinAdd.visiable = false
-      this.$message.success('新增公告成功')
+    handlereplyAddSuccess () {
+      this.replyAdd.visiable = false
+      this.$message.success('新增回复内容成功')
       this.search()
     },
     edit (record) {
-      this.$refs.bulletinEdit.setFormValues(record)
-      this.bulletinEdit.visiable = true
+      this.$refs.replyEdit.setFormValues(record)
+      this.replyEdit.visiable = true
     },
-    handleBulletinEditClose () {
-      this.bulletinEdit.visiable = false
+    handlereplyEditClose () {
+      this.replyEdit.visiable = false
     },
-    handleBulletinEditSuccess () {
-      this.bulletinEdit.visiable = false
-      this.$message.success('修改公告成功')
+    handlereplyEditSuccess () {
+      this.replyEdit.visiable = false
+      this.$message.success('修改回复内容成功')
       this.search()
     },
     handleDeptChange (value) {
@@ -213,7 +213,7 @@ export default {
         centered: true,
         onOk () {
           let ids = that.selectedRowKeys.join(',')
-          that.$delete('/cos/bulletin-info/' + ids).then(() => {
+          that.$delete('/cos/reply-info/' + ids).then(() => {
             that.$message.success('删除成功')
             that.selectedRowKeys = []
             that.search()
@@ -283,7 +283,7 @@ export default {
         params.size = this.pagination.defaultPageSize
         params.current = this.pagination.defaultCurrent
       }
-      this.$get('/cos/bulletin-info/page', {
+      this.$get('/cos/reply-info/page', {
         ...params
       }).then((r) => {
         let data = r.data.data

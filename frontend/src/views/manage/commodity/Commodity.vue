@@ -7,6 +7,22 @@
           <div :class="advanced ? null: 'fold'">
             <a-col :md="6" :sm="24">
               <a-form-item
+                label="用户名称"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
+                <a-input v-model="queryParams.userName"/>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="24">
+              <a-form-item
+                label="商品类型"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
+                <a-input v-model="queryParams.typeName"/>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="24">
+              <a-form-item
                 label="标题"
                 :labelCol="{span: 4}"
                 :wrapperCol="{span: 18, offset: 2}">
@@ -15,10 +31,14 @@
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="内容"
+                label="商品状态"
                 :labelCol="{span: 4}"
                 :wrapperCol="{span: 18, offset: 2}">
-                <a-input v-model="queryParams.content"/>
+                <a-select v-model="queryParams.status">
+                  <a-select-option value='0'>上架</a-select-option>
+                  <a-select-option value='1'>下架</a-select-option>
+                  <a-select-option value='2'>售出</a-select-option>
+                </a-select>
               </a-form-item>
             </a-col>
           </div>
@@ -129,18 +149,14 @@ export default {
     }),
     columns () {
       return [{
-        title: '标题',
-        dataIndex: 'title',
-        scopedSlots: { customRender: 'titleShow' },
-        width: 300
+        title: '卖家编号',
+        dataIndex: 'code'
       }, {
-        title: '公告内容',
-        dataIndex: 'content',
-        scopedSlots: { customRender: 'contentShow' },
-        width: 600
+        title: '卖家名称',
+        dataIndex: 'userName'
       }, {
-        title: '发布时间',
-        dataIndex: 'date',
+        title: '联系方式',
+        dataIndex: 'phone',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -149,8 +165,95 @@ export default {
           }
         }
       }, {
-        title: '上传人',
-        dataIndex: 'publisher',
+        title: '标题',
+        dataIndex: 'title',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '商品名称',
+        dataIndex: 'commodityName',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '商品类型',
+        dataIndex: 'typeName',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '商品图片',
+        dataIndex: 'images',
+        customRender: (text, record, index) => {
+          if (!record.images) return <a-avatar shape="square" icon="user" />
+          return <a-popover>
+            <template slot="content">
+              <a-avatar shape="square" size={132} icon="user" src={ 'http://127.0.0.1:9527/imagesWeb/' + record.images.split(',')[0] } />
+            </template>
+            <a-avatar shape="square" icon="user" src={ 'http://127.0.0.1:9527/imagesWeb/' + record.images.split(',')[0] } />
+          </a-popover>
+        }
+      }, {
+        title: '商品状态',
+        dataIndex: 'status',
+        customRender: (text, row, index) => {
+          switch (text) {
+            case 0:
+              return <a-tag color='green'>上架</a-tag>
+            case 1:
+              return <a-tag color='pink'>下架</a-tag>
+            case 2:
+              return <a-tag color='red'>出售</a-tag>
+            default:
+              return '- -'
+          }
+        }
+      }, {
+        title: '点击次数',
+        dataIndex: 'clickNum',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '价格',
+        dataIndex: 'price',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text + '元'
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '数量',
+        dataIndex: 'storeNum',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '发布时间',
+        dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -178,12 +281,12 @@ export default {
     add () {
       this.commodityAdd.visiable = true
     },
-    handlecommodityAddClose () {
+    handlecommodityAddClose () {false
       this.commodityAdd.visiable = false
     },
     handlecommodityAddSuccess () {
       this.commodityAdd.visiable = false
-      this.$message.success('新增公告成功')
+      this.$message.success('新增商品成功')
       this.search()
     },
     edit (record) {
@@ -195,7 +298,7 @@ export default {
     },
     handlecommodityEditSuccess () {
       this.commodityEdit.visiable = false
-      this.$message.success('修改公告成功')
+      this.$message.success('修改商品成功')
       this.search()
     },
     handleDeptChange (value) {

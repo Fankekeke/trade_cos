@@ -70,39 +70,39 @@
         </template>
       </a-table>
     </div>
-    <bulletin-add
-      v-if="bulletinAdd.visiable"
-      @close="handleBulletinAddClose"
-      @success="handleBulletinAddSuccess"
-      :bulletinAddVisiable="bulletinAdd.visiable">
-    </bulletin-add>
-    <bulletin-edit
-      ref="bulletinEdit"
-      @close="handleBulletinEditClose"
-      @success="handleBulletinEditSuccess"
-      :bulletinEditVisiable="bulletinEdit.visiable">
-    </bulletin-edit>
+    <pattern-add
+      v-if="patternAdd.visiable"
+      @close="handlepatternAddClose"
+      @success="handlepatternAddSuccess"
+      :patternAddVisiable="patternAdd.visiable">
+    </pattern-add>
+    <pattern-edit
+      ref="patternEdit"
+      @close="handlepatternEditClose"
+      @success="handlepatternEditSuccess"
+      :patternEditVisiable="patternEdit.visiable">
+    </pattern-edit>
   </a-card>
 </template>
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import BulletinAdd from './BulletinAdd.vue'
-import BulletinEdit from './BulletinEdit.vue'
+import patternAdd from './patternAdd.vue'
+import patternEdit from './patternEdit.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
-  name: 'Bulletin',
-  components: {BulletinAdd, BulletinEdit, RangeDate},
+  name: 'pattern',
+  components: {patternAdd, patternEdit, RangeDate},
   data () {
     return {
       advanced: false,
-      bulletinAdd: {
+      patternAdd: {
         visiable: false
       },
-      bulletinEdit: {
+      patternEdit: {
         visiable: false
       },
       queryParams: {},
@@ -134,7 +134,7 @@ export default {
         scopedSlots: { customRender: 'titleShow' },
         width: 300
       }, {
-        title: '公告内容',
+        title: '商品类型内容',
         dataIndex: 'content',
         scopedSlots: { customRender: 'contentShow' },
         width: 600
@@ -176,26 +176,26 @@ export default {
       this.advanced = !this.advanced
     },
     add () {
-      this.bulletinAdd.visiable = true
+      this.patternAdd.visiable = true
     },
-    handleBulletinAddClose () {
-      this.bulletinAdd.visiable = false
+    handlepatternAddClose () {
+      this.patternAdd.visiable = false
     },
-    handleBulletinAddSuccess () {
-      this.bulletinAdd.visiable = false
-      this.$message.success('新增公告成功')
+    handlepatternAddSuccess () {
+      this.patternAdd.visiable = false
+      this.$message.success('新增商品类型成功')
       this.search()
     },
     edit (record) {
-      this.$refs.bulletinEdit.setFormValues(record)
-      this.bulletinEdit.visiable = true
+      this.$refs.patternEdit.setFormValues(record)
+      this.patternEdit.visiable = true
     },
-    handleBulletinEditClose () {
-      this.bulletinEdit.visiable = false
+    handlepatternEditClose () {
+      this.patternEdit.visiable = false
     },
-    handleBulletinEditSuccess () {
-      this.bulletinEdit.visiable = false
-      this.$message.success('修改公告成功')
+    handlepatternEditSuccess () {
+      this.patternEdit.visiable = false
+      this.$message.success('修改商品类型成功')
       this.search()
     },
     handleDeptChange (value) {
@@ -213,7 +213,7 @@ export default {
         centered: true,
         onOk () {
           let ids = that.selectedRowKeys.join(',')
-          that.$delete('/cos/bulletin-info/' + ids).then(() => {
+          that.$delete('/cos/pattern-info/' + ids).then(() => {
             that.$message.success('删除成功')
             that.selectedRowKeys = []
             that.search()
@@ -283,7 +283,7 @@ export default {
         params.size = this.pagination.defaultPageSize
         params.current = this.pagination.defaultCurrent
       }
-      this.$get('/cos/bulletin-info/page', {
+      this.$get('/cos/pattern-info/page', {
         ...params
       }).then((r) => {
         let data = r.data.data

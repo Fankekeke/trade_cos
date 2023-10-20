@@ -1,5 +1,5 @@
 <template>
-  <a-modal v-model="show" title="新增公告" @cancel="onClose" :width="800">
+  <a-modal v-model="show" title="新增商品类型" @cancel="onClose" :width="800">
     <template slot="footer">
       <a-button key="back" @click="onClose">
         取消
@@ -11,7 +11,7 @@
     <a-form :form="form" layout="vertical">
       <a-row :gutter="20">
         <a-col :span="12">
-          <a-form-item label='公告标题' v-bind="formItemLayout">
+          <a-form-item label='商品类型标题' v-bind="formItemLayout">
             <a-input v-decorator="[
             'title',
             { rules: [{ required: true, message: '请输入名称!' }] }
@@ -27,7 +27,7 @@
           </a-form-item>
         </a-col>
         <a-col :span="24">
-          <a-form-item label='公告内容' v-bind="formItemLayout">
+          <a-form-item label='商品类型内容' v-bind="formItemLayout">
             <a-textarea :rows="6" v-decorator="[
             'content',
              { rules: [{ required: true, message: '请输入名称!' }] }
@@ -76,9 +76,9 @@ const formItemLayout = {
   wrapperCol: { span: 24 }
 }
 export default {
-  name: 'BulletinAdd',
+  name: 'patternAdd',
   props: {
-    bulletinAddVisiable: {
+    patternAddVisiable: {
       default: false
     }
   },
@@ -88,7 +88,7 @@ export default {
     }),
     show: {
       get: function () {
-        return this.bulletinAddVisiable
+        return this.patternAddVisiable
       },
       set: function () {
       }
@@ -136,7 +136,7 @@ export default {
         values.images = images.length > 0 ? images.join(',') : null
         if (!err) {
           this.loading = true
-          this.$post('/cos/bulletin-info', {
+          this.$post('/cos/pattern-info', {
             ...values
           }).then((r) => {
             this.reset()
