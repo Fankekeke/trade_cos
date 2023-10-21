@@ -70,12 +70,6 @@
         </template>
       </a-table>
     </div>
-    <evaluate-add
-      v-if="evaluateAdd.visiable"
-      @close="handleevaluateAddClose"
-      @success="handleevaluateAddSuccess"
-      :evaluateAddVisiable="evaluateAdd.visiable">
-    </evaluate-add>
     <evaluate-edit
       ref="evaluateEdit"
       @close="handleevaluateEditClose"
@@ -87,15 +81,14 @@
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import evaluateAdd from './evaluateAdd.vue'
-import evaluateEdit from './evaluateEdit.vue'
+import evaluateEdit from './EvaluateEdit.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
   name: 'evaluate',
-  components: {evaluateAdd, evaluateEdit, RangeDate},
+  components: {evaluateEdit, RangeDate},
   data () {
     return {
       advanced: false,

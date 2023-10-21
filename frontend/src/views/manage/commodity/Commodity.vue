@@ -86,6 +86,8 @@
           </template>
         </template>
         <template slot="operation" slot-scope="text, record">
+          <a-icon v-if="record.status == 1" type="caret-down" @click="audit(record.id, 0)" title="上 架" style="margin-right: 10px"></a-icon>
+          <a-icon v-if="record.status == 0" type="caret-up" @click="audit(record.id, 1)" title="下 架" style="margin-right: 10px"></a-icon>
           <a-icon type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="修 改"></a-icon>
         </template>
       </a-table>
@@ -176,7 +178,7 @@ export default {
         }
       }, {
         title: '商品名称',
-        dataIndex: 'commodityName',
+        dataIndex: 'name',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -253,7 +255,7 @@ export default {
         }
       }, {
         title: '发布时间',
-        dataIndex: 'createDate',
+        dataIndex: 'createTime',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -272,6 +274,12 @@ export default {
     this.fetch()
   },
   methods: {
+    audit (id, status) {
+      this.$get('/cos/commodity-info/audit', {id, status}).then((r) => {
+        this.$message.success('修改成功')
+        this.search()
+      })
+    },
     onSelectChange (selectedRowKeys) {
       this.selectedRowKeys = selectedRowKeys
     },

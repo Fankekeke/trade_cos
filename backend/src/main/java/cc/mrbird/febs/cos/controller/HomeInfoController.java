@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -23,44 +24,43 @@ public class HomeInfoController {
 
     private final IHomeInfoService homeInfoService;
 
-    /**
-     * 分页获取首页图片信息
-     *
-     * @param page     分页对象
-     * @param homeInfo 首页图片信息
-     * @return 结果
-     */
-    @GetMapping("/page")
-    public R page(Page<HomeInfo> page, HomeInfo homeInfo) {
-        return R.ok();
+    @GetMapping("/data")
+    public R getHomeData() {
+        LinkedHashMap<String, Object> result = new LinkedHashMap<String, Object>() {
+            {
+                put("home", homeInfoService.getById(1));
+            }
+        };
+        return R.ok(result);
+    }
+
+    @GetMapping("/detail")
+    public R getHome() {
+        return R.ok(homeInfoService.getById(1));
     }
 
     /**
-     * 获取首页图片信息
+     * 分页查询首页信息
      *
-     * @return 结果
+     * @param page
+     * @param homeInfo
+     * @return
      */
+    @GetMapping("/page")
+    public R page(Page page, HomeInfo homeInfo) {
+        return R.ok();
+    }
+
     @GetMapping("/list")
     public R list() {
         return R.ok(homeInfoService.list());
     }
 
     /**
-     * 获取首页图片详细信息
+     * 新增首页信息
      *
-     * @param id ID
-     * @return 结果
-     */
-    @GetMapping("/detail/{id}")
-    public R detail(@PathVariable("id") Integer id) {
-        return R.ok(homeInfoService.getById(id));
-    }
-
-    /**
-     * 新增首页图片信息
-     *
-     * @param homeInfo 首页图片信息
-     * @return 结果
+     * @param homeInfo
+     * @return
      */
     @PostMapping
     public R save(HomeInfo homeInfo) {
@@ -68,21 +68,22 @@ public class HomeInfoController {
     }
 
     /**
-     * 修改首页图片信息
+     * 修改首页信息
      *
-     * @param homeInfo 首页图片信息
-     * @return 结果
+     * @param homeInfo
+     * @return
      */
     @PutMapping
     public R edit(HomeInfo homeInfo) {
+        homeInfo.setId(1);
         return R.ok(homeInfoService.updateById(homeInfo));
     }
 
     /**
-     * 删除首页图片信息
+     * 删除首页信息
      *
-     * @param ids 主键IDS
-     * @return 结果
+     * @param ids
+     * @return
      */
     @DeleteMapping("/{ids}")
     public R deleteByIds(@PathVariable("ids") List<Integer> ids) {

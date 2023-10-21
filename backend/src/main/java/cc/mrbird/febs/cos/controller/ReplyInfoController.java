@@ -2,8 +2,10 @@ package cc.mrbird.febs.cos.controller;
 
 
 import cc.mrbird.febs.common.utils.R;
+import cc.mrbird.febs.cos.entity.CommodityInfo;
 import cc.mrbird.febs.cos.entity.ReplyInfo;
 import cc.mrbird.febs.cos.entity.UserInfo;
+import cc.mrbird.febs.cos.service.ICommodityInfoService;
 import cc.mrbird.febs.cos.service.IReplyInfoService;
 import cc.mrbird.febs.cos.service.IUserInfoService;
 import cn.hutool.core.date.DateUtil;
@@ -28,6 +30,8 @@ public class ReplyInfoController {
 
     private final IUserInfoService userInfoService;
 
+    private final ICommodityInfoService commodityInfoService;
+
     /**
      * 分页获取消息回复信息
      *
@@ -38,6 +42,17 @@ public class ReplyInfoController {
     @GetMapping("/page")
     public R page(Page<ReplyInfo> page, ReplyInfo replyInfo) {
         return R.ok(replyInfoService.selectReplyPage(page, replyInfo));
+    }
+
+    /**
+     * 获取具体的帖子回复信息
+     *
+     * @param commodityId 商品ID
+     * @return 结果
+     */
+    @GetMapping("/list/{id}")
+    public R replyListByPostId(@PathVariable(value = "id") Integer commodityId) {
+        return R.ok(replyInfoService.replyListByPostId(commodityId));
     }
 
     /**

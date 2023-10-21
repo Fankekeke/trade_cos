@@ -97,7 +97,7 @@
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import orderEdit from './orderEdit.vue'
+import orderEdit from './OrderEdit.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')

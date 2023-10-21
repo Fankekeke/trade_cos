@@ -32,7 +32,7 @@ public class CollectInfoController {
     /**
      * 分页获取收藏信息
      *
-     * @param page         分页对象
+     * @param page        分页对象
      * @param collectInfo 收藏信息
      * @return 结果
      */

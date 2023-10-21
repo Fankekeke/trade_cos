@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 
 /**
  * @author FanK
@@ -21,4 +22,12 @@ public interface ReplyInfoMapper extends BaseMapper<ReplyInfo> {
      * @return 结果
      */
     IPage<LinkedHashMap<String, Object>> selectReplyPage(Page<ReplyInfo> page, @Param("replyInfo") ReplyInfo replyInfo);
+
+    /**
+     * 获取具体的帖子回复信息
+     *
+     * @param commodityId 商品ID
+     * @return 结果
+     */
+    List<LinkedHashMap<String, Object>> replyListByPostId(@Param("commodityId") Integer commodityId);
 }

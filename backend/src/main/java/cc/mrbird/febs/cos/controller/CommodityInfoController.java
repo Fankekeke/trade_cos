@@ -41,6 +41,16 @@ public class CommodityInfoController {
     }
 
     /**
+     * 更新状态
+     *
+     * @return 结果
+     */
+    @GetMapping("/audit")
+    public R audit(@RequestParam("id") Integer id, @RequestParam("status") Integer status) {
+        return R.ok(commodityInfoService.update(Wrappers.<CommodityInfo>lambdaUpdate().set(CommodityInfo::getStatus, status).eq(CommodityInfo::getId, id)));
+    }
+
+    /**
      * 获取商品信息
      *
      * @return 结果

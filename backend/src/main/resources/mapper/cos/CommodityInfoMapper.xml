@@ -26,7 +26,7 @@
         ui.code,
         ui.name as userName,
         ui.phone,
-        ct.name as typeName,
+        ct.name as typeName
         from
         commodity_info coi
         left join user_info ui on

@@ -68,17 +68,17 @@
             ]"/>
           </a-form-item>
         </a-col>
-        <a-col :span="24">
+        <a-col :span="12">
           <a-form-item label='商品价格' v-bind="formItemLayout">
-            <a-input-number v-decorator="[
+            <a-input-number style="width: 100%" v-decorator="[
             'price',
              { rules: [{ required: true, message: '请输入商品价格!' }] }
             ]" :min="1" :max="99999" :step="0.1" />
           </a-form-item>
         </a-col>
-        <a-col :span="24">
+        <a-col :span="12">
           <a-form-item label='数量' v-bind="formItemLayout">
-            <a-input-number v-decorator="[
+            <a-input-number style="width: 100%" v-decorator="[
             'storeNum',
              { rules: [{ required: true, message: '请输入数量!' }] }
             ]" :min="1" :max="999" />

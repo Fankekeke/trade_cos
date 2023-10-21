@@ -14,22 +14,50 @@
         ci.title,
         ci.name as commodityName,
         ui.code,
-        ui.name as username,
+        ui.name as userName,
+        ui.phone,
         ui.images
         FROM
         reply_info ri
         LEFT JOIN commodity_info ci on
         (ci.id = ri.commodity_id)
-        LEFT JOIN user_info ui ON (ui.user_id = tu.USER_ID)
+        LEFT JOIN user_info ui ON (ui.id = ri.user_id)
         WHERE
-        ri.delete_flag = 0
+        ri.del_flag = 0
         <if test="replyInfo.title != null and replyInfo.title != ''">
             AND ci.title LIKE CONCAT('%',#{replyInfo.title},'%')
         </if>
         <if test="replyInfo.userName != null and replyInfo.userName != ''">
             AND ui.name LIKE CONCAT('%',#{replyInfo.userName},'%')
         </if>
-        ORDER BY ri.send_create DESC
+        ORDER BY ri.create_date DESC
     </select>
 
+    <!-- 获取具体的帖子回复信息 -->
+    <select id="replyListByPostId" resultType="java.util.LinkedHashMap">
+        SELECT
+            ri.id,
+            ri.user_id AS userId,
+            ri.content,
+            ri.post_id AS postId,
+            ri.reply_user_id replyUserId,
+            ri.send_create AS sendCreate,
+            pi.title,
+            tu.AVATAR AS avatar,
+            ui.name as username,
+            ui.images,
+            ui1.name as replyUserName
+        FROM
+            reply_info ri
+                LEFT JOIN post_info pi ON ( ri.post_id = pi.id )
+                LEFT JOIN t_user tu ON ( tu.USER_ID = ri.user_id )
+                LEFT JOIN t_user tu1 ON ( tu1.USER_ID = ri.reply_user_id )
+                LEFT JOIN user_info ui ON (ui.user_id = tu.USER_ID)
+                LEFT JOIN user_info ui1 ON (ui1.user_id = tu1.USER_ID)
+        WHERE
+            ri.delete_flag = 0
+          AND ri.post_id = #{ postId }
+        ORDER BY
+            ri.send_create ASC
+    </select>
 </mapper>
