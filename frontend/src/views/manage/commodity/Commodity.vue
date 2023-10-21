@@ -88,7 +88,8 @@
         <template slot="operation" slot-scope="text, record">
           <a-icon v-if="record.status == 1" type="caret-down" @click="audit(record.id, 0)" title="上 架" style="margin-right: 10px"></a-icon>
           <a-icon v-if="record.status == 0" type="caret-up" @click="audit(record.id, 1)" title="下 架" style="margin-right: 10px"></a-icon>
-          <a-icon type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="修 改"></a-icon>
+          <a-icon type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="修 改" style="margin-right: 10px"></a-icon>
+          <a-icon type="cloud" @click="handlecommodityViewOpen(record)" title="详 情"></a-icon>
         </template>
       </a-table>
     </div>
@@ -104,6 +105,11 @@
       @success="handlecommodityEditSuccess"
       :commodityEditVisiable="commodityEdit.visiable">
     </commodity-edit>
+    <commodity-view
+      @close="handlecommodityViewClose"
+      :commodityShow="commodityView.visiable"
+      :commodityData="commodityView.data">
+    </commodity-view>
   </a-card>
 </template>
 
@@ -111,13 +117,14 @@
 import RangeDate from '@/components/datetime/RangeDate'
 import commodityAdd from './CommodityAdd.vue'
 import commodityEdit from './CommodityEdit.vue'
+import commodityView from './CommodityView.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
   name: 'commodity',
-  components: {commodityAdd, commodityEdit, RangeDate},
+  components: {commodityAdd, commodityEdit, commodityView, RangeDate},
   data () {
     return {
       advanced: false,
@@ -126,6 +133,10 @@ export default {
       },
       commodityEdit: {
         visiable: false
+      },
+      commodityView: {
+        visiable: false,
+        data: null
       },
       queryParams: {},
       filteredInfo: null,
@@ -274,6 +285,13 @@ export default {
     this.fetch()
   },
   methods: {
+    handlecommodityViewOpen (record) {
+      this.commodityView.data = record
+      this.commodityView.visiable = true
+    },
+    handlecommodityViewClose () {
+      this.commodityView.visiable = false
+    },
     audit (id, status) {
       this.$get('/cos/commodity-info/audit', {id, status}).then((r) => {
         this.$message.success('修改成功')

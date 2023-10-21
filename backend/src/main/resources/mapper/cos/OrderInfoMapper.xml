@@ -24,11 +24,13 @@
         coi.name as commodityName,
         ct.name as typeName,
         coi.images,
+        coi.price,
+        coi.store_num,
         ei.id as evaluateId
         from
         order_info oi
         left join user_info ui on
-        (ui.user_id = oi.buy_user_id)
+        (ui.id = oi.buy_user_id)
         left join commodity_info coi on
         (coi.id = oi.commodity_id)
         left join commodity_type ct on
@@ -37,8 +39,11 @@
         (ei.order_id = oi.id)
         where
         1 = 1
-        <if test="orderInfo.userId != null and orderInfo.userId != ''">
-            AND ui.user_id = #{orderInfo.userId}
+        <if test="orderInfo.buyUserId != null and orderInfo.buyUserId != ''">
+            AND ui.user_id = #{orderInfo.buyUserId}
+        </if>
+        <if test="orderInfo.sellUserId != null and orderInfo.sellUserId != ''">
+            AND ui.user_id = #{orderInfo.sellUserId}
         </if>
         <if test="orderInfo.code != null and orderInfo.code != ''">
             AND oi.code LIKE CONCAT('%',#{orderInfo.code},'%')

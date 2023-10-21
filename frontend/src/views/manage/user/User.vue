@@ -149,7 +149,7 @@ export default {
         dataIndex: 'code'
       }, {
         title: '用户名称',
-        dataIndex: 'userName'
+        dataIndex: 'name'
       }, {
         title: '联系方式',
         dataIndex: 'phone',

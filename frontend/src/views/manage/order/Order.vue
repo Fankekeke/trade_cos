@@ -233,16 +233,6 @@ export default {
           }
         }
       }, {
-        title: '点击次数',
-        dataIndex: 'clickNum',
-        customRender: (text, row, index) => {
-          if (text !== null) {
-            return text
-          } else {
-            return '- -'
-          }
-        }
-      }, {
         title: '价格',
         dataIndex: 'price',
         customRender: (text, row, index) => {
