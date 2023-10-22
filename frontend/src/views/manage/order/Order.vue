@@ -82,6 +82,7 @@
           </template>
         </template>
         <template slot="operation" slot-scope="text, record">
+          <a-icon type="file-search" @click="orderViewOpen(record)" title="详 情" style="margin-right: 10px"></a-icon>
           <a-icon type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="修 改"></a-icon>
         </template>
       </a-table>
@@ -92,19 +93,25 @@
       @success="handleorderEditSuccess"
       :orderEditVisiable="orderEdit.visiable">
     </order-edit>
+    <order-view
+      @close="handleorderViewClose"
+      :orderShow="orderView.visiable"
+      :orderData="orderView.data">
+    </order-view>
   </a-card>
 </template>
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
 import orderEdit from './OrderEdit.vue'
+import orderView from './OrderView'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
   name: 'order',
-  components: {orderEdit, RangeDate},
+  components: {orderEdit, orderView, RangeDate},
   data () {
     return {
       advanced: false,
@@ -112,6 +119,10 @@ export default {
         visiable: false
       },
       orderEdit: {
+        visiable: false,
+        data: null
+      },
+      orderView: {
         visiable: false,
         data: null
       },
@@ -273,6 +284,13 @@ export default {
     this.fetch()
   },
   methods: {
+    orderViewOpen (row) {
+      this.orderView.data = row
+      this.orderView.visiable = true
+    },
+    handleorderViewClose () {
+      this.orderView.visiable = false
+    },
     onSelectChange (selectedRowKeys) {
       this.selectedRowKeys = selectedRowKeys
     },

@@ -2,17 +2,21 @@ package cc.mrbird.febs.cos.controller;
 
 
 import cc.mrbird.febs.common.utils.R;
+import cc.mrbird.febs.cos.entity.LogisticsInfo;
 import cc.mrbird.febs.cos.entity.OrderInfo;
 import cc.mrbird.febs.cos.entity.UserInfo;
 import cc.mrbird.febs.cos.service.IOrderInfoService;
 import cc.mrbird.febs.cos.service.IUserInfoService;
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -51,6 +55,23 @@ public class OrderInfoController {
     }
 
     /**
+     * 根据订单查询物流
+     *
+     * @param orderId 订单ID
+     * @return 结果
+     */
+    @GetMapping("/logistics/{orderId}")
+    public R selectLogistics(@PathVariable("orderId") Integer orderId) {
+        OrderInfo orderInfo = orderInfoService.getById(orderId);
+        if (StrUtil.isNotEmpty(orderInfo.getLogistics())) {
+            List<LogisticsInfo> logisticsList = JSONUtil.toList(orderInfo.getLogistics(), LogisticsInfo.class);
+            return R.ok(logisticsList);
+        } else {
+            return R.ok(Collections.emptyList());
+        }
+    }
+
+    /**
      * 获取订单订单详细信息
      *
      * @param id ID
@@ -58,7 +79,7 @@ public class OrderInfoController {
      */
     @GetMapping("/detail/{id}")
     public R detail(@PathVariable("id") Integer id) {
-        return R.ok(orderInfoService.getById(id));
+        return R.ok(orderInfoService.detail(id));
     }
 
     /**
@@ -74,7 +95,7 @@ public class OrderInfoController {
         if (user != null) {
             orderInfo.setBuyUserId(user.getId());
         }
-        orderInfo.setCode("OR-" +System.currentTimeMillis());
+        orderInfo.setCode("OR-" + System.currentTimeMillis());
         orderInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
         return R.ok(orderInfoService.save(orderInfo));
     }

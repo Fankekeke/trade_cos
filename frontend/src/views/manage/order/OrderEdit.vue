@@ -7,9 +7,6 @@
       <a-button key="submit" type="primary" :loading="loading" @click="handleSubmit">
         修改
       </a-button>
-      <a-button key="submit1" @click="receipt">
-        收货
-      </a-button>
     </template>
     <div style="font-size: 13px;font-family: SimHei">
       <a-row style="padding-left: 24px;padding-right: 24px;">
@@ -90,8 +87,8 @@ export default {
   },
   methods: {
     selectLogistics (orderId) {
-      this.$get(`/cos/purchase-info/detail/${orderId}`).then((r) => {
-        this.logisticsList = r.data.logistics
+      this.$get(`/cos/order-info/logistics/${orderId}`).then((r) => {
+        this.logisticsList = r.data.data
       })
     },
     handleCancel () {
@@ -121,6 +118,7 @@ export default {
       this.selectLogistics(order.id)
     },
     reset () {
+      this.remark = ''
       this.loading = false
       this.form.resetFields()
     },
@@ -143,7 +141,7 @@ export default {
         if (!err) {
           this.loading = true
           this.logisticsList.push({remark: this.remark, createDate: new Date()})
-          this.$put('/cos/purchase-info', {
+          this.$put('/cos/order-info', {
             'id': this.rowId,
             'logistics': JSON.stringify(this.logisticsList)
           }).then((r) => {

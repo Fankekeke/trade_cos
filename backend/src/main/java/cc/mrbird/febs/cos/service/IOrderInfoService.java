@@ -21,4 +21,12 @@ public interface IOrderInfoService extends IService<OrderInfo> {
      * @return 结果
      */
     IPage<LinkedHashMap<String, Object>> selectOrderPage(Page<OrderInfo> page, OrderInfo orderInfo);
+
+    /**
+     * 获取订单订单详细信息
+     *
+     * @param orderId ID
+     * @return 结果
+     */
+    LinkedHashMap<String, Object> detail(Integer orderId);
 }
