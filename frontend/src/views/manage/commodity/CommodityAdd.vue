@@ -61,14 +61,6 @@
           </a-form-item>
         </a-col>
         <a-col :span="12">
-          <a-form-item label='成色状态' v-bind="formItemLayout">
-            <a-input v-decorator="[
-            'quality',
-            { rules: [{ required: true, message: '请输入成色状态!' }] }
-            ]"/>
-          </a-form-item>
-        </a-col>
-        <a-col :span="12">
           <a-form-item label='商品价格' v-bind="formItemLayout">
             <a-input-number style="width: 100%" v-decorator="[
             'price',

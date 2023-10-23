@@ -27,7 +27,7 @@
               <a-col :span="24">
                 <a-form-item label='电子邮箱' v-bind="formItemLayout">
                   <a-input v-decorator="[
-                  'phone',
+                  'mail',
                   { rules: [{ required: true, message: '请输入电子邮箱!' }] }
                   ]"/>
                 </a-form-item>
@@ -62,6 +62,28 @@
                   'province',
                   { rules: [{ required: true, message: '请输入省份!' }] }
                   ]"/>
+                </a-form-item>
+              </a-col>
+              <a-col :span="24">
+                <a-form-item label='头像' v-bind="formItemLayout">
+                  <a-upload
+                    name="avatar"
+                    action="http://127.0.0.1:9527/file/fileUpload/"
+                    list-type="picture-card"
+                    :file-list="fileList"
+                    @preview="handlePreview"
+                    @change="picHandleChange"
+                  >
+                    <div v-if="fileList.length < 1">
+                      <a-icon type="plus" />
+                      <div class="ant-upload-text">
+                        Upload
+                      </div>
+                    </div>
+                  </a-upload>
+                  <a-modal :visible="previewVisible" :footer="null" @cancel="handleCancel">
+                    <img alt="example" style="width: 100%" :src="previewImage" />
+                  </a-modal>
                 </a-form-item>
               </a-col>
               <a-col :span="24">
@@ -105,6 +127,14 @@
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
+function getBase64 (file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.onload = () => resolve(reader.result)
+    reader.onerror = error => reject(error)
+  })
+}
 const formItemLayout = {
   labelCol: { span: 24 },
   wrapperCol: { span: 24 }
@@ -123,7 +153,10 @@ export default {
       form: this.$form.createForm(this),
       loading: false,
       courseInfo: [],
-      dataLoading: false
+      dataLoading: false,
+      fileList: [],
+      previewVisible: false,
+      previewImage: ''
     }
   },
   mounted () {
@@ -143,7 +176,7 @@ export default {
       let listData = []
       this.courseInfo.forEach(item => {
         if ((moment(value).format('YYYY-MM-DD')) === (moment(item.createDate).format('YYYY-MM-DD'))) {
-          listData.push({type: 'success', content: item.remark})
+          listData.push({type: 'none', content: item.code})
         }
       })
       return listData || []
@@ -166,15 +199,48 @@ export default {
           this.form.getFieldDecorator(key)
           obj[key] = student[key]
         }
-        if (key === 'sex' && student[key] !== null) {
-          obj[key] = student[key].toString()
+        if (key === 'images') {
+          this.fileList = []
+          this.imagesInit(student['images'])
         }
       })
       this.form.setFieldsValue(obj)
     },
+    handleCancel () {
+      this.previewVisible = false
+    },
+    async handlePreview (file) {
+      if (!file.url && !file.preview) {
+        file.preview = await getBase64(file.originFileObj)
+      }
+      this.previewImage = file.url || file.preview
+      this.previewVisible = true
+    },
+    picHandleChange ({ fileList }) {
+      this.fileList = fileList
+    },
+    imagesInit (images) {
+      if (images !== null && images !== '') {
+        let imageList = []
+        images.split(',').forEach((image, index) => {
+          imageList.push({uid: index, name: image, status: 'done', url: 'http://127.0.0.1:9527/imagesWeb/' + image})
+        })
+        this.fileList = imageList
+      }
+    },
     handleSubmit () {
+      // 获取图片List
+      let images = []
+      this.fileList.forEach(image => {
+        if (image.response !== undefined) {
+          images.push(image.response)
+        } else {
+          images.push(image.name)
+        }
+      })
       this.form.validateFields((err, values) => {
         values.id = this.rowId
+        values.images = images.length > 0 ? images.join(',') : null
         if (!err) {
           this.loading = true
           this.$put('/cos/user-info', {

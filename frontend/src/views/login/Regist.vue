@@ -182,6 +182,10 @@ export default {
     },
 
     handleSubmit () {
+      if (!this.studentName) {
+        this.$message.error('请填写账号名称')
+        return false
+      }
       this.form.validateFields((err, values) => {
         if (!err) {
           this.$post('regist', {

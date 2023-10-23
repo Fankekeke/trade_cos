@@ -7,26 +7,38 @@
           <div :class="advanced ? null: 'fold'">
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="订单编号"
-                :labelCol="{span: 5}"
-                :wrapperCol="{span: 18, offset: 1}">
-                <a-input v-model="queryParams.orderCode"/>
-              </a-form-item>
-            </a-col>
-            <a-col :md="6" :sm="24">
-              <a-form-item
-                label="客户名称"
-                :labelCol="{span: 5}"
-                :wrapperCol="{span: 18, offset: 1}">
+                label="用户名称"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
                 <a-input v-model="queryParams.userName"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="药店名称"
-                :labelCol="{span: 5}"
-                :wrapperCol="{span: 18, offset: 1}">
-                <a-input v-model="queryParams.pharmacyName"/>
+                label="商品类型"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
+                <a-input v-model="queryParams.typeName"/>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="24">
+              <a-form-item
+                label="标题"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
+                <a-input v-model="queryParams.title"/>
+              </a-form-item>
+            </a-col>
+            <a-col :md="6" :sm="24">
+              <a-form-item
+                label="商品状态"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
+                <a-select v-model="queryParams.status">
+                  <a-select-option value='0'>上架</a-select-option>
+                  <a-select-option value='1'>下架</a-select-option>
+                  <a-select-option value='2'>售出</a-select-option>
+                </a-select>
               </a-form-item>
             </a-col>
           </div>
@@ -39,6 +51,7 @@
     </div>
     <div>
       <div class="operator">
+        <a-button type="primary" ghost @click="add">新增</a-button>
         <a-button @click="batchDelete">删除</a-button>
       </div>
       <!-- 表格区域 -->
@@ -51,38 +64,79 @@
                :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
                :scroll="{ x: 900 }"
                @change="handleTableChange">
+        <template slot="titleShow" slot-scope="text, record">
+          <template>
+            <a-badge status="processing"/>
+            <a-tooltip>
+              <template slot="title">
+                {{ record.title }}
+              </template>
+              {{ record.title.slice(0, 8) }} ...
+            </a-tooltip>
+          </template>
+        </template>
         <template slot="contentShow" slot-scope="text, record">
           <template>
             <a-tooltip>
               <template slot="title">
                 {{ record.content }}
               </template>
-              {{ record.content.slice(0, 10) }} ...
+              {{ record.content.slice(0, 30) }} ...
             </a-tooltip>
           </template>
         </template>
+        <template slot="operation" slot-scope="text, record">
+          <a-icon v-if="record.status == 1" type="caret-down" @click="audit(record.id, 0)" title="上 架" style="margin-right: 10px"></a-icon>
+          <a-icon v-if="record.status == 0" type="caret-up" @click="audit(record.id, 1)" title="下 架" style="margin-right: 10px"></a-icon>
+          <a-icon type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="修 改" style="margin-right: 10px"></a-icon>
+          <a-icon type="cloud" @click="handlecommodityViewOpen(record)" title="详 情"></a-icon>
+        </template>
       </a-table>
     </div>
+    <commodity-add
+      v-if="commodityAdd.visiable"
+      @close="handlecommodityAddClose"
+      @success="handlecommodityAddSuccess"
+      :commodityAddVisiable="commodityAdd.visiable">
+    </commodity-add>
+    <commodity-edit
+      ref="commodityEdit"
+      @close="handlecommodityEditClose"
+      @success="handlecommodityEditSuccess"
+      :commodityEditVisiable="commodityEdit.visiable">
+    </commodity-edit>
+    <commodity-view
+      @close="handlecommodityViewClose"
+      :commodityShow="commodityView.visiable"
+      :commodityData="commodityView.data">
+    </commodity-view>
   </a-card>
 </template>
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
+import commodityAdd from './CommodityAdd.vue'
+import commodityEdit from './CommodityEdit.vue'
+import commodityView from './CommodityView.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
-  name: 'evaluate',
-  components: {RangeDate},
+  name: 'commodity',
+  components: {commodityAdd, commodityEdit, commodityView, RangeDate},
   data () {
     return {
       advanced: false,
-      evaluateAdd: {
+      commodityAdd: {
         visiable: false
       },
-      evaluateEdit: {
+      commodityEdit: {
         visiable: false
+      },
+      commodityView: {
+        visiable: false,
+        data: null
       },
       queryParams: {},
       filteredInfo: null,
@@ -108,40 +162,53 @@ export default {
     }),
     columns () {
       return [{
-        title: '订单编号',
+        title: '卖家编号',
         dataIndex: 'code'
       }, {
-        title: '订单总价',
-        dataIndex: 'totalCost',
+        title: '卖家名称',
+        dataIndex: 'userName'
+      }, {
+        title: '联系方式',
+        dataIndex: 'phone',
         customRender: (text, row, index) => {
           if (text !== null) {
-            return text + '元'
+            return text
           } else {
             return '- -'
           }
         }
       }, {
-        title: '评价客户',
-        dataIndex: 'name'
-      }, {
-        title: '药房名称',
-        dataIndex: 'pharmacyName'
-      }, {
-        title: '评价得分',
-        dataIndex: 'score',
+        title: '标题',
+        dataIndex: 'title',
         customRender: (text, row, index) => {
           if (text !== null) {
-            return text + '分'
+            return text
           } else {
             return '- -'
           }
         }
       }, {
-        title: '评价内容',
-        dataIndex: 'content',
-        scopedSlots: { customRender: 'contentShow' }
+        title: '商品名称',
+        dataIndex: 'name',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
       }, {
-        title: '评价图片',
+        title: '商品类型',
+        dataIndex: 'typeName',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '商品图片',
         dataIndex: 'images',
         customRender: (text, record, index) => {
           if (!record.images) return <a-avatar shape="square" icon="user" />
@@ -153,8 +220,23 @@ export default {
           </a-popover>
         }
       }, {
-        title: '评价时间',
-        dataIndex: 'createDate',
+        title: '商品状态',
+        dataIndex: 'status',
+        customRender: (text, row, index) => {
+          switch (text) {
+            case 0:
+              return <a-tag color='green'>上架</a-tag>
+            case 1:
+              return <a-tag color='pink'>下架</a-tag>
+            case 2:
+              return <a-tag color='red'>出售</a-tag>
+            default:
+              return '- -'
+          }
+        }
+      }, {
+        title: '点击次数',
+        dataIndex: 'clickNum',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -162,6 +244,40 @@ export default {
             return '- -'
           }
         }
+      }, {
+        title: '价格',
+        dataIndex: 'price',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text + '元'
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '数量',
+        dataIndex: 'storeNum',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '发布时间',
+        dataIndex: 'createTime',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '操作',
+        dataIndex: 'operation',
+        scopedSlots: {customRender: 'operation'}
       }]
     }
   },
@@ -169,6 +285,19 @@ export default {
     this.fetch()
   },
   methods: {
+    handlecommodityViewOpen (record) {
+      this.commodityView.data = record
+      this.commodityView.visiable = true
+    },
+    handlecommodityViewClose () {
+      this.commodityView.visiable = false
+    },
+    audit (id, status) {
+      this.$get('/cos/commodity-info/audit', {id, status}).then((r) => {
+        this.$message.success('修改成功')
+        this.search()
+      })
+    },
     onSelectChange (selectedRowKeys) {
       this.selectedRowKeys = selectedRowKeys
     },
@@ -176,26 +305,26 @@ export default {
       this.advanced = !this.advanced
     },
     add () {
-      this.evaluateAdd.visiable = true
+      this.commodityAdd.visiable = true
     },
-    handleevaluateAddClose () {
-      this.evaluateAdd.visiable = false
+    handlecommodityAddClose () {false
+      this.commodityAdd.visiable = false
     },
-    handleevaluateAddSuccess () {
-      this.evaluateAdd.visiable = false
-      this.$message.success('新增评价成功')
+    handlecommodityAddSuccess () {
+      this.commodityAdd.visiable = false
+      this.$message.success('新增商品成功')
       this.search()
     },
     edit (record) {
-      this.$refs.evaluateEdit.setFormValues(record)
-      this.evaluateEdit.visiable = true
+      this.$refs.commodityEdit.setFormValues(record)
+      this.commodityEdit.visiable = true
     },
-    handleevaluateEditClose () {
-      this.evaluateEdit.visiable = false
+    handlecommodityEditClose () {
+      this.commodityEdit.visiable = false
     },
-    handleevaluateEditSuccess () {
-      this.evaluateEdit.visiable = false
-      this.$message.success('修改评价成功')
+    handlecommodityEditSuccess () {
+      this.commodityEdit.visiable = false
+      this.$message.success('修改商品成功')
       this.search()
     },
     handleDeptChange (value) {
@@ -213,7 +342,7 @@ export default {
         centered: true,
         onOk () {
           let ids = that.selectedRowKeys.join(',')
-          that.$delete('/cos/order-evaluate/' + ids).then(() => {
+          that.$delete('/cos/commodity-info/' + ids).then(() => {
             that.$message.success('删除成功')
             that.selectedRowKeys = []
             that.search()
@@ -283,11 +412,8 @@ export default {
         params.size = this.pagination.defaultPageSize
         params.current = this.pagination.defaultCurrent
       }
-      if (params.type === undefined) {
-        delete params.type
-      }
       params.userId = this.currentUser.userId
-      this.$get('/cos/evaluate-info/page', {
+      this.$get('/cos/commodity-info/page', {
         ...params
       }).then((r) => {
         let data = r.data.data
