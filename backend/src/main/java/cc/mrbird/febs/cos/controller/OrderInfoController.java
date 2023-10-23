@@ -72,6 +72,29 @@ public class OrderInfoController {
     }
 
     /**
+     * 订单支付后回调-更新订单状态
+     *
+     * @param orderCode 订单编号
+     * @return 结果
+     */
+    @GetMapping("/payment")
+    public R payment(@RequestParam("orderCode") String orderCode) {
+        return R.ok(orderInfoService.update(Wrappers.<OrderInfo>lambdaUpdate().set(OrderInfo::getPayStatus, 1).eq(OrderInfo::getCode, orderCode)));
+    }
+
+    /**
+     * 修改订单状态
+     *
+     * @param orderId 订单ID
+     * @param status  状态
+     * @return 结果
+     */
+    @GetMapping("/edit/status")
+    public R orderReceive(@RequestParam("orderId") Integer orderId, @RequestParam("status") Integer status) {
+        return R.ok(orderInfoService.update(Wrappers.<OrderInfo>lambdaUpdate().set(OrderInfo::getPayStatus, status).eq(OrderInfo::getId, orderId)));
+    }
+
+    /**
      * 获取订单订单详细信息
      *
      * @param id ID
@@ -99,6 +122,17 @@ public class OrderInfoController {
         orderInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
         return R.ok(orderInfoService.save(orderInfo));
     }
+
+    /**
+     * 获取主页数据
+     *
+     * @return 结果
+     */
+    @GetMapping("/homeData")
+    public R homeData() {
+        return R.ok(orderInfoService.homeData());
+    }
+
 
     /**
      * 修改订单订单信息

@@ -83,12 +83,16 @@
         </template>
         <template slot="operation" slot-scope="text, record">
           <a-icon type="file-search" @click="orderViewOpen(record)" title="详 情" style="margin-right: 10px"></a-icon>
-          <a-icon v-if="record.payStatus ==  0" type="alipay" @click="orderPay(record)" title="支 付" style="margin-left: 10px"></a-icon>
-          <a-icon v-if="record.payStatus ==  3" type="shopping" theme="twoTone" twoToneColor="#4a9ff5" @click="orderReceive(record)" title="收 货" style="margin-left: 10px"></a-icon>
-          <a-icon v-if="record.evaluateId == null && record.payStatus == 4" type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="orderEvaluateOpen(record)" title="评 价" style="margin-left: 10px"></a-icon>
+          <a-icon type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="修 改"></a-icon>
         </template>
       </a-table>
     </div>
+    <order-edit
+      ref="orderEdit"
+      @close="handleorderEditClose"
+      @success="handleorderEditSuccess"
+      :orderEditVisiable="orderEdit.visiable">
+    </order-edit>
     <order-view
       @close="handleorderViewClose"
       :orderShow="orderView.visiable"
@@ -105,6 +109,7 @@
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
+import orderEdit from './OrderEdit.vue'
 import orderView from './OrderView'
 import {mapState} from 'vuex'
 import moment from 'moment'
@@ -112,7 +117,7 @@ moment.locale('zh-cn')
 
 export default {
   name: 'order',
-  components: {orderView, RangeDate},
+  components: {orderEdit, orderView, RangeDate},
   data () {
     return {
       advanced: false,
@@ -445,7 +450,7 @@ export default {
         params.size = this.pagination.defaultPageSize
         params.current = this.pagination.defaultCurrent
       }
-      params.buyUserId = this.currentUser.userId
+      params.sellUserId = this.currentUser.userId
       this.$get('/cos/order-info/page', {
         ...params
       }).then((r) => {

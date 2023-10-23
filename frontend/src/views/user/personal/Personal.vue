@@ -25,6 +25,14 @@
                 </a-form-item>
               </a-col>
               <a-col :span="24">
+                <a-form-item label='电子邮箱' v-bind="formItemLayout">
+                  <a-input v-decorator="[
+                  'phone',
+                  { rules: [{ required: true, message: '请输入电子邮箱!' }] }
+                  ]"/>
+                </a-form-item>
+              </a-col>
+              <a-col :span="24">
                 <a-form-item label='收获地址' v-bind="formItemLayout">
                   <a-input v-decorator="[
                   'address',
@@ -151,7 +159,7 @@ export default {
     },
     setFormValues ({...student}) {
       this.rowId = student.id
-      let fields = ['name', 'phone', 'address', 'province', 'city', 'area']
+      let fields = ['name', 'phone', 'address', 'province', 'city', 'area', 'mail']
       let obj = {}
       Object.keys(student).forEach((key) => {
         if (fields.indexOf(key) !== -1) {

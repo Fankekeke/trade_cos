@@ -7,14 +7,6 @@
           <div :class="advanced ? null: 'fold'">
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="订单编号"
-                :labelCol="{span: 4}"
-                :wrapperCol="{span: 18, offset: 2}">
-                <a-input v-model="queryParams.code"/>
-              </a-form-item>
-            </a-col>
-            <a-col :md="6" :sm="24">
-              <a-form-item
                 label="用户名称"
                 :labelCol="{span: 4}"
                 :wrapperCol="{span: 18, offset: 2}">
@@ -37,6 +29,18 @@
                 <a-input v-model="queryParams.typeName"/>
               </a-form-item>
             </a-col>
+            <a-col :md="6" :sm="24">
+              <a-form-item
+                label="商品状态"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
+                <a-select v-model="queryParams.status">
+                  <a-select-option value='0'>上架</a-select-option>
+                  <a-select-option value='1'>下架</a-select-option>
+                  <a-select-option value='2'>售出</a-select-option>
+                </a-select>
+              </a-form-item>
+            </a-col>
           </div>
           <span style="float: right; margin-top: 3px;">
             <a-button type="primary" @click="search">查询</a-button>
@@ -47,7 +51,7 @@
     </div>
     <div>
       <div class="operator">
-        <a-button type="primary" ghost @click="add">新增</a-button>
+<!--        <a-button type="primary" ghost @click="add">新增</a-button>-->
         <a-button @click="batchDelete">删除</a-button>
       </div>
       <!-- 表格区域 -->
@@ -82,54 +86,30 @@
           </template>
         </template>
         <template slot="operation" slot-scope="text, record">
-          <a-icon type="file-search" @click="orderViewOpen(record)" title="详 情" style="margin-right: 10px"></a-icon>
-          <a-icon v-if="record.payStatus ==  0" type="alipay" @click="orderPay(record)" title="支 付" style="margin-left: 10px"></a-icon>
-          <a-icon v-if="record.payStatus ==  3" type="shopping" theme="twoTone" twoToneColor="#4a9ff5" @click="orderReceive(record)" title="收 货" style="margin-left: 10px"></a-icon>
-          <a-icon v-if="record.evaluateId == null && record.payStatus == 4" type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="orderEvaluateOpen(record)" title="评 价" style="margin-left: 10px"></a-icon>
+          <a-icon type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="修 改"></a-icon>
         </template>
       </a-table>
     </div>
-    <order-view
-      @close="handleorderViewClose"
-      :orderShow="orderView.visiable"
-      :orderData="orderView.data">
-    </order-view>
-    <order-evaluate
-      @close="handleorderAddClose"
-      @success="handleorderAddSuccess"
-      :evaluateAddVisiable="orderEvaluateView.visiable"
-      :orderData="orderEvaluateView.data">
-    </order-evaluate>
   </a-card>
 </template>
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import orderView from './OrderView'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
-  name: 'order',
-  components: {orderView, RangeDate},
+  name: 'collect',
+  components: {RangeDate},
   data () {
     return {
       advanced: false,
-      orderAdd: {
+      collectAdd: {
         visiable: false
       },
-      orderEdit: {
-        visiable: false,
-        data: null
-      },
-      orderView: {
-        visiable: false,
-        data: null
-      },
-      orderEvaluateView: {
-        visiable: false,
-        data: null
+      collectEdit: {
+        visiable: false
       },
       queryParams: {},
       filteredInfo: null,
@@ -155,31 +135,14 @@ export default {
     }),
     columns () {
       return [{
-        title: '订单编号',
+        title: '用户编号',
         dataIndex: 'code'
       }, {
-        title: '总价格',
-        dataIndex: 'totalPrice',
-        customRender: (text, row, index) => {
-          if (text !== null) {
-            return text + '元'
-          } else {
-            return '- -'
-          }
-        }
-      }, {
-        title: '折后价格',
-        dataIndex: 'totalAfterPrice',
-        customRender: (text, row, index) => {
-          if (text !== null) {
-            return text + '元'
-          } else {
-            return '- -'
-          }
-        }
-      }, {
         title: '用户名称',
-        dataIndex: 'userName',
+        dataIndex: 'userName'
+      }, {
+        title: '联系方式',
+        dataIndex: 'phone',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -188,8 +151,8 @@ export default {
           }
         }
       }, {
-        title: '联系方式',
-        dataIndex: 'phone',
+        title: '标题',
+        dataIndex: 'title',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -231,45 +194,21 @@ export default {
         }
       }, {
         title: '商品状态',
-        dataIndex: 'payStatus',
+        dataIndex: 'status',
         customRender: (text, row, index) => {
           switch (text) {
             case 0:
-              return <a-tag color='green'>未支付</a-tag>
+              return <a-tag color='green'>上架</a-tag>
             case 1:
-              return <a-tag color='pink'>已支付</a-tag>
+              return <a-tag color='pink'>下架</a-tag>
             case 2:
-              return <a-tag color='red'>正在发货</a-tag>
-            case 3:
-              return <a-tag color='red'>已发货</a-tag>
-            case 4:
-              return <a-tag color='red'>已收货</a-tag>
+              return <a-tag color='red'>出售</a-tag>
             default:
               return '- -'
           }
         }
       }, {
-        title: '价格',
-        dataIndex: 'price',
-        customRender: (text, row, index) => {
-          if (text !== null) {
-            return text + '元'
-          } else {
-            return '- -'
-          }
-        }
-      }, {
-        title: '数量',
-        dataIndex: 'storeNum',
-        customRender: (text, row, index) => {
-          if (text !== null) {
-            return text
-          } else {
-            return '- -'
-          }
-        }
-      }, {
-        title: '发布时间',
+        title: '创建时间',
         dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -278,10 +217,6 @@ export default {
             return '- -'
           }
         }
-      }, {
-        title: '操作',
-        dataIndex: 'operation',
-        scopedSlots: {customRender: 'operation'}
       }]
     }
   },
@@ -289,48 +224,6 @@ export default {
     this.fetch()
   },
   methods: {
-    orderEvaluateOpen (row) {
-      this.orderEvaluateView.data = row
-      this.orderEvaluateView.visiable = true
-    },
-    orderReceive (record) {
-      this.$get('/cos/order-info/edit/status', {orderId: record.id, status: 3}).then(() => {
-        this.$message.success('收货成功')
-        this.search()
-      })
-    },
-    orderPay (record) {
-      let data = { outTradeNo: record.code, subject: `${record.createDate}缴费信息`, totalAmount: record.totalCost, body: '' }
-      this.$post('/cos/pay/alipay', data).then((r) => {
-        // console.log(r.data.msg)
-        // 添加之前先删除一下，如果单页面，页面不刷新，添加进去的内容会一直保留在页面中，二次调用form表单会出错
-        const divForm = document.getElementsByTagName('div')
-        if (divForm.length) {
-          document.body.removeChild(divForm[0])
-        }
-        const div = document.createElement('div')
-        div.innerHTML = r.data.msg // data就是接口返回的form 表单字符串
-        // console.log(div.innerHTML)
-        document.body.appendChild(div)
-        document.forms[0].setAttribute('target', '_self') // 新开窗口跳转
-        document.forms[0].submit()
-      })
-    },
-    handleorderAddClose () {
-      this.orderEvaluateView.visiable = false
-    },
-    handleorderAddSuccess () {
-      this.orderEvaluateView.visiable = false
-      this.$message.success('订单评价成功！')
-      this.search()
-    },
-    orderViewOpen (row) {
-      this.orderView.data = row
-      this.orderView.visiable = true
-    },
-    handleorderViewClose () {
-      this.orderView.visiable = false
-    },
     onSelectChange (selectedRowKeys) {
       this.selectedRowKeys = selectedRowKeys
     },
@@ -338,26 +231,26 @@ export default {
       this.advanced = !this.advanced
     },
     add () {
-      this.orderAdd.visiable = true
+      this.collectAdd.visiable = true
     },
-    handleorderAddClose () {
-      this.orderAdd.visiable = false
+    handlecollectAddClose () {
+      this.collectAdd.visiable = false
     },
-    handleorderAddSuccess () {
-      this.orderAdd.visiable = false
-      this.$message.success('新增订单成功')
+    handlecollectAddSuccess () {
+      this.collectAdd.visiable = false
+      this.$message.success('新增收藏成功')
       this.search()
     },
     edit (record) {
-      this.$refs.orderEdit.setFormValues(record)
-      this.orderEdit.visiable = true
+      this.$refs.collectEdit.setFormValues(record)
+      this.collectEdit.visiable = true
     },
-    handleorderEditClose () {
-      this.orderEdit.visiable = false
+    handlecollectEditClose () {
+      this.collectEdit.visiable = false
     },
-    handleorderEditSuccess () {
-      this.orderEdit.visiable = false
-      this.$message.success('修改订单成功')
+    handlecollectEditSuccess () {
+      this.collectEdit.visiable = false
+      this.$message.success('修改收藏成功')
       this.search()
     },
     handleDeptChange (value) {
@@ -375,7 +268,7 @@ export default {
         centered: true,
         onOk () {
           let ids = that.selectedRowKeys.join(',')
-          that.$delete('/cos/order-info/' + ids).then(() => {
+          that.$delete('/cos/collect-info/' + ids).then(() => {
             that.$message.success('删除成功')
             that.selectedRowKeys = []
             that.search()
@@ -445,8 +338,8 @@ export default {
         params.size = this.pagination.defaultPageSize
         params.current = this.pagination.defaultCurrent
       }
-      params.buyUserId = this.currentUser.userId
-      this.$get('/cos/order-info/page', {
+      params.userId = this.currentUser.userId
+      this.$get('/cos/collect-info/page', {
         ...params
       }).then((r) => {
         let data = r.data.data

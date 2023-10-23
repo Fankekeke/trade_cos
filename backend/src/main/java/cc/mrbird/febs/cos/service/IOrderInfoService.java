@@ -29,4 +29,11 @@ public interface IOrderInfoService extends IService<OrderInfo> {
      * @return 结果
      */
     LinkedHashMap<String, Object> detail(Integer orderId);
+
+    /**
+     * 获取主页数据
+     *
+     * @return 结果
+     */
+    LinkedHashMap<String, Object> homeData();
 }
