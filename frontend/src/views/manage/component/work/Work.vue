@@ -1,7 +1,7 @@
 <template>
   <div style="background:#ECECEC; padding:30px;margin-top: 30px;margin-bottom: 30px">
     <a-row :gutter="8" class="count-info">
-      <a-card class="head-info-card" style="width: 65%;margin: 0 auto">
+      <a-card class="head-info-card">
         <a-row>
           <a-col :span="24">
             <a-input-search placeholder="搜索贴子" v-show="!postDetailShow" style="width: 200px;margin-top: 10px;float: right" @search="onSearch" />
@@ -124,7 +124,6 @@
 <script>
 
 import {mapState} from 'vuex'
-import VehicleView from './VehicleView.vue'
 function getBase64 (file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
@@ -135,7 +134,6 @@ function getBase64 (file) {
 }
 export default {
   name: 'Work',
-  components: {VehicleView},
   data () {
     return {
       roomList: [],

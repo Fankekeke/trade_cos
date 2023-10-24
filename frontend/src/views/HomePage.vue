@@ -37,6 +37,9 @@
           </div>
         </a-col>
       </a-card>
+      <a-col :span="24">
+        <work></work>
+      </a-col>
     </a-row>
     <home @setTitle="setTitleData"></home>
     <a-row :gutter="8" class="count-info" style="margin-top: 15px" v-show="user.roleId == 74">
@@ -53,11 +56,12 @@ import HeadInfo from '@/views/common/HeadInfo'
 import {mapState} from 'vuex'
 import moment from 'moment'
 import Home from './manage/component/home/Home'
+import Work from './manage/component/work/Work'
 moment.locale('zh-cn')
 
 export default {
   name: 'HomePage',
-  components: {Home, HeadInfo},
+  components: {Home, Work, HeadInfo},
   data () {
     return {
       titleData: {
