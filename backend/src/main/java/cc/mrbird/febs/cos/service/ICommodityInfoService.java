@@ -21,4 +21,12 @@ public interface ICommodityInfoService extends IService<CommodityInfo> {
      * @return 结果
      */
     IPage<LinkedHashMap<String, Object>> selectCommodityPage(Page<CommodityInfo> page, CommodityInfo commodityInfo);
+
+    /**
+     * 根据ID获取商品信息
+     *
+     * @param commodityId 商品信息
+     * @return 结果
+     */
+    LinkedHashMap<String, Object> selectCommodityById(Integer commodityId);
 }

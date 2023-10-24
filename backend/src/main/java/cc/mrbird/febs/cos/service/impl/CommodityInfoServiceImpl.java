@@ -27,4 +27,15 @@ public class CommodityInfoServiceImpl extends ServiceImpl<CommodityInfoMapper, C
     public IPage<LinkedHashMap<String, Object>> selectCommodityPage(Page<CommodityInfo> page, CommodityInfo commodityInfo) {
         return baseMapper.selectCommodityPage(page, commodityInfo);
     }
+
+    /**
+     * 根据ID获取商品信息
+     *
+     * @param commodityId 商品信息
+     * @return 结果
+     */
+    @Override
+    public LinkedHashMap<String, Object> selectCommodityById(Integer commodityId) {
+        return baseMapper.selectCommodityById(commodityId);
+    }
 }

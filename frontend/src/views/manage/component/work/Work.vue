@@ -4,7 +4,7 @@
       <a-card class="head-info-card">
         <a-row>
           <a-col :span="24">
-            <a-input-search placeholder="搜索贴子" v-show="!postDetailShow" style="width: 200px;margin-top: 10px;float: right" @search="onSearch" />
+            <a-input-search placeholder="搜索商品" style="width: 200px;margin-top: 10px;float: right" v-show="!postDetailShow" @search="onSearch" />
           </a-col>
         </a-row>
         <a-tabs :activeKey="tabKey" tab-position="top" @change="tabChange" v-show="!postDetailShow">
@@ -14,23 +14,17 @@
               <a-list item-layout="vertical" size="large" :pagination="pagination" :data-source="postList">
                 <a-list-item slot="renderItem" key="item.title" slot-scope="item, index">
                   <template slot="actions">
-                    <span key="message">
-                      <a-icon type="message" style="margin-right: 8px" />
-                      <span v-if="item.collect === 0">{{ item.reply }}</span>
-                      <span v-else>{{ item.reply / item.collect }}</span> 回复
-                    </span>
                     <span key="star">
-                      <a-icon type="star" style="margin-right: 8px" />
-                      {{ item.collect }} 收藏
+                      <span style="color: red">{{ item.price }}</span> 元
                     </span>
                     <span key="to-top">
                       <a-icon type="to-top" style="margin-right: 8px" />
-                      {{ timeFormat(item.createDate) }}
+                      {{ timeFormat(item.createTime) }}
                     </span>
                   </template>
                   <a-list-item-meta :description="item.content.slice(0, 100) + '...'">
                     <a slot="title" @click="postReplyDetail(item)">{{ item.title }}</a>
-                    <a-avatar shape="square" slot="avatar" icon="user" :src="'http://127.0.0.1:9527/imagesWeb/' + item.userImages" />
+                    <a-avatar shape="square" slot="avatar" icon="user" :src="'http://127.0.0.1:9527/imagesWeb/' + item.images" />
                   </a-list-item-meta>
                 </a-list-item>
               </a-list>
@@ -46,12 +40,9 @@
           </div>
           <p style="font-size: 22px;color: black;font-weight: 500;line-height: 150%;margin: 25px 50px;margin-top: 50px">
             {{ postDetail.title }}
-            <a-icon type="form" style="cursor: pointer" v-if="user.userId === postDetail.userId" @click="edit(postDetail)"/>
           </p>
           <div style="margin: 25px 50px;font-size: 13px">
-            <a-icon v-if="collectUser === 0" type="heart" style="margin-right: 10px;cursor: pointer" @click="collectUserCheck(0)"/>
-            <a-icon v-if="collectUser > 0" type="heart" style="margin-right: 10px;color: red;cursor: pointer" @click="collectUserCheck(1)"/>
-            {{ postDetail.username }} 关注
+            {{ postDetail.username }}
             <a-divider type="vertical" />
             <a-icon type="eye" style="margin-right: 10px;margin-left: 40px" />
             {{ postDetail.pageviews }} 访问
@@ -148,7 +139,24 @@ export default {
         data: null
       },
       startDate: null,
-      endDate: null
+      endDate: null,
+      tagList: [],
+      tagListData: [],
+      postList: [],
+      replyList: [],
+      postDetail: null,
+      tabName: '',
+      tabKey: '',
+      postDetailShow: false,
+      pagination: {
+        pageSize: 20
+      },
+      fileList: [],
+      previewVisible: false,
+      previewImage: '',
+      replyContent: '',
+      replyUser: null,
+      collectPost: 0
     }
   },
   computed: {
@@ -164,23 +172,12 @@ export default {
     }
   },
   mounted () {
-    this.getWorkStatusList()
+    this.getTypeList()
   },
   methods: {
-    getPostList (tagId) {
-      this.loading = true
-      this.$get(`/cos/post-info/tag/${tagId}`).then((r) => {
-        this.postList = r.data.data
-        setTimeout(() => {
-          this.loading = false
-        }, 500)
-      })
-    },
-    getTagList () {
-      this.$get('/cos/tag-info/list').then((r) => {
-        this.tagList = [{id: -1, name: '推荐'}]
-        this.tagList.push.apply(this.tagList, r.data.data)
-        console.log(this.tagList)
+    getTypeList () {
+      this.$get('/cos/commodity-type/list').then((r) => {
+        this.tagList = r.data.data
         if (this.tagList.length !== 0) {
           this.tabChange(this.tagList[0].id)
         }
@@ -189,6 +186,71 @@ export default {
           tagListData.push({label: item.name, value: item.id})
         })
         this.tagListData = tagListData
+      })
+    },
+    tabChange (key) {
+      this.tabName = this.tagList.find(o => o.id === key).name
+      this.tabKey = key
+      if (key !== 9999 && key !== -1) {
+        this.getPostList(key)
+        if (this.tagList[this.tagList.length - 1].id === 9999) {
+          this.tagList.pop()
+        }
+      }
+    },
+    getPostList (tagId) {
+      this.loading = true
+      this.$get(`/cos/commodity-info/tag/${tagId}`).then((r) => {
+        this.postList = r.data.data
+        setTimeout(() => {
+          this.loading = false
+        }, 500)
+      })
+    },
+    commit () {
+      if (this.replyContent !== '') {
+        let data = {userId: this.user.userId, content: this.replyContent, postId: this.postDetail.id, replyUserId: this.replyUser}
+        this.$post(`/cos/reply-info`, data).then((r) => {
+          if (r.data.code === 500) {
+            this.$message.error(r.data.msg)
+          } else {
+            this.postReplyDetail(this.postDetail)
+            this.replyContent = ''
+          }
+        })
+      } else {
+        this.$message.error('请填写评论！')
+      }
+    },
+    replyUserAdd (reply) {
+      this.replyUser = reply.userId
+      this.replyContent = this.replyContent + '@' + reply.username
+    },
+    collectPostCheck (deleteFlag) {
+      this.$post(`/cos/collect-info`, {userId: this.user.userId, postId: this.postDetail.id, deleteFlag}).then((r) => {
+        this.postReplyDetail(this.postDetail)
+        this.$message.success(deleteFlag === 0 ? '收藏贴子成功！' : '取消收藏成功！')
+      })
+    },
+    postReplyDetail (post) {
+      this.postInfoDetail(post.id)
+      this.collectByUser(post.id)
+      this.replyUser = []
+      this.fileList = []
+      this.$get(`/cos/reply-info/list/${post.id}`).then((r) => {
+        this.replyList = r.data.data
+        this.postDetailShow = true
+      })
+    },
+    postInfoDetail (postId) {
+      this.$get(`/cos/commodity-info/post/${postId}`).then((r) => {
+        this.postDetail = r.data
+        this.imagesInit(this.postDetail.images)
+      })
+    },
+    collectByUser (postId) {
+      this.$get(`/cos/commodity-info/collcet`, {userId: this.currentUser.userId, postId}).then((r) => {
+        this.collectPost = r.data.collect
       })
     },
     handlevehicleViewClose () {
@@ -248,6 +310,78 @@ export default {
       } else {
         this.getWorkStatusList()
       }
+    },
+    timeFormat (time) {
+      var nowTime = new Date()
+      var day = nowTime.getDate()
+      var hours = parseInt(nowTime.getHours())
+      var minutes = nowTime.getMinutes()
+      // 开始分解付入的时间
+      var timeday = time.substring(8, 10)
+      var timehours = parseInt(time.substring(11, 13))
+      var timeminutes = time.substring(14, 16)
+      // eslint-disable-next-line camelcase
+      var d_day = Math.abs(day - timeday)
+      // eslint-disable-next-line camelcase
+      var d_hours = hours - timehours
+      // eslint-disable-next-line camelcase
+      var d_minutes = Math.abs(minutes - timeminutes)
+      // eslint-disable-next-line camelcase
+      if (d_day <= 1) {
+        // eslint-disable-next-line camelcase
+        switch (d_day) {
+          case 0:
+            // eslint-disable-next-line camelcase
+            if (d_hours === 0 && d_minutes > 0) {
+              // eslint-disable-next-line camelcase
+              return d_minutes + '分钟前'
+              // eslint-disable-next-line camelcase
+            } else if (d_hours === 0 && d_minutes === 0) {
+              return '1分钟前'
+            } else {
+              // eslint-disable-next-line camelcase
+              return Math.abs(d_hours) + '小时前'
+            }
+            // eslint-disable-next-line no-unreachable
+            break
+          case 1:
+            // eslint-disable-next-line camelcase
+            if (d_hours < 0) {
+              // eslint-disable-next-line camelcase
+              return (24 + d_hours) + '小时前'
+            } else {
+              // eslint-disable-next-line camelcase
+              return d_day + '天前'
+            }
+            // eslint-disable-next-line no-unreachable
+            break
+        }
+        // eslint-disable-next-line camelcase
+      } else if (d_day > 1 && d_day < 10) {
+        // eslint-disable-next-line camelcase
+        return d_day + '天前'
+      } else {
+        return time
+      }
+    },
+    imagesInit (images) {
+      if (images !== null && images !== '') {
+        let imageList = []
+        images.split(',').forEach((image, index) => {
+          imageList.push({uid: index, name: image, status: 'done', url: 'http://127.0.0.1:9527/imagesWeb/' + image})
+        })
+        this.fileList = imageList
+      }
+    },
+    async handlePreview (file) {
+      if (!file.url && !file.preview) {
+        file.preview = await getBase64(file.originFileObj)
+      }
+      this.previewImage = file.url || file.preview
+      this.previewVisible = true
+    },
+    handleCancel () {
+      this.previewVisible = false
     },
     onChange (date, dateString) {
       this.startDate = dateString[0]

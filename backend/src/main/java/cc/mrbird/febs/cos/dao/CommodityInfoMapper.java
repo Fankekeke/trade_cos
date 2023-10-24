@@ -21,4 +21,12 @@ public interface CommodityInfoMapper extends BaseMapper<CommodityInfo> {
      * @return 结果
      */
     IPage<LinkedHashMap<String, Object>> selectCommodityPage(Page<CommodityInfo> page, @Param("commodityInfo") CommodityInfo commodityInfo);
+
+    /**
+     * 根据ID获取商品信息
+     *
+     * @param commodityId 商品信息
+     * @return 结果
+     */
+    LinkedHashMap<String, Object> selectCommodityById(@Param("commodityId") Integer commodityId);
 }

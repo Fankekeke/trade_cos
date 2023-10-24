@@ -2,8 +2,10 @@ package cc.mrbird.febs.cos.controller;
 
 
 import cc.mrbird.febs.common.utils.R;
+import cc.mrbird.febs.cos.entity.CollectInfo;
 import cc.mrbird.febs.cos.entity.CommodityInfo;
 import cc.mrbird.febs.cos.entity.UserInfo;
+import cc.mrbird.febs.cos.service.ICollectInfoService;
 import cc.mrbird.febs.cos.service.ICommodityInfoService;
 import cc.mrbird.febs.cos.service.IUserInfoService;
 import cn.hutool.core.date.DateUtil;
@@ -14,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -28,16 +31,58 @@ public class CommodityInfoController {
 
     private final IUserInfoService userInfoService;
 
+    private final ICollectInfoService collectInfoService;
+
     /**
      * 分页获取商品信息
      *
-     * @param page         分页对象
+     * @param page          分页对象
      * @param commodityInfo 商品信息
      * @return 结果
      */
     @GetMapping("/page")
     public R page(Page<CommodityInfo> page, CommodityInfo commodityInfo) {
         return R.ok(commodityInfoService.selectCommodityPage(page, commodityInfo));
+    }
+
+    /**
+     * 获取贴子详细信息
+     *
+     * @param commodityId 商品ID
+     * @return 结果
+     */
+    @GetMapping("/post/{commodityId}")
+    public R postDetail(@PathVariable("commodityId") Integer commodityId) {
+        return R.ok(commodityInfoService.selectCommodityById(commodityId));
+    }
+
+    /**
+     * 获取关注信息
+     *
+     * @param userId      用户ID
+     * @param commodityId 商品ID
+     * @return 结果
+     */
+    @GetMapping("/collcet")
+    public R collectByUser(Integer userId, Integer commodityId) {
+        UserInfo user = userInfoService.getOne(Wrappers.<UserInfo>lambdaQuery().eq(UserInfo::getUserId, userId));
+        LinkedHashMap<String, Object> result = new LinkedHashMap<String, Object>() {
+            {
+                put("collect", collectInfoService.count(Wrappers.<CollectInfo>lambdaQuery().eq(CollectInfo::getUserId, user.getId()).eq(CollectInfo::getCommodityId, commodityId)));
+            }
+        };
+        return R.ok(result);
+    }
+
+    /**
+     * 根据商品类型获取商品信息
+     *
+     * @param typeId 类型
+     * @return 结果
+     */
+    @GetMapping("/tag/{typeId}")
+    public R selectListByType(@PathVariable("typeId") Integer typeId) {
+        return R.ok(commodityInfoService.list(Wrappers.<CommodityInfo>lambdaQuery().eq(CommodityInfo::getTypeId, typeId).eq(CommodityInfo::getStatus, 0)));
     }
 
     /**
@@ -84,7 +129,7 @@ public class CommodityInfoController {
         if (user != null) {
             commodityInfo.setUserId(user.getId());
         }
-        commodityInfo.setCode("COM-" +System.currentTimeMillis());
+        commodityInfo.setCode("COM-" + System.currentTimeMillis());
         commodityInfo.setCreateTime(DateUtil.formatDateTime(new Date()));
         return R.ok(commodityInfoService.save(commodityInfo));
     }
