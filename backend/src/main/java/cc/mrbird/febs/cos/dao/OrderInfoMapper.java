@@ -50,4 +50,11 @@ public interface OrderInfoMapper extends BaseMapper<OrderInfo> {
      * @return 结果
      */
     List<OrderInfo> selectOrderByYear();
+
+    /**
+     * 订单销售类别统计
+     *
+     * @return 结果
+     */
+    List<LinkedHashMap<String, Object>> selectOrderType();
 }

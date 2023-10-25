@@ -119,8 +119,8 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
         result.put("orderNumWithinDays", baseMapper.selectOrderNumWithinDays());
         // 近十天内收益统计
         result.put("orderPriceWithinDays", baseMapper.selectOrderPriceWithinDays());
-        // 订单销售药品类别统计
-//        result.put("orderDrugType", orderInfoMapper.selectOrderDrugType());
+        // 订单销售类别统计
+        result.put("orderDrugType", baseMapper.selectOrderType());
         return result;
     }
 }

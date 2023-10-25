@@ -178,4 +178,16 @@
         CURDATE(),
         '%Y')
     </select>
+
+    <!-- 订单销售类别统计 -->
+    <select id="selectOrderType" resultType="java.util.LinkedHashMap">
+        select count(od.id) as count, ct.name from
+        order_info oi
+        left join commodity_info ci on
+        (ci.id = oi.commodity_id)
+        left join commodity_type ct on
+        (ct.id = ci.type_id)
+        where 1 = 1
+        group by ci.type_id
+    </select>
 </mapper>
