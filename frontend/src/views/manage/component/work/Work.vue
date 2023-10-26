@@ -31,35 +31,62 @@
             </div>
           </a-tab-pane>
         </a-tabs>
-        <div v-if="postDetailShow && postDetail !== null" style="margin: 18px">
+        <div v-if="postDetailShow && postDetail !== null" style="margin: 18px; font-family: SimHei">
           <div style="margin-bottom: 10px">
             <a-breadcrumb>
               <a-breadcrumb-item><a @click="postDetailShow = false">返回</a></a-breadcrumb-item>
               <a-breadcrumb-item>{{ tabName }}</a-breadcrumb-item>
             </a-breadcrumb>
           </div>
-          <p style="font-size: 22px;color: black;font-weight: 500;line-height: 150%;margin: 25px 50px;margin-top: 50px">
+          <p style="font-size: 25px;color: black;font-weight: 500;line-height: 150%;margin: 25px 50px;margin-top: 50px">
             {{ postDetail.title }}
           </p>
           <div style="margin: 25px 50px;font-size: 13px">
-            {{ postDetail.username }}
+            {{ postDetail.userName }}
             <a-divider type="vertical" />
             <a-icon type="eye" style="margin-right: 10px;margin-left: 40px" />
-            {{ postDetail.pageviews }} 访问
-            <a-divider type="vertical" />
-            <a-icon type="message" style="margin-right: 10px" />
-            <span v-if="postDetail.collect === 0">{{ postDetail.reply }}</span>
-            <span v-else>{{ postDetail.reply / postDetail.collect }}</span> 回复
+            {{ postDetail.clickNum }} 访问
             <a-divider type="vertical" />
             <a-icon v-if="collectPost === 0" type="star" style="margin-right: 10px;cursor: pointer" @click="collectPostCheck(0)"/>
             <a-icon v-if="collectPost > 0" type="star" style="margin-right: 10px;color: red;cursor: pointer" @click="collectPostCheck(1)"/>
-            {{ postDetail.collect }} 收藏
+             收藏
             <a-divider type="vertical" />
-            {{ timeFormat(postDetail.createDate) }}
+            {{ timeFormat(postDetail.createTime) }}
           </div>
           <div style="margin: 25px 50px;font-size: 15px;line-height: 1.6;word-break: break-word;letter-spacing: 1px;text-indent: 30px">
-            {{ postDetail.content }}
+            <a-row>
+              {{ postDetail.content }}
+            </a-row>
           </div>
+          <a-row style="margin: 0 50px">
+            <a-col :span="24"><b>商品名称：</b>
+              {{ postDetail.name }}
+            </a-col>
+            <a-col :span="24"><b>联系方式：</b>
+              {{ postDetail.phone }}
+            </a-col>
+          </a-row>
+          <br/>
+          <a-row style="margin: 0 50px">
+            <a-col :span="24"><b>所属类型：</b>
+              {{ postDetail.typeName }}
+            </a-col>
+            <a-col :span="24"><b>品牌：</b>
+              {{ postDetail.brand }}
+            </a-col>
+            <a-col :span="24"><b>规格：</b>
+              {{ postDetail.model }}
+            </a-col>
+          </a-row>
+          <br/>
+          <a-row style="margin: 0 50px">
+            <a-col :span="24"><b>价格：</b>
+              {{ postDetail.price }}
+            </a-col>
+            <a-col :span="24"><b>数量：</b>
+              {{ postDetail.storeNum }}
+            </a-col>
+          </a-row>
           <div style="margin: 25px 50px;height: 100px">
             <a-upload
               name="avatar"
@@ -89,8 +116,8 @@
                   <p slot="content" style="white-space: pre-line;">
                     {{ item.content }}
                   </p>
-                  <a-tooltip slot="datetime" :title="item.sendCreate">
-                    <span>{{ timeFormat(item.sendCreate) }}</span>
+                  <a-tooltip slot="datetime" :title="item.createDate">
+                    <span>{{ timeFormat(item.createDate) }}</span>
                   </a-tooltip>
                 </a-comment>
               </a-list-item>
@@ -175,6 +202,22 @@ export default {
     this.getTypeList()
   },
   methods: {
+    onSearch (key) {
+      if (key !== '') {
+        this.loading = true
+        if (this.tagList[this.tagList.length - 1].id !== 9999) {
+          this.tagList.push({id: 9999, name: '搜索'})
+        }
+        this.tabKey = 9999
+        this.tabName = '搜索'
+        this.$get(`/cos/commodity-info/list/${key}`).then((r) => {
+          this.postList = r.data.data
+          setTimeout(() => {
+            this.loading = false
+          }, 500)
+        })
+      }
+    },
     getTypeList () {
       this.$get('/cos/commodity-type/list').then((r) => {
         this.tagList = r.data.data
@@ -312,6 +355,10 @@ export default {
       }
     },
     timeFormat (time) {
+      console.log(time)
+      if (!time) {
+        return ''
+      }
       var nowTime = new Date()
       var day = nowTime.getDate()
       var hours = parseInt(nowTime.getHours())

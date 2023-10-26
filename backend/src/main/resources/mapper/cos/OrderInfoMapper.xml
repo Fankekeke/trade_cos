@@ -181,7 +181,7 @@
 
     <!-- 订单销售类别统计 -->
     <select id="selectOrderType" resultType="java.util.LinkedHashMap">
-        select count(od.id) as count, ct.name from
+        select count(oi.id) as count, ct.name from
         order_info oi
         left join commodity_info ci on
         (ci.id = oi.commodity_id)
