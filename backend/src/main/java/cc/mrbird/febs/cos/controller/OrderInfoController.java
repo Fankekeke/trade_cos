@@ -2,9 +2,11 @@ package cc.mrbird.febs.cos.controller;
 
 
 import cc.mrbird.febs.common.utils.R;
+import cc.mrbird.febs.cos.entity.CommodityInfo;
 import cc.mrbird.febs.cos.entity.LogisticsInfo;
 import cc.mrbird.febs.cos.entity.OrderInfo;
 import cc.mrbird.febs.cos.entity.UserInfo;
+import cc.mrbird.febs.cos.service.ICommodityInfoService;
 import cc.mrbird.febs.cos.service.IOrderInfoService;
 import cc.mrbird.febs.cos.service.IUserInfoService;
 import cn.hutool.core.date.DateUtil;
@@ -31,6 +33,8 @@ public class OrderInfoController {
     private final IOrderInfoService orderInfoService;
 
     private final IUserInfoService userInfoService;
+
+    private final ICommodityInfoService commodityInfoService;
 
     /**
      * 分页获取订单订单信息
@@ -118,6 +122,14 @@ public class OrderInfoController {
         if (user != null) {
             orderInfo.setBuyUserId(user.getId());
         }
+        // 更新商品状态
+        CommodityInfo commodity = commodityInfoService.getById(orderInfo.getCommodityId());
+        commodity.setStatus(2);
+        orderInfo.setSellUserId(commodity.getUserId());
+        orderInfo.setTotalPrice(commodity.getPrice());
+        orderInfo.setTotalAfterPrice(commodity.getPrice());
+        commodityInfoService.updateById(commodity);
+
         orderInfo.setCode("OR-" + System.currentTimeMillis());
         orderInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
         return R.ok(orderInfoService.save(orderInfo));

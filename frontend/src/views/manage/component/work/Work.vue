@@ -210,7 +210,7 @@ export default {
         }
         this.tabKey = 9999
         this.tabName = '搜索'
-        this.$get(`/cos/commodity-info/list/${key}`).then((r) => {
+        this.$get(`/cos/commodity-info/list/serach/${key}`).then((r) => {
           this.postList = r.data.data
           setTimeout(() => {
             this.loading = false
@@ -252,7 +252,7 @@ export default {
     },
     commit () {
       if (this.replyContent !== '') {
-        let data = {userId: this.user.userId, content: this.replyContent, postId: this.postDetail.id, replyUserId: this.replyUser}
+        let data = {userId: this.user.userId, content: this.replyContent, commodityId: this.postDetail.id, replyUserId: this.replyUser}
         this.$post(`/cos/reply-info`, data).then((r) => {
           if (r.data.code === 500) {
             this.$message.error(r.data.msg)
@@ -270,9 +270,9 @@ export default {
       this.replyContent = this.replyContent + '@' + reply.username
     },
     collectPostCheck (deleteFlag) {
-      this.$post(`/cos/collect-info`, {userId: this.user.userId, postId: this.postDetail.id, deleteFlag}).then((r) => {
+      this.$post(`/cos/collect-info`, {userId: this.user.userId, commodityId: this.postDetail.id, deleteFlag}).then((r) => {
         this.postReplyDetail(this.postDetail)
-        this.$message.success(deleteFlag === 0 ? '收藏贴子成功！' : '取消收藏成功！')
+        this.$message.success(deleteFlag === 0 ? '收藏商品成功！' : '取消收藏成功！')
       })
     },
     postReplyDetail (post) {

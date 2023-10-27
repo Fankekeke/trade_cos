@@ -3,11 +3,13 @@ package cc.mrbird.febs.cos.service.impl;
 import cc.mrbird.febs.cos.entity.CommodityInfo;
 import cc.mrbird.febs.cos.dao.CommodityInfoMapper;
 import cc.mrbird.febs.cos.service.ICommodityInfoService;
+import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.LinkedHashMap;
 
 /**
@@ -36,6 +38,10 @@ public class CommodityInfoServiceImpl extends ServiceImpl<CommodityInfoMapper, C
      */
     @Override
     public LinkedHashMap<String, Object> selectCommodityById(Integer commodityId) {
+        // 商品信息
+        CommodityInfo commodityInfo = this.getById(commodityId);
+        commodityInfo.setClickNum(commodityInfo.getClickNum() + 1);
+        commodityInfo.setClickTime(DateUtil.formatTime(new Date()));
         return baseMapper.selectCommodityById(commodityId);
     }
 }

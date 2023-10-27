@@ -74,9 +74,16 @@ public class CollectInfoController {
         UserInfo user = userInfoService.getOne(Wrappers.<UserInfo>lambdaQuery().eq(UserInfo::getUserId, collectInfo.getUserId()));
         if (user != null) {
             collectInfo.setUserId(user.getId());
+            CollectInfo collectTemp = collectInfoService.getOne(Wrappers.<CollectInfo>lambdaQuery().eq(CollectInfo::getCommodityId, collectInfo.getCommodityId())
+                    .eq(CollectInfo::getUserId, user.getId()));
+            if (collectTemp != null) {
+                collectInfoService.removeById(collectTemp.getId());
+            } else {
+                collectInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
+                collectInfoService.save(collectInfo);
+            }
         }
-        collectInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
-        return R.ok(collectInfoService.save(collectInfo));
+        return R.ok();
     }
 
     /**

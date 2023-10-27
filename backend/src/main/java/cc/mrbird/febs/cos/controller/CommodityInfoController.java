@@ -86,6 +86,20 @@ public class CommodityInfoController {
     }
 
     /**
+     * 搜索条件商品信息
+     *
+     * @param key 搜索条件
+     * @return 结果
+     */
+    @GetMapping("/search/{key}")
+    public R selectListBySearch(@PathVariable(value = "key", required = false) String key) {
+        return R.ok(commodityInfoService.list(Wrappers.<CommodityInfo>lambdaQuery().like(CommodityInfo::getBrand, key).or().like(CommodityInfo::getContent, key)
+                .or().like(CommodityInfo::getTitle, key)
+                .or().like(CommodityInfo::getName, key)
+                .eq(CommodityInfo::getStatus, 0)));
+    }
+
+    /**
      * 更新状态
      *
      * @return 结果
