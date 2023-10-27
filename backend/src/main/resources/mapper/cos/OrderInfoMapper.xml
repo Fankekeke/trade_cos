@@ -31,6 +31,8 @@
         order_info oi
         left join user_info ui on
         (ui.id = oi.buy_user_id)
+        left join user_info ui2 on
+        (ui2.id = oi.sell_user_id)
         left join commodity_info coi on
         (coi.id = oi.commodity_id)
         left join commodity_type ct on
@@ -43,7 +45,7 @@
             AND ui.user_id = #{orderInfo.buyUserId}
         </if>
         <if test="orderInfo.sellUserId != null and orderInfo.sellUserId != ''">
-            AND ui.user_id = #{orderInfo.sellUserId}
+            AND ui2.user_id = #{orderInfo.sellUserId}
         </if>
         <if test="orderInfo.code != null and orderInfo.code != ''">
             AND oi.code LIKE CONCAT('%',#{orderInfo.code},'%')

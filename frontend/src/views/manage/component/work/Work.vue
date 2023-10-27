@@ -24,7 +24,7 @@
                   </template>
                   <a-list-item-meta :description="item.content.slice(0, 100) + '...'">
                     <a slot="title" @click="postReplyDetail(item)">{{ item.title }}</a>
-                    <a-avatar shape="square" slot="avatar" icon="user" :src="'http://127.0.0.1:9527/imagesWeb/' + item.images" />
+                    <a-avatar shape="square" slot="avatar" icon="user" :src="'http://127.0.0.1:9527/imagesWeb/' + item.images.split(',')[0]" />
                   </a-list-item-meta>
                 </a-list-item>
               </a-list>
@@ -40,6 +40,16 @@
           </div>
           <p style="font-size: 25px;color: black;font-weight: 500;line-height: 150%;margin: 25px 50px;margin-top: 50px">
             {{ postDetail.title }}
+            <a-popconfirm
+              title="确认购买?"
+              ok-text="Yes"
+              cancel-text="No"
+              @confirm="confirm"
+            >
+              <a href="#" v-if="postDetail.oldUserId != currentUser.userId">
+                <a-icon type="wallet" theme="twoTone" style="font-size: 25px;margin-left: 30px"/>
+              </a>
+            </a-popconfirm>
           </p>
           <div style="margin: 25px 50px;font-size: 13px">
             {{ postDetail.userName }}
@@ -202,6 +212,16 @@ export default {
     this.getTypeList()
   },
   methods: {
+    confirm (e) {
+      this.$post(`/cos/order-info`, {
+        buyUserId: this.currentUser.userId,
+        commodityId: this.postDetail.id
+      }).then((r) => {
+        this.postDetailShow = false
+        this.getTypeList()
+        this.$message.success('添加订单成功！')
+      })
+    },
     onSearch (key) {
       if (key !== '') {
         this.loading = true
@@ -252,7 +272,7 @@ export default {
     },
     commit () {
       if (this.replyContent !== '') {
-        let data = {userId: this.user.userId, content: this.replyContent, commodityId: this.postDetail.id, replyUserId: this.replyUser}
+        let data = {userId: this.currentUser.userId, content: this.replyContent, commodityId: this.postDetail.id, replyUserId: this.replyUser}
         this.$post(`/cos/reply-info`, data).then((r) => {
           if (r.data.code === 500) {
             this.$message.error(r.data.msg)
@@ -270,7 +290,7 @@ export default {
       this.replyContent = this.replyContent + '@' + reply.username
     },
     collectPostCheck (deleteFlag) {
-      this.$post(`/cos/collect-info`, {userId: this.user.userId, commodityId: this.postDetail.id, deleteFlag}).then((r) => {
+      this.$post(`/cos/collect-info`, {userId: this.currentUser.userId, commodityId: this.postDetail.id, deleteFlag}).then((r) => {
         this.postReplyDetail(this.postDetail)
         this.$message.success(deleteFlag === 0 ? '收藏商品成功！' : '取消收藏成功！')
       })
@@ -292,7 +312,7 @@ export default {
       })
     },
     collectByUser (postId) {
-      this.$get(`/cos/commodity-info/collcet`, {userId: this.currentUser.userId, postId}).then((r) => {
+      this.$get(`/cos/commodity-info/collcet`, {userId: this.currentUser.userId, commodityId: postId}).then((r) => {
         this.collectPost = r.data.collect
       })
     },

@@ -41,7 +41,8 @@ public class CommodityInfoServiceImpl extends ServiceImpl<CommodityInfoMapper, C
         // 商品信息
         CommodityInfo commodityInfo = this.getById(commodityId);
         commodityInfo.setClickNum(commodityInfo.getClickNum() + 1);
-        commodityInfo.setClickTime(DateUtil.formatTime(new Date()));
+        commodityInfo.setClickTime(DateUtil.formatDateTime(new Date()));
+        this.updateById(commodityInfo);
         return baseMapper.selectCommodityById(commodityId);
     }
 }

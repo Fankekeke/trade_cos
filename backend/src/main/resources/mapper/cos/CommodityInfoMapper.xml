@@ -81,6 +81,7 @@
         ui.code,
         ui.name as userName,
         ui.phone,
+        ui.user_id as oldUserId,
         ct.name as typeName
         from
         commodity_info coi

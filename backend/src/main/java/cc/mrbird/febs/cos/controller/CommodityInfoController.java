@@ -91,7 +91,7 @@ public class CommodityInfoController {
      * @param key 搜索条件
      * @return 结果
      */
-    @GetMapping("/search/{key}")
+    @GetMapping("/list/serach/{key}")
     public R selectListBySearch(@PathVariable(value = "key", required = false) String key) {
         return R.ok(commodityInfoService.list(Wrappers.<CommodityInfo>lambdaQuery().like(CommodityInfo::getBrand, key).or().like(CommodityInfo::getContent, key)
                 .or().like(CommodityInfo::getTitle, key)

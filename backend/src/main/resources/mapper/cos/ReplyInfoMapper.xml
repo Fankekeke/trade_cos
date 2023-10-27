@@ -50,8 +50,8 @@
         FROM
             reply_info ri
                 LEFT JOIN commodity_info ci ON ( ri.commodity_id = ci.id )
-                LEFT JOIN user_info ui ON (ui.user_id = ri.user_id)
-                LEFT JOIN user_info ui1 ON (ui1.user_id = ri.reply_user_id)
+                LEFT JOIN user_info ui ON (ui.id = ri.user_id)
+                LEFT JOIN user_info ui1 ON (ui1.id = ri.reply_user_id)
         WHERE
           1 = 1
           AND ri.commodity_id = #{ commodityId }
