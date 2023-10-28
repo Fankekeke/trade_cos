@@ -90,12 +90,6 @@
           <a-col :span="8"><b>商品名称：</b>
             {{ commodityData.name }}
           </a-col>
-          <a-col :span="8"><b>所属用户：</b>
-            {{ commodityData.userName }}
-          </a-col>
-          <a-col :span="8"><b>所属用户：</b>
-            {{ commodityData.phone }}
-          </a-col>
         </a-row>
         <br/>
         <a-row style="padding-left: 24px;padding-right: 24px;">

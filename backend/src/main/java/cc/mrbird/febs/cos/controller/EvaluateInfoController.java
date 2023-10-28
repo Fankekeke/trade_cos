@@ -2,9 +2,13 @@ package cc.mrbird.febs.cos.controller;
 
 
 import cc.mrbird.febs.common.utils.R;
+import cc.mrbird.febs.cos.entity.CommodityInfo;
 import cc.mrbird.febs.cos.entity.EvaluateInfo;
+import cc.mrbird.febs.cos.entity.OrderInfo;
 import cc.mrbird.febs.cos.entity.UserInfo;
+import cc.mrbird.febs.cos.service.ICommodityInfoService;
 import cc.mrbird.febs.cos.service.IEvaluateInfoService;
+import cc.mrbird.febs.cos.service.IOrderInfoService;
 import cc.mrbird.febs.cos.service.IUserInfoService;
 import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -27,6 +31,8 @@ public class EvaluateInfoController {
     private final IEvaluateInfoService evaluateInfoService;
 
     private final IUserInfoService userInfoService;
+
+    private final IOrderInfoService orderInfoService;
 
     /**
      * 分页获取订单评价信息
@@ -69,10 +75,9 @@ public class EvaluateInfoController {
      */
     @PostMapping
     public R save(EvaluateInfo evaluateInfo) {
-        UserInfo userInfo = userInfoService.getOne(Wrappers.<UserInfo>lambdaQuery().eq(UserInfo::getUserId, evaluateInfo.getUserId()));
-        if (userInfo != null) {
-            evaluateInfo.setUserId(userInfo.getId());
-        }
+        // 订单信息
+        OrderInfo order = orderInfoService.getById(evaluateInfo.getOrderId());
+        evaluateInfo.setUserId(order.getBuyUserId());
         evaluateInfo.setCreateDate(DateUtil.formatDateTime(new Date()));
         return R.ok(evaluateInfoService.save(evaluateInfo));
     }

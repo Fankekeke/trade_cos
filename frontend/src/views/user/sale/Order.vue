@@ -48,7 +48,7 @@
     <div>
       <div class="operator">
 <!--        <a-button type="primary" ghost @click="add">新增</a-button>-->
-        <a-button @click="batchDelete">删除</a-button>
+<!--        <a-button @click="batchDelete">删除</a-button>-->
       </div>
       <!-- 表格区域 -->
       <a-table ref="TableInfo"
@@ -83,7 +83,7 @@
         </template>
         <template slot="operation" slot-scope="text, record">
           <a-icon type="file-search" @click="orderViewOpen(record)" title="详 情" style="margin-right: 10px"></a-icon>
-          <a-icon type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="修 改"></a-icon>
+          <a-icon v-if="record.payStatus == 1 || record.payStatus == 3" type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="修 改"></a-icon>
         </template>
       </a-table>
     </div>
@@ -344,14 +344,6 @@ export default {
     },
     add () {
       this.orderAdd.visiable = true
-    },
-    handleorderAddClose () {
-      this.orderAdd.visiable = false
-    },
-    handleorderAddSuccess () {
-      this.orderAdd.visiable = false
-      this.$message.success('新增订单成功')
-      this.search()
     },
     edit (record) {
       this.$refs.orderEdit.setFormValues(record)

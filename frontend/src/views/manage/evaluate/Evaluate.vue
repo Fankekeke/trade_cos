@@ -31,7 +31,6 @@
     </div>
     <div>
       <div class="operator">
-<!--        <a-button type="primary" ghost @click="add">新增</a-button>-->
         <a-button @click="batchDelete">删除</a-button>
       </div>
       <!-- 表格区域 -->
@@ -44,51 +43,30 @@
                :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
                :scroll="{ x: 900 }"
                @change="handleTableChange">
-        <template slot="titleShow" slot-scope="text, record">
-          <template>
-            <a-badge status="processing"/>
-            <a-tooltip>
-              <template slot="title">
-                {{ record.title }}
-              </template>
-              {{ record.title.slice(0, 8) }} ...
-            </a-tooltip>
-          </template>
-        </template>
         <template slot="contentShow" slot-scope="text, record">
           <template>
             <a-tooltip>
               <template slot="title">
-                {{ record.content }}
+                {{ record.remark }}
               </template>
-              {{ record.content.slice(0, 30) }} ...
+              {{ record.remark.slice(0, 10) }} ...
             </a-tooltip>
           </template>
         </template>
-        <template slot="operation" slot-scope="text, record">
-          <a-icon type="setting" theme="twoTone" twoToneColor="#4a9ff5" @click="edit(record)" title="修 改"></a-icon>
-        </template>
       </a-table>
     </div>
-    <evaluate-edit
-      ref="evaluateEdit"
-      @close="handleevaluateEditClose"
-      @success="handleevaluateEditSuccess"
-      :evaluateEditVisiable="evaluateEdit.visiable">
-    </evaluate-edit>
   </a-card>
 </template>
 
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
-import evaluateEdit from './EvaluateEdit.vue'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
   name: 'evaluate',
-  components: {evaluateEdit, RangeDate},
+  components: {RangeDate},
   data () {
     return {
       advanced: false,
@@ -122,18 +100,73 @@ export default {
     }),
     columns () {
       return [{
-        title: '标题',
-        dataIndex: 'title',
-        scopedSlots: { customRender: 'titleShow' },
-        width: 300
+        title: '订单编号',
+        dataIndex: 'code'
+      }, {
+        title: '订单总价',
+        dataIndex: 'totalCost',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text + '元'
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '评价客户',
+        dataIndex: 'userName'
+      }, {
+        title: '商品名称',
+        dataIndex: 'commodityName'
+      }, {
+        title: '商品类型',
+        dataIndex: 'typeName',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '订单编号',
+        dataIndex: 'code',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '评价得分',
+        dataIndex: 'score',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text + '分'
+          } else {
+            return '- -'
+          }
+        }
       }, {
         title: '评价内容',
-        dataIndex: 'content',
-        scopedSlots: { customRender: 'contentShow' },
-        width: 600
+        dataIndex: 'remark',
+        scopedSlots: { customRender: 'contentShow' }
       }, {
-        title: '发布时间',
-        dataIndex: 'date',
+        title: '评价图片',
+        dataIndex: 'images',
+        customRender: (text, record, index) => {
+          if (!record.images) return <a-avatar shape="square" icon="user" />
+          return <a-popover>
+            <template slot="content">
+              <a-avatar shape="square" size={132} icon="user" src={ 'http://127.0.0.1:9527/imagesWeb/' + record.images.split(',')[0] } />
+            </template>
+            <a-avatar shape="square" icon="user" src={ 'http://127.0.0.1:9527/imagesWeb/' + record.images.split(',')[0] } />
+          </a-popover>
+        }
+      }, {
+        title: '评价时间',
+        dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -141,20 +174,6 @@ export default {
             return '- -'
           }
         }
-      }, {
-        title: '上传人',
-        dataIndex: 'publisher',
-        customRender: (text, row, index) => {
-          if (text !== null) {
-            return text
-          } else {
-            return '- -'
-          }
-        }
-      }, {
-        title: '操作',
-        dataIndex: 'operation',
-        scopedSlots: {customRender: 'operation'}
       }]
     }
   },
@@ -206,7 +225,7 @@ export default {
         centered: true,
         onOk () {
           let ids = that.selectedRowKeys.join(',')
-          that.$delete('/cos/evaluate-info/' + ids).then(() => {
+          that.$delete('/cos/order-evaluate/' + ids).then(() => {
             that.$message.success('删除成功')
             that.selectedRowKeys = []
             that.search()
@@ -275,6 +294,9 @@ export default {
         // 如果分页信息为空，则设置为默认值
         params.size = this.pagination.defaultPageSize
         params.current = this.pagination.defaultCurrent
+      }
+      if (params.type === undefined) {
+        delete params.type
       }
       this.$get('/cos/evaluate-info/page', {
         ...params

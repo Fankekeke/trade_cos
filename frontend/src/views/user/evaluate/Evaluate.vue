@@ -7,26 +7,18 @@
           <div :class="advanced ? null: 'fold'">
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="订单编号"
-                :labelCol="{span: 5}"
-                :wrapperCol="{span: 18, offset: 1}">
-                <a-input v-model="queryParams.orderCode"/>
+                label="标题"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
+                <a-input v-model="queryParams.title"/>
               </a-form-item>
             </a-col>
             <a-col :md="6" :sm="24">
               <a-form-item
-                label="客户名称"
-                :labelCol="{span: 5}"
-                :wrapperCol="{span: 18, offset: 1}">
-                <a-input v-model="queryParams.userName"/>
-              </a-form-item>
-            </a-col>
-            <a-col :md="6" :sm="24">
-              <a-form-item
-                label="药店名称"
-                :labelCol="{span: 5}"
-                :wrapperCol="{span: 18, offset: 1}">
-                <a-input v-model="queryParams.pharmacyName"/>
+                label="内容"
+                :labelCol="{span: 4}"
+                :wrapperCol="{span: 18, offset: 2}">
+                <a-input v-model="queryParams.content"/>
               </a-form-item>
             </a-col>
           </div>
@@ -55,9 +47,9 @@
           <template>
             <a-tooltip>
               <template slot="title">
-                {{ record.content }}
+                {{ record.remark }}
               </template>
-              {{ record.content.slice(0, 10) }} ...
+              {{ record.remark.slice(0, 10) }} ...
             </a-tooltip>
           </template>
         </template>
@@ -122,10 +114,30 @@ export default {
         }
       }, {
         title: '评价客户',
-        dataIndex: 'name'
+        dataIndex: 'userName'
       }, {
-        title: '药房名称',
-        dataIndex: 'pharmacyName'
+        title: '商品名称',
+        dataIndex: 'commodityName'
+      }, {
+        title: '商品类型',
+        dataIndex: 'typeName',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
+      }, {
+        title: '订单编号',
+        dataIndex: 'code',
+        customRender: (text, row, index) => {
+          if (text !== null) {
+            return text
+          } else {
+            return '- -'
+          }
+        }
       }, {
         title: '评价得分',
         dataIndex: 'score',
@@ -138,7 +150,7 @@ export default {
         }
       }, {
         title: '评价内容',
-        dataIndex: 'content',
+        dataIndex: 'remark',
         scopedSlots: { customRender: 'contentShow' }
       }, {
         title: '评价图片',

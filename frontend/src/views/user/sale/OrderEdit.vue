@@ -143,6 +143,7 @@ export default {
           this.logisticsList.push({remark: this.remark, createDate: new Date()})
           this.$put('/cos/order-info', {
             'id': this.rowId,
+            'payStatus': 3,
             'logistics': JSON.stringify(this.logisticsList)
           }).then((r) => {
             this.reset()

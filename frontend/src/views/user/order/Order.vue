@@ -48,7 +48,7 @@
     <div>
       <div class="operator">
 <!--        <a-button type="primary" ghost @click="add">新增</a-button>-->
-        <a-button @click="batchDelete">删除</a-button>
+<!--        <a-button @click="batchDelete">删除</a-button>-->
       </div>
       <!-- 表格区域 -->
       <a-table ref="TableInfo"
@@ -106,13 +106,14 @@
 <script>
 import RangeDate from '@/components/datetime/RangeDate'
 import orderView from './OrderView'
+import orderEvaluate from './OrderEvaluate'
 import {mapState} from 'vuex'
 import moment from 'moment'
 moment.locale('zh-cn')
 
 export default {
   name: 'order',
-  components: {orderView, RangeDate},
+  components: {orderView, orderEvaluate, RangeDate},
   data () {
     return {
       advanced: false,
@@ -294,13 +295,13 @@ export default {
       this.orderEvaluateView.visiable = true
     },
     orderReceive (record) {
-      this.$get('/cos/order-info/edit/status', {orderId: record.id, status: 3}).then(() => {
+      this.$get('/cos/order-info/edit/status', {orderId: record.id, status: 4}).then(() => {
         this.$message.success('收货成功')
         this.search()
       })
     },
     orderPay (record) {
-      let data = { outTradeNo: record.code, subject: `${record.createDate}缴费信息`, totalAmount: record.totalCost, body: '' }
+      let data = { outTradeNo: record.code, subject: `${record.createDate}缴费信息`, totalAmount: record.totalAfterPrice, body: '' }
       this.$post('/cos/pay/alipay', data).then((r) => {
         // console.log(r.data.msg)
         // 添加之前先删除一下，如果单页面，页面不刷新，添加进去的内容会一直保留在页面中，二次调用form表单会出错
@@ -315,14 +316,6 @@ export default {
         document.forms[0].setAttribute('target', '_self') // 新开窗口跳转
         document.forms[0].submit()
       })
-    },
-    handleorderAddClose () {
-      this.orderEvaluateView.visiable = false
-    },
-    handleorderAddSuccess () {
-      this.orderEvaluateView.visiable = false
-      this.$message.success('订单评价成功！')
-      this.search()
     },
     orderViewOpen (row) {
       this.orderView.data = row
@@ -341,11 +334,11 @@ export default {
       this.orderAdd.visiable = true
     },
     handleorderAddClose () {
-      this.orderAdd.visiable = false
+      this.orderEvaluateView.visiable = false
     },
     handleorderAddSuccess () {
-      this.orderAdd.visiable = false
-      this.$message.success('新增订单成功')
+      this.orderEvaluateView.visiable = false
+      this.$message.success('新增评价成功')
       this.search()
     },
     edit (record) {

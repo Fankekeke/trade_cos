@@ -21,7 +21,7 @@
         coi.title,
         coi.name as commodityName,
         ct.name as typeName,
-        coi.images,
+        coi.images as commodityImages,
         coi.status
         from
         evaluate_info ei
@@ -30,7 +30,7 @@
         left join commodity_info coi on
         (coi.id = oi.commodity_id)
         left join user_info ui on
-        (ui.user_id = oi.buy_user_id)
+        (ui.id = oi.buy_user_id)
         left join commodity_type ct on
         (ct.id = coi.type_id)
         where
