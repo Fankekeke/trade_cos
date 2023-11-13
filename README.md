@@ -34,6 +34,9 @@ WebStorm OR VScode 编译器 [https://www.jianshu.com/p/d63b5bae9dff]
 安装所需文件 yarn install 
 运行 yarn run dev
 
+#### 后端启动方式
+
+首先启动redis，进入redis目录终端。输入redis-server回车
 
 #### 项目功能
 > 用户注册、密码修改、销售情况统计、交易市场、商品评论、公告管理、用户收藏、商品管理、评价管理、订单管理、商品类型、消息管理、用户管理、订单物流更新、商品购买、订单评价
