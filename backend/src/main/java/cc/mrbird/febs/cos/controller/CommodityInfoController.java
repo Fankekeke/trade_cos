@@ -68,7 +68,7 @@ public class CommodityInfoController {
         UserInfo user = userInfoService.getOne(Wrappers.<UserInfo>lambdaQuery().eq(UserInfo::getUserId, userId));
         LinkedHashMap<String, Object> result = new LinkedHashMap<String, Object>() {
             {
-                put("collect", collectInfoService.count(Wrappers.<CollectInfo>lambdaQuery().eq(CollectInfo::getUserId, user.getId()).eq(CollectInfo::getCommodityId, commodityId)));
+                put("collect", user != null ? collectInfoService.count(Wrappers.<CollectInfo>lambdaQuery().eq(CollectInfo::getUserId, user.getId()).eq(CollectInfo::getCommodityId, commodityId)) : 0);
             }
         };
         return R.ok(result);
