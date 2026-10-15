@@ -1,76 +1,178 @@
-### 基于SpringBoot + Vue的二手交易平台 校园交易系统
+![](https://img.shields.io/badge/License-MIT-blue.svg)
 
-二手物品交易系统、闲置物品交易平台、二手商品买卖平台
+![](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)
 
-#### 安装环境 
+![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+
+# 基于 SpringBoot + Vue 的二手交易系统 (Second-hand Trading System)
+
+商品管理 · 在线交易 · 支付宝支付 · 订单管理 · 评价管理 · 收藏功能 · 消息互动 · 多角色协同
+
+本项目是一套面向校园与社区的二手物品在线交易平台，采用前后端分离架构，覆盖管理员与普通用户两类角色。系统围绕"商品发布、在线交易、订单管理、支付记录、评价管理、用户收藏、消息互动、销售统计"等核心业务设计，支持用户注册登录、发布闲置物品、浏览交易市场、收藏商品、在线下单与支付宝支付，管理员完成商品审核、订单管理、用户管理、公告发布、评价审核与平台运营数据统计，适用于校园二手交易平台、社区闲置物品交换系统、二手物品电商后台及C2C在线交易社区。
+
+#### 安装环境
+️**注意**：请确保您的开发环境已安装以下依赖。
 
 JAVA 环境 
 
 Node.js环境 [https://nodejs.org/en/] 选择14.17
 
-Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs 
+Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs
 
-Mysql 数据库 [https://blog.csdn.net/qq_40303031/article/details/88935262] 一定要把账户和密码记住
+Mysql 数据库 一定要把账户和密码记住
 
 redis
 
-Idea 编译器 [https://blog.csdn.net/weixin_44505194/article/details/104452880]
+Idea 编译器
 
-WebStorm OR VScode 编译器 [https://www.jianshu.com/p/d63b5bae9dff]
+WebStorm OR VScode 编译器
 
 #### 采用技术及功能
 
 后端：SpringBoot、MybatisPlus、MySQL、Redis、
-前端：Vue、Apex、Antd、Axios、baidu.js
+前端：Vue、Apex、Antd、Axios
 
- 
+平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件) + 百度地图 API
+
 平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)
 
 开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok
 
-支付使用阿里沙盒支付
+---
+
+## 核心特性
+
+- **多角色权限管理**：区分管理员与普通用户两类角色，实现不同权限隔离与功能访问控制。
+- **商品全生命周期管理**：支持用户发布闲置物品，上传图文详情、设置价格与分类，管理员可审核、下架违规商品，保障平台内容合规。
+- **交易市场**：提供商品浏览与搜索功能，支持按类型、价格区间、新旧程度、发布时间筛选，用户可快速找到心仪的二手物品。
+- **订单全流程管理**：覆盖下单、支付、发货、收货、确认完成全流程，支持订单状态实时查询与交易纠纷处理。
+- **支付宝在线支付**：集成支付宝支付能力，支持用户在线缴纳商品费用，支付后自动生成缴费记录，便于查询与对账。
+- **用户收藏功能**：用户可收藏感兴趣的商品，方便后续查看与购买，提升用户粘性与转化率。
+- **评价管理体系**：交易完成后买卖双方可互评，管理员可审核评价内容，构建平台信用体系与交易保障机制。
+- **消息互动**：支持买家与卖家在线沟通，管理员可回复用户咨询与反馈，提升平台服务体验。
+- **销售统计与趋势分析**：管理员可查看平台订单趋势、热销商品排行、交易额统计等多维度数据，辅助运营决策。
+---
+
+## 适用场景
+
+- 校园二手物品交易平台
+- 社区闲置物品交换系统
+- C2C二手物品在线交易社区
+- 企业内部闲置物品流转平台
+- 二手数码/图书/服饰垂直交易平台
+- 跳蚤市场线上化管理系统
+---
+
+## 功能模块概览
+
+## 管理员端
+
+管理员负责平台整体运营、商品审核、订单管理、用户管理与数据统计分析：
+
+### 商品与分类管理
+
+- **商品管理**：审核用户发布的商品，支持商品上架/下架、违规内容处理、商品详情查看，维护平台商品质量。
+- **商品类型**：管理商品分类体系，如数码电子、图书教材、服饰鞋包、家居用品、运动户外等，支持分类增删改与排序。
+
+### 订单与交易管理
+
+- **订单管理**：查看平台所有订单，包括订单编号、买卖双方信息、商品明细、订单金额、支付状态、物流状态等，支持按时间、状态筛选与异常订单处理。
+- **平台订单趋势**：以图表形式展示平台日/周/月订单量变化趋势，直观呈现平台交易活跃度。
+- **销售统计**：按时间段统计平台交易额、订单量、客单价、热销商品排行等数据，生成可视化报表，辅助运营决策。
+
+### 用户与互动管理
+
+- **用户管理**：管理注册用户信息，包括账号状态、实名认证、信用评分，支持禁用违规账号与重置密码。
+- **用户收藏**：查看用户收藏数据，了解热门商品与用户偏好，辅助推荐策略优化。
+- **评价管理**：审核用户对交易的评价内容，处理恶意评价与纠纷，维护平台评价体系的公正性。
+- **消息回复**：回复用户咨询、投诉与反馈，处理交易纠纷，提升平台服务质量。
+
+### 公告与首页管理
+
+- **公告管理**：发布平台公告，包括交易规则更新、活动通知、安全提示、维护通知等，支持置顶与定时发布。
+- **首页图片**：配置首页轮播图与推荐位图片，展示平台活动、热门商品与优质卖家，提升平台视觉吸引力。
+
+---
+
+## 用户端
+
+用户端面向普通注册用户，提供注册登录、商品发布、浏览交易、在线支付、订单管理与评价反馈功能：
+
+### 账户与个人信息
+
+- **登录注册**：支持手机号、邮箱等方式注册登录，密码加密存储，支持实名认证。
+- **个人信息**：维护昵称、头像、联系方式、收货地址等个人信息，展示个人主页与信用评分。
+
+### 商品发布与管理
+
+- **我的商品**：管理个人发布的闲置物品，包括商品上架/下架、编辑商品信息、查看商品浏览与收藏数据。
+- **交易市场**：浏览平台所有在售商品，支持按类型、价格、新旧程度、关键词搜索筛选，快速找到心仪物品。
+
+### 交易与支付
+
+- **订单管理**：查看个人所有订单，包括我买到的（买入订单）和我卖出的（卖出订单），实时查看订单状态与交易进度。
+- **卖出订单**：作为卖家查看收到的订单，确认订单、填写物流信息、处理发货与售后。
+- **支付宝在线支付**：对买入订单进行在线支付，支持支付宝快捷缴费，支付成功后自动生成电子缴费凭证。
+
+### 收藏与评价
+
+- **我的收藏**：查看个人收藏的商品列表，方便后续购买与比价，支持取消收藏。
+- **评价管理**：交易完成后对对方进行评价，包括商品描述相符度、卖家/买家服务态度、物流速度等，支持星级评分与文字评论，构建平台信用体系。
+
+### 消息互动
+
+- **我的消息**：接收订单状态变更、买家咨询、评价提醒、系统公告等消息，支持在线回复买家/卖家咨询。
+
+---
+
+## 项目结构
+
+```text
+pharmacy-dispensing-system/
+├── backend/            # 后端 API 服务
+│   ├── src/
+│   │   ├── controllers/  # 控制器
+│   │   ├── models/       # 数据模型
+│   │   ├── routes/       # 路由
+│   │   └── services/     # 业务逻辑
+│   └── package.json
+├── frontend/           # 前端 Web 应用
+│   ├── src/
+│   │   ├── views/      # 页面视图
+│   │   ├── components/ # 公共组件
+│   │   └── store/      # 状态管理
+│   └── package.json
+├── docs/               # 项目文档与 API 接口说明
+├── LICENSE
+└── README.md
+```
+---
+
 
 #### 前台启动方式
-
 安装所需文件 yarn install 
 运行 yarn run dev
 
-#### 后端启动方式
-
-1.首先启动redis，进入redis目录终端。输入redis-server回车
-2.导入sql文件，修改数据库与redis连接配置
-3.idea中启动后端项目
-
-#### 项目功能
-> 用户注册、密码修改、销售情况统计、交易市场、商品评论、公告管理、用户收藏、商品管理、评价管理、订单管理、商品类型、消息管理、用户管理、订单物流更新、商品购买、订单评价
-
 #### 默认后台账户密码
- 
 [管理员]
 admin
-1234qwer
+123456
 
-[用户1]
+[用户]
 fank
-1234qwer
-
-[用户2]
-test2
-1234qwer
+123456
 
 #### 项目截图
-
 |  |  |
 |---------------------|---------------------|
-|![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505649843.jpg) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505534664.jpg) |
-|![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505633237.jpg) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505694472.jpg) |
-|![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505622043.jpg) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698506824199.jpg) |
-|![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505606122.jpg) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698506802722.jpg) |
-|![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505591995.jpg) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505794221.jpg) |
-|![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505578675.jpg) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505719644.jpg) |
-|![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505558940.jpg) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505705165.jpg) |
-|![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1698505548846.jpg) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png) |
-
+| ![](./assets/image%20(1).jpg) | ![](./assets/image%20(2).jpg) |
+| ![](./assets/image%20(3).jpg) | ![](./assets/image%20(4).jpg) |
+| ![](./assets/image%20(5).jpg) | ![](./assets/image%20(6).jpg) |
+| ![](./assets/image%20(7).jpg) | ![](./assets/image%20(8).jpg) |
+| ![](./assets/image%20(9).jpg) | ![](./assets/image%20(10).jpg) |
+| ![](./assets/image%20(11).jpg) | ![](./assets/image%20(12).jpg) |
+| ![](./assets/image%20(13).jpg) | ![](./assets/image%20(14).jpg) |
+| ![](./assets/image%20(15).jpg) | ![](./assets/image%20(16).jpg) | 
 
 #### 演示视频
 
@@ -88,7 +190,10 @@ WeChat: `Storm_Berserker`
 
 > 项目部署调试不好包退！功能逻辑没讲明白包退！
 
+<div align=center><img align="center" src="./assets/product_word.png" alt="fankekeke" /></div>
+
 #### 其它资源
+[2026年-答辩顺利通过-客户评价🀄](https://berserker287.github.io/2026/06/29/2026%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/)
 
 [2025年-答辩顺利通过-客户评价🍜](https://berserker287.github.io/2025/06/18/2025%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/)
 
@@ -106,11 +211,14 @@ WeChat: `Storm_Berserker`
 
 [计算机专业毕业答辩小tips](https://zhuanlan.zhihu.com/p/145911029)
 
-
 #### 接JAVAWEB毕设，纯原创，价格公道，诚信第一
 
 `网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT`
 
 More info: [悲伤的橘子树](https://berserker287.github.io/)
 
-<p><img align="center" src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png" alt="fankekeke" /></p>
+<div align="center"><img align="center" src="./assets/chat_qr_code.png" alt="fankekeke" width=250 /></div>
+
+<p><img align="center" src="./assets/wechat_group.png" alt="fankekeke" /></p>
+
+**感谢查看**
